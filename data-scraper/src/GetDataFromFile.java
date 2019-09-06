@@ -164,23 +164,23 @@ public class GetDataFromFile {
 	    		csvWriter.append(",");
 	    		csvWriter.append("Winning Pitcher ID");
 	    		csvWriter.append(",");
-	    		csvWriter.append("Winning Pitcher Name");
-	    		csvWriter.append(",");
+	    		//csvWriter.append("Winning Pitcher Name");
+	    		//csvWriter.append(",");
 	    		csvWriter.append("Losing Pitcher ID");
 	    		csvWriter.append(",");
-	    		csvWriter.append("Losing Pitcher Name");
-	    		csvWriter.append(",");
+	    		//csvWriter.append("Losing Pitcher Name");
+	    		//csvWriter.append(",");
 	    		csvWriter.append("Saving Pitcher ID");
 	    		csvWriter.append(",");
-	    		csvWriter.append("Saving Pitcher Name");
-	    		csvWriter.append(",");
+	    		//csvWriter.append("Saving Pitcher Name");
+	    		//csvWriter.append(",");
 	    		csvWriter.append("Visiting Starter Pitcher ID");
 	    		csvWriter.append(",");
-	    		csvWriter.append("Visiting Starter Pitcher Name");
-	    		csvWriter.append(",");
+	    		//csvWriter.append("Visiting Starter Pitcher Name");
+	    		//csvWriter.append(",");
 	    		csvWriter.append("Home Starter Pitcher ID");
 	    		csvWriter.append(",");
-	    		csvWriter.append("Home Starter Pitcher Name");
+	    		//csvWriter.append("Home Starter Pitcher Name");
 	    		csvWriter.append("\n");
 		    	String st;
 				int i=0;
@@ -220,17 +220,18 @@ public class GetDataFromFile {
 					    	csvWriter.append(",");
 					    	csvWriter.append(data[17]);
 					    	csvWriter.append(",");
+					    	
 					    	for(int j=19;j<=76;j++)
 					    	{
 					    		csvWriter.append(data[j]);
 					    		csvWriter.append(",");
 					    	}
-					    	for(int k=93;k<=98;k++)
+					    	for(int k=93;k<=98;k=k+2)
 					    	{
 					    		csvWriter.append(data[k]);
 					    		csvWriter.append(",");
 					    	}
-					    	for(int l=101;l<=104;l++)
+					    	for(int l=101;l<=104;l=l+2)
 					    	{
 					    		csvWriter.append(data[l]);
 					    		csvWriter.append(",");
@@ -271,12 +272,12 @@ public class GetDataFromFile {
 				    		csvWriter.append(data[j]);
 				    		csvWriter.append(",");
 				    	}
-				    	for(int k=93;k<=98;k++)
+				    	for(int k=93;k<=98;k=k+2)
 				    	{
 				    		csvWriter.append(data[k]);
 				    		csvWriter.append(",");
 				    	}
-				    	for(int l=101;l<=104;l++)
+				    	for(int l=101;l<=104;l=l+2)
 				    	{
 				    		csvWriter.append(data[l]);
 				    		csvWriter.append(",");
@@ -294,5 +295,4 @@ public class GetDataFromFile {
 		
 		
 	}
-
 }
