@@ -47,8 +47,15 @@ def main():
         data['Home Team OPS'] = data['Home Team OBP'] + data['Home Team Slugging']
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
+        #Make win loss column
+        #Do descriptive statistics for each column and put into diff file
+        #Run simple machine learning methods (linear regression) to predict win
+        #Run heatmaps for variables
+        #Use step AIC ()
 
-    data.plot(kind="scatter", x="Home Team HBP", y="Home Team Score")
+
+
+    data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
     plt.show()
     data["Home Team HBP"].hist()
     plt.show()
