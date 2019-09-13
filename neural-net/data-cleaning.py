@@ -3,7 +3,8 @@ import os
 
 
 def main():
-    os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
+    #os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
+    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
     extension = 'csv'
 
     teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",

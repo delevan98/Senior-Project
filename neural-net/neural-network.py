@@ -16,29 +16,29 @@ import csv
 
 
 def main():
-    os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
-
-    teamAbbr = ["CHN", "PHI", "PIT", "CIN", "SLN", "BOS", "CHA",
+    #os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
+    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
+    teamAbbr = ["CHN", "PIT", "PHI", "CIN", "SLN", "BOS", "CHA",
                 "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
                 "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
                 "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
-                "MIL", "WAS"]
+                "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
 
     #This input will eventually be supplied by web scraper data
     team1, team2 = input("Enter a team matchup:").split()
     print("Team 1: ",team1)
     print("Team 2: ", team2)
 
-    data = pd.read_csv(team1 + '_All.csv')
-    data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
-    plt.show()
-    data["Home Team HBP"].hist()
-    plt.show()
 
-    # data.drop(['Visting Team', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1)
-    # data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
-    # 'Home Starter Pitcher ID'], axis=1)
-    # print(data.info())
+
+    data = pd.read_csv(team1 + '_All.csv')
+    #data = pd.read_csv(teamAbbr[x] + '_All.csv')
+    #data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
+    #plt.show()
+
+    #data["Home Team HBP"].hist()
+    #plt.show()
+
 
     data.drop(['Visting Team','Date', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
     data.drop(['Winning Pitcher ID', 'Visting Team Stolen Bases', 'Saving Pitcher ID','Home Team Stolen Bases', 'Visting Team Caught Stealing',
@@ -54,6 +54,8 @@ def main():
                 'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
                 'Visiting Team Game Number', 'Home Team Game Number'], axis=1, inplace=True)
 
+#save,load, and make prediction
+#switch to flask and make web app and load in models
     try:
         data.drop(['Unnamed: 75'], axis=1, inplace=True)
 
@@ -63,12 +65,14 @@ def main():
 
     # Using Pearson Correlation
     plt.subplots(figsize=(36,36))
-    #plt.figure(figsize=(300, 100))
     cor = data.corr()
     sns.heatmap(cor, cmap=plt.cm.Reds)
+    #plt.gcf().subplots_adjust(top=.4, bottom=0.3)
+    fig = plt.gcf()
     plt.show()
-    plt.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
-
+    fig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
+    plt.close()
+    # use stat to find if yankees OBP performance is greater than average???
     #X_train, X_test, y_train, y_test = train_test_split(data.drop('Home Team Score', axis=1),
                                                         #data['Home Team Score'], test_size=0.30,
                                                         #random_state=101)
@@ -87,7 +91,7 @@ def main():
                                                         data['Win'], test_size=0.30,
                                                         random_state=101)
 
-    #print(data.isna().any())
+    print(data.isna().any())
 
     logmodel = LogisticRegression()
     logmodel.fit(X_train, y_train)
@@ -112,13 +116,16 @@ def main():
     # create heatmap
     sns.heatmap(pd.DataFrame(conf_matrix), annot=True, cmap="YlGnBu", fmt='g')
     ax.xaxis.set_label_position("top")
-    plt.tight_layout()
+    #plt.tight_layout()
     plt.title('Confusion matrix', y=1.1)
     plt.ylabel('Actual label')
     plt.xlabel('Predicted label')
+    plt.tight_layout()
+    fig2 = plt.gcf()
     plt.show()
 
-    plt.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Initial_Heatmap_WAS.png")
+    fig2.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Sample_Conf_Matrix.png")
+    plt.close()
 
 
     rfe = RFE(logmodel, 9)  # running RFE
