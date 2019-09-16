@@ -25,13 +25,14 @@ def main():
                 "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
 
     #This input will eventually be supplied by web scraper data
-    team1, team2 = input("Enter a team matchup:").split()
-    print("Team 1: ",team1)
-    print("Team 2: ", team2)
+    #team1, team2 = input("Enter a team matchup:").split()
+    #print("Team 1: ",team1)
+    #print("Team 2: ", team2)
 
 
 
-    data = pd.read_csv(team1 + '_All.csv')
+    #data = pd.read_csv(team1 + '_All.csv')
+    data = pd.read_csv('NYA_All.csv')
     #data = pd.read_csv(teamAbbr[x] + '_All.csv')
     #data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
     #plt.show()
@@ -64,14 +65,15 @@ def main():
 
 
     # Using Pearson Correlation
-    plt.subplots(figsize=(36,36))
+    plt.subplots(figsize=(35,35))
     cor = data.corr()
     sns.heatmap(cor, cmap=plt.cm.Reds)
-    #plt.gcf().subplots_adjust(top=.4, bottom=0.3)
+    plt.gcf().subplots_adjust(top=.95,bottom=0.35)
+    plt.xticks(rotation=45,ha='right')
     fig = plt.gcf()
     plt.show()
     fig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
-    plt.close()
+    plt.close('all')
     # use stat to find if yankees OBP performance is greater than average???
     #X_train, X_test, y_train, y_test = train_test_split(data.drop('Home Team Score', axis=1),
                                                         #data['Home Team Score'], test_size=0.30,
@@ -108,23 +110,19 @@ def main():
     conf_matrix = confusion_matrix(y_test, predictions)
     print(conf_matrix)
 
-    class_names = [0, 1]  # name  of classes
-    fig, ax = plt.subplots()
-    tick_marks = np.arange(len(class_names))
-    plt.xticks(tick_marks, class_names)
-    plt.yticks(tick_marks, class_names)
-    # create heatmap
-    sns.heatmap(pd.DataFrame(conf_matrix), annot=True, cmap="YlGnBu", fmt='g')
-    ax.xaxis.set_label_position("top")
-    #plt.tight_layout()
-    plt.title('Confusion matrix', y=1.1)
-    plt.ylabel('Actual label')
-    plt.xlabel('Predicted label')
+    plt.figure(figsize=(10,10))
+    ax = plt.subplot(111)
+    sns.heatmap(pd.DataFrame(conf_matrix),annot=True, annot_kws={"size": 16}, ax=ax, cmap="YlGnBu", fmt='d')
+    ax.set_xlabel('Predicted labels')
+    ax.set_ylabel('True labels')
+    ax.set_title('Confusion Matrix')
+    ax.xaxis.set_ticklabels(['Loss', 'Win'])
+    ax.yaxis.set_ticklabels(['Loss', 'Win'])
     plt.tight_layout()
-    fig2 = plt.gcf()
+    saveFig = plt.gcf()
     plt.show()
 
-    fig2.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Sample_Conf_Matrix.png")
+    saveFig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Sample_Conf_Matrix.png")
     plt.close()
 
 
