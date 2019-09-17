@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 import seaborn as sns
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import ExtraTreesClassifier
+import pickle
 
 import glob
 import sys
@@ -16,7 +17,6 @@ import csv
 
 
 def main():
-    #os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
     os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
     teamAbbr = ["CHN", "PIT", "PHI", "CIN", "SLN", "BOS", "CHA",
                 "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
@@ -24,14 +24,6 @@ def main():
                 "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
                 "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
 
-    #This input will eventually be supplied by web scraper data
-    #team1, team2 = input("Enter a team matchup:").split()
-    #print("Team 1: ",team1)
-    #print("Team 2: ", team2)
-
-
-
-    #data = pd.read_csv(team1 + '_All.csv')
     data = pd.read_csv('NYA_All.csv')
     #data = pd.read_csv(teamAbbr[x] + '_All.csv')
     #data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
@@ -110,15 +102,14 @@ def main():
     conf_matrix = confusion_matrix(y_test, predictions)
     print(conf_matrix)
 
-    plt.figure(figsize=(10,10))
-    ax = plt.subplot(111)
-    sns.heatmap(pd.DataFrame(conf_matrix),annot=True, annot_kws={"size": 16}, ax=ax, cmap="YlGnBu", fmt='d')
+    #plt.figure(figsize=(10,10))
+    ax = plt.subplot()
+    sns.heatmap(pd.DataFrame(conf_matrix),annot=True, cmap="YlGnBu", fmt='d')
     ax.set_xlabel('Predicted labels')
     ax.set_ylabel('True labels')
     ax.set_title('Confusion Matrix')
     ax.xaxis.set_ticklabels(['Loss', 'Win'])
     ax.yaxis.set_ticklabels(['Loss', 'Win'])
-    plt.tight_layout()
     saveFig = plt.gcf()
     plt.show()
 
@@ -141,6 +132,16 @@ def main():
     for f in range(X_train.shape[1]):
         print("%d. %s (%f)" % (f + 1, X_train.columns[indices[f]], importances[indices[f]]))
 
+    if(saveModel(logmodel) == 1):
+        print("Successfully saved model!")
+
+    else:
+        print("Model failed to save!")
+
+
+def saveModel(model):
+    pickle.dump(model, open('logmodel.pkl', 'wb'))
+    return 1
 
 if __name__ == "__main__":
     main()
