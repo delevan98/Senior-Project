@@ -1,0 +1,32 @@
+import numpy as np
+from flask import Flask, request, render_template
+import pickle
+import numpy as np
+from flask import request
+import pandas as pd
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    model = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    data.drop(['Win', 'Team Abbr'], axis=1, inplace=True)
+    predictions = model.predict(data)
+    print(predictions)
+    return render_template('result.html', prediction=predictions)
+
+#@app.route('/predict',methods=['POST'])
+#def get_win():
+
+#    model = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl','rb'))
+#    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+#    data.drop('Win', 'Team Abbr', axis=1)
+#    predictions = model.predict(data)
+#    print(predictions)
+#    return render_template('result.html',prediction = predictions)
+
+if __name__ == '__main__':
+    app.run()
+

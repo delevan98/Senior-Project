@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML App
+		</div>
+		<h2>Baseball Game Predictor</h2>
+
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Game</b></p>
+	<div class="results">
+    {% for item in prediction %}
+        {% if item == 1%}
+	    <h2 style="color:red;">Win!</h2>
+	    {% elif item == 0%}
+	    <h2 style="color:blue;">Loss!</h2>
+	    {% endif %}
+    {% endfor %}
+
+	</div>
+
+</body>
+</html>

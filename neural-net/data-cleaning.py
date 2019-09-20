@@ -56,21 +56,60 @@ def main():
 
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
-        data.drop(['Visting Team', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1)
+        data.drop(['Visting Team', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
         data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
-                   'Home Starter Pitcher ID'], axis=1)
+                   'Home Starter Pitcher ID'], axis=1, inplace=True)
 
         corr_matrix = data.corr()
         #print(corr_matrix["Home Team Score"].sort_values(ascending=False))
         corr_matrix.to_csv(
-            "C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\"+ teamAbbr[x]+"_correlation_matrix.csv")
+            "C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\"+ teamAbbr[x]+"_correlation_matrix.csv")
 
         description = data.describe()
-        description.to_csv("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\"+ teamAbbr[x]+"_desc_stats.csv")
+        description.to_csv("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\"+ teamAbbr[x]+"_desc_stats.csv")
+
+        write_averages(data, teamAbbr[x])
 
         #print(data['Win'].value_counts())
 
+def write_averages(data, teamAbbr):
+    if (os.path.isfile('team_averages.csv')):
+        print("File has already been created!")
+    else:
+        avg_file = open("team_averages.csv", "w+")
+        data = dropCols(data)
+        data['Team Abbr'] = "Team Abbr"
+        data.iloc[:0].to_csv('team_averages.csv', index=False, header=True)
 
+    try:
+        data = dropCols(data)
+    except KeyError:
+        print("Columns have already been deleted!")
 
+    description = data.tail(10).describe()
+    description['TeamAbbr'] = teamAbbr
+    description.iloc[1:2].to_csv('team_averages.csv', index=False, header=False, mode='a')
+
+def dropCols(data):
+    data.drop(['Date', 'Visting Team Stolen Bases', 'Home Team Stolen Bases',
+               'Visting Team Caught Stealing',
+               'Home Team Caught Stealing', 'Visting Team G Double Play', 'Home Team G Double Play',
+               'Visting Team Awarded First on Interference', 'Home Team Awarded First on Interference',
+               'Visting Team Balks', 'Home Team Balks', 'Visting Team Put-outs', 'Home Team Put-outs',
+               'Visting Team Assists', 'Visting Team Passed Balls', 'Home Team Passed Balls',
+               'Visting Team Double Plays', 'Attendance', 'Home Team Double Plays',
+               'Home Team Triple Plays', 'Visting Team Triple Plays', 'Home Team Triples',
+               'Visiting Team Sac Hits', 'Home Team Int Walks', 'Visting Team Int Walks',
+               'Home Team Sac Hits', 'Length of Game in Outs', 'Visting Team Sac Flys', 'Home Team Sac Flys',
+               'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
+               'Visiting Team Game Number', 'Home Team Game Number'], axis=1, inplace=True)
+
+    try:
+        data.drop(['Unnamed: 75'], axis=1, inplace=True)
+
+    except KeyError:
+        print("Column is not in the file!!!")
+
+    return data
 if __name__ == "__main__":
     main()

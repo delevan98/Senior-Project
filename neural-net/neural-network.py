@@ -14,6 +14,7 @@ import pickle
 import glob
 import sys
 import csv
+import json
 
 
 def main():
@@ -137,6 +138,14 @@ def main():
 
     else:
         print("Model failed to save!")
+
+    f = open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv', 'rU')
+    reader = csv.DictReader(f, fieldnames=("fieldname0", "fieldname1", "fieldname2", "fieldname3"))
+    out = json.dumps([row for row in reader])
+    print("JSON parsed!")
+    f = open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\parsed.json', 'w')
+    f.write(out)
+
 
 
 def saveModel(model):
