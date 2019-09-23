@@ -56,7 +56,6 @@ def main():
     except KeyError:
         print("Column is not in the file!!!")
 
-
     # Using Pearson Correlation
     plt.subplots(figsize=(35,35))
     cor = data.corr()
@@ -139,12 +138,6 @@ def main():
     else:
         print("Model failed to save!")
 
-    f = open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv', 'rU')
-    reader = csv.DictReader(f, fieldnames=("fieldname0", "fieldname1", "fieldname2", "fieldname3"))
-    out = json.dumps([row for row in reader])
-    print("JSON parsed!")
-    f = open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\parsed.json', 'w')
-    f.write(out)
 
 
 

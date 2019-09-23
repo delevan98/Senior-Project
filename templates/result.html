@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 <head>
-	<title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
+{% block main %}
+        {%for game in games%}
+        <figure class="rectangle">
+            <h6 class="time">{{game["Time"]}}</h6>
+            <h6>{% if game["HomePrediction"] == 1%}
+                <h2 class="homePrediction" style="color:red;">Win!</h2>
+                {% elif game["HomePrediction"] == 0%}
+                <h2 class="homePrediction" style="color:blue;">Loss!</h2>
+                {% endif %}</h6>
+                <img class="homeLogo" src="{{game['HomeLogoPath']}}" alt="Home Logo" height="110" width="110"/>
+            <h6 class="homeTeam">{{game["HomeTeamAbbr"]}}</h6>
 
-	<header>
-		<div class="container">
-		<div id="brandname">
-			ML App
-		</div>
-		<h2>Baseball Game Predictor</h2>
-
-	</div>
-	</header>
-	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Game</b></p>
-	<div class="results">
-    {% for item in prediction %}
-        {% if item == 1%}
-	    <h2 style="color:red;">Win!</h2>
-	    {% elif item == 0%}
-	    <h2 style="color:blue;">Loss!</h2>
-	    {% endif %}
-    {% endfor %}
-
-	</div>
-
-</body>
-</html>
+            <h6>{% if game["AwayPrediction"] == 1%}
+                <h2 class="awayPrediction" style="color:red;">Win!</h2>
+                {% elif game["AwayPrediction"] == 0%}
+                <h2 class="awayPrediction" style="color:blue;">Loss!</h2>
+                {% endif %}</h6>
+                <img class="awayLogo" src="{{game['AwayLogoPath']}}" alt="Away Logo" height="110" width="110"/>
+            <h6 class="awayTeam">{{game["AwayTeamAbbr"]}}</h6>
+        </figure>
+        {%endfor%}
+{% endblock %}

@@ -1,0 +1,181 @@
+.navbar-brand {
+  font-size: large;
+}
+
+body{
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+}
+
+.container{
+	overflow: hidden;
+	width: 25%;
+    display: inline-block;
+    border: 2px solid gray;
+    padding: 4px;
+    margin: 8px;
+    list-style: none;
+    background-color: white;
+    text-align: left;
+}
+
+header{
+	background:#03A9F4;#35434a;
+	border-bottom:#448AFF 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+
+}
+
+main
+{
+    overflow-x: auto;
+    text-align: center;
+}
+.main-header{
+			text-align:center;
+			background-color: blue;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+#brandname{
+	float:left;
+	font-size:30px;
+	color: #fff;
+	margin: 10px;
+}
+
+header h2{
+	text-align:center;
+	color:#fff;
+
+}
+
+
+
+.btn-info {background-color: #2196F3;
+	height:40px;
+	width:100px;} /* Blue */
+.btn-info:hover {background: #0b7dda;}
+
+#result {
+  z-index: 3;
+  width: 360px;
+  display: inline-block;
+  height: 265px;
+}
+
+#rectangle {
+  z-index: 4;
+  width: 360px;
+  height: 265px;
+  border-radius: 9px;
+  display: inline-block;
+  background: #f0eded;
+  box-shadow: 0px 0px8px rgba(100,100,100,0.5);
+  position: relative;
+}
+
+#time {
+  z-index: 4;
+  width: 153.07px;
+  height: 23px;
+  font-family: "High School USA Serif";
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+
+}
+
+#awayTeamRect {
+  z-index: 4;
+  width: 129px;
+  height: 187px;
+  text-align: right;
+}
+
+#awayTeam {
+  z-index: 5;
+  width: 74.11px;
+  height: 23px;
+  font-family: "High School USA Serif";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: right;
+}
+
+#awayLogo {
+  z-index: 5;
+  width: 129px;
+  height: 129px;
+  text-align: right;
+}
+
+#awayPrediction {
+  z-index: 5;
+  width: 87.93px;
+  height: 23px;
+  font-family: "High School USA Serif";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: right;
+}
+
+#homeTeamRect {
+  z-index: 4;
+  width: 111px;
+  height: 187px;
+}
+
+#homeTeam {
+  z-index: 5;
+  width: 89.28px;
+  height: 23px;
+  font-family: "High School USA Serif";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+#homeLogo {
+  z-index: 5;
+  width: 111px;
+  height: 111px;
+}
+
+#homePrediction {
+  z-index: 5;
+  width: 83px;
+  height: 23px;
+  font-family: "High School USA Serif";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+#scorePrediction {
+  z-index: 4;
+  width: 76.64px;
+  height: 46px;
+  font-family: "High School USA Serif";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 46px;
+}
+
+li.game {
+  width: 25%;
+  display: inline-block;
+  border: 2px solid gray;
+  padding: 4px;
+  margin: 8px;
+  list-style: none;
+  background-color: white;
+  text-align: center;
+}

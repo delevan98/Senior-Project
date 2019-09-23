@@ -87,8 +87,9 @@ def write_averages(data, teamAbbr):
         print("Columns have already been deleted!")
 
     description = data.tail(10).describe()
+    print(description)
     description['TeamAbbr'] = teamAbbr
-    description.iloc[1:2].to_csv('team_averages.csv', index=False, header=False, mode='a')
+    description.iloc[1:2].to_csv('team_averages.csv', index=False, header=False,mode='a')
 
 def dropCols(data):
     data.drop(['Date', 'Visting Team Stolen Bases', 'Home Team Stolen Bases',
