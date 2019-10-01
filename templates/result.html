@@ -3,24 +3,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 {% block main %}
+        <div class="flex-container">
         {%for game in games%}
-        <figure class="rectangle">
-            <h6 class="time">{{game["Time"]}}</h6>
-            <h6>{% if game["HomePrediction"] == 1%}
-                <h2 class="homePrediction" style="color:red;">Win!</h2>
+        <div class="rectangle">
+            <div>{{game["Time"]}}</div>
+            <div>{% if game["HomePrediction"] == 1%}
+                <div>Win!</div>
                 {% elif game["HomePrediction"] == 0%}
-                <h2 class="homePrediction" style="color:blue;">Loss!</h2>
-                {% endif %}</h6>
-                <img class="homeLogo" src="{{game['HomeLogoPath']}}" alt="Home Logo" height="110" width="110"/>
-            <h6 class="homeTeam">{{game["HomeTeamAbbr"]}}</h6>
+                <div>Loss!</div>
+                {% endif %}</div>
+                <img src="{{game['HomeLogoPath']}}" alt="Home Logo" height="110" width="110"/>
+            <div>{{game["HomeTeamAbbr"]}}</div>
 
-            <h6>{% if game["AwayPrediction"] == 1%}
-                <h2 class="awayPrediction" style="color:red;">Win!</h2>
+            <div>{% if game["AwayPrediction"] == 1%}
+                <div>Win!</div>
                 {% elif game["AwayPrediction"] == 0%}
-                <h2 class="awayPrediction" style="color:blue;">Loss!</h2>
-                {% endif %}</h6>
-                <img class="awayLogo" src="{{game['AwayLogoPath']}}" alt="Away Logo" height="110" width="110"/>
-            <h6 class="awayTeam">{{game["AwayTeamAbbr"]}}</h6>
-        </figure>
+                <div>Loss!</div>
+                {% endif %}</div>
+                <img src="{{game['AwayLogoPath']}}" alt="Away Logo" height="110" width="110"/>
+            <div>{{game["AwayTeamAbbr"]}}</div>
+        </div>
         {%endfor%}
+        </div>
 {% endblock %}

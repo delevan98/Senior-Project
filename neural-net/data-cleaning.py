@@ -12,7 +12,7 @@ def main():
 			    "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
 				"TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
 				"MIL", "WAS"]
-
+    #Explore each variable in dataset
     for x in range(30):
         all_filenames = []
         for y in range(2010,2019):
