@@ -60,6 +60,10 @@ def main():
         data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
                    'Home Starter Pitcher ID'], axis=1, inplace=True)
 
+        final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'wonPrev', 'atBats', 'Hits',
+                                      'Doubles' , 'Triples' , 'homeRuns' , 'RBI' , 'Walks' , 'Strikeouts', 'LOB' ,
+                                      'pitchersUsed' , 'indER' , 'teamER', 'Errors', 'battingAverage' , 'OBP' , 'Slugging' , 'OPS', 'Win'])
+
         corr_matrix = data.corr()
         #print(corr_matrix["Home Team Score"].sort_values(ascending=False))
         corr_matrix.to_csv(

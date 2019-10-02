@@ -6,6 +6,8 @@ body{
 	font:15px/1.5 Arial, Helvetica,sans-serif;
 	padding: 0px;
 	background-color:#f4f3f3;
+	height: 100%;
+	overflow-y: hidden;
 }
 
 .container{
@@ -54,37 +56,28 @@ header h2{
 
 }
 
-
-
 .btn-info {background-color: #2196F3;
 	height:40px;
 	width:100px;} /* Blue */
 .btn-info:hover {background: #0b7dda;}
 
-#result {
-  z-index: 3;
-  width: 360px;
-  display: inline-block;
-  height: 265px;
-}
-
 .rectangle {
-  width: 100px;
+  width: 365px;
   height: 265px;
   border-radius: 9px;
   /*display: inline-block;*/
-  /*background: #f0eded;*/
-  background-color: DodgerBlue;
+  background: #f0eded;
   box-shadow: 0px 0px 8px rgba(100,100,100,0.5);
   position: relative;
   margin: 50px;
   border-style: solid;
   border-width: thin;
+  .homeLogo();
 }
 
 .time {
-  z-index: 4;
-  width: 153.07px;
+  width: 365px;
+  padding: 10px;
   height: 23px;
   font-family: "High School USA Serif";
   text-align: center;
@@ -95,14 +88,12 @@ header h2{
 }
 
 .awayTeamRect {
-  z-index: 4;
   width: 129px;
   height: 187px;
   text-align: right;
 }
 
 .awayTeam {
-  z-index: 5;
   width: 74.11px;
   height: 23px;
   font-family: "High School USA Serif";
@@ -113,14 +104,12 @@ header h2{
 }
 
 .awayLogo {
-  z-index: 5;
   width: 129px;
   height: 129px;
   text-align: right;
 }
 
 .awayPrediction {
-  z-index: 5;
   width: 87.93px;
   height: 23px;
   font-family: "High School USA Serif";
@@ -131,39 +120,36 @@ header h2{
 }
 
 .homeTeamRect {
-  z-index: 4;
   width: 111px;
   height: 187px;
 }
 
 .homeTeam {
-  z-index: 5;
   width: 89.28px;
   height: 23px;
   font-family: "High School USA Serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
+
 }
 
 .homeLogo {
-  z-index: 5;
   width: 111px;
   height: 111px;
 }
 
 .homePrediction {
-  z-index: 5;
   width: 83px;
   height: 23px;
   font-family: "High School USA Serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
+
 }
 
 .scorePrediction {
-  z-index: 4;
   width: 76.64px;
   height: 46px;
   font-family: "High School USA Serif";

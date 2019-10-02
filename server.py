@@ -43,7 +43,7 @@ def createJSON(games,predictions):
         awayTeamPrediction ^= labels[x]
         values = [games.iloc[x,2], games.iloc[x,0], int(labels[x]),"static/" +games.iloc[x,0]+"_Logo.png", games.iloc[x,1], int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png"]
         print(values)
-        gameData.update(dict(zip(keys,values)))
+        gameData = dict(zip(keys,values))
         gameDataFinal.append(gameData)
 
     print(gameDataFinal)
