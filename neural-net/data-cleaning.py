@@ -63,7 +63,7 @@ def main():
         final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'wonPrev', 'atBats', 'Hits',
                                       'Doubles' , 'Triples' , 'homeRuns' , 'RBI' , 'Walks' , 'Strikeouts', 'LOB' ,
                                       'pitchersUsed' , 'indER' , 'teamER', 'Errors', 'battingAverage' , 'OBP' , 'Slugging' , 'OPS', 'Win'])
-
+        fillTeamDF(final, teamAbbr[x])
         corr_matrix = data.corr()
         #print(corr_matrix["Home Team Score"].sort_values(ascending=False))
         corr_matrix.to_csv(
@@ -116,5 +116,11 @@ def dropCols(data):
         print("Column is not in the file!!!")
 
     return data
+
+def fillTeamDF(data, teamAbbr):
+
+    data
+
+
 if __name__ == "__main__":
     main()
