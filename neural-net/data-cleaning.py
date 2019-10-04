@@ -56,14 +56,16 @@ def main():
 
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
+        final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'wonPrev', 'atBats', 'Hits',
+                                      'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
+                                      'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
+                                      'OPS', 'Win'])
+
         data.drop(['Visting Team', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
         data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
                    'Home Starter Pitcher ID'], axis=1, inplace=True)
 
-        final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'wonPrev', 'atBats', 'Hits',
-                                      'Doubles' , 'Triples' , 'homeRuns' , 'RBI' , 'Walks' , 'Strikeouts', 'LOB' ,
-                                      'pitchersUsed' , 'indER' , 'teamER', 'Errors', 'battingAverage' , 'OBP' , 'Slugging' , 'OPS', 'Win'])
-        fillTeamDF(final, teamAbbr[x])
+        fillTeamDF(data, final, teamAbbr[x])
         corr_matrix = data.corr()
         #print(corr_matrix["Home Team Score"].sort_values(ascending=False))
         corr_matrix.to_csv(
@@ -117,9 +119,63 @@ def dropCols(data):
 
     return data
 
-def fillTeamDF(data, teamAbbr):
+#This function was created in DS 201 on October 4, 2019
+def fillTeamDF(data, final, teamAbbr):
 
-    data
+    final['teamAbbr'] = teamAbbr
+    if(data['Home Team'] == teamAbbr):
+        final['League'] = data['League.1']
+        final['Score'] = data['Home Team Score']
+        final['isHomeTeam'] = 1
+        final['wonPrev'] = data['Home Team Score'].shift() > data['Visiting Team Score']
+        final['atBats'] = data['Home Team At-Bats']
+        final['Hits'] = data['Home Team Hits']
+        final['Doubles'] = data['Home Team Doubles']
+        final['Triples'] = data['Home Team Triples']
+        final['homeRuns'] = data['Home Team Home-Runs']
+        final['RBI'] = data['Home Team RBI']
+        final['Walks'] = data['Home Team Walks']
+        final['Strikeouts'] = data['Home Team Strikeouts']
+        final['LOB'] = data['Home Team LOB']
+        final['pitchersUsed'] = data['Home Team Pitchers Used']
+        final['indER'] = data['Home Team Ind ER']
+        final['teamER'] = data['Home Team Team ER']
+        final['Errors'] = data['Home Team Erros']
+        final['battingAverage'] = data['Home Team Batting Average']
+        final['OBP'] = data['Home Team OBP']
+        final['Slugging'] = data['Home Team Slugging']
+        final['OPS'] = data['Home Team OPS']
+        final['Win'] = data['Win']
+
+    else:
+        final['League'] = data['League']
+        final['Score'] = data['Visiting Team Score']
+        final['isHomeTeam'] = 0
+        final['wonPrev'] = data['Visiting Team Score'].shift() > data['Home Team Score']
+        final['atBats'] = data['Visting Team At-Bats']
+        final['Hits'] = data['Visting Team Hits']
+        final['Doubles'] = data['Visting Team Doubles']
+        final['Triples'] = data['Visting Team Triples']
+        final['homeRuns'] = data['Visting Team Home-Runs']
+        final['RBI'] = data['Visting Team RBI']
+        final['Walks'] = data['Visting Team Walks']
+        final['Strikeouts'] = data['Visting Team Strikeouts']
+        final['LOB'] = data['Visting Team LOB']
+        final['pitchersUsed'] = data['Visting Team Pitchers Used']
+        final['indER'] = data['Visting Team Ind ER']
+        final['teamER'] = data['Visting Team Team ER']
+        final['Errors'] = data['Visting Team Erros']
+        final['battingAverage'] = data['Visiting Team Batting Average']
+        final['OBP'] = data['Visiting Team OBP']
+        final['Slugging'] = data['Visiting Team Slugging']
+        final['OPS'] = data['Visiting Team OPS']
+        final['Win'] = data['Win']
+
+        print(final.tail(10))
+
+
+
+
 
 
 if __name__ == "__main__":

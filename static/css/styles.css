@@ -7,7 +7,7 @@ body{
 	padding: 0px;
 	background-color:#f4f3f3;
 	height: 100%;
-	overflow-y: hidden;
+	overflow-y: auto;
 }
 
 .container{
@@ -72,7 +72,6 @@ header h2{
   margin: 50px;
   border-style: solid;
   border-width: thin;
-  .homeLogo();
 }
 
 .time {
@@ -100,13 +99,15 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  text-align: right;
+  text-align: center;
+  float: right;
 }
 
 .awayLogo {
   width: 129px;
   height: 129px;
-  text-align: right;
+  text-align: center;
+  float: right;
 }
 
 .awayPrediction {
@@ -116,7 +117,8 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  text-align: right;
+  text-align: center;
+  float: right;
 }
 
 .homeTeamRect {
@@ -131,12 +133,16 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
+  float: left;
+  text-align: left;
 
 }
 
 .homeLogo {
   width: 111px;
   height: 111px;
+  float: left;
+  text-align: left;
 }
 
 .homePrediction {
@@ -146,6 +152,8 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
+  text-align: left;
+  float: left;
 
 }
 
@@ -173,4 +181,6 @@ li.game {
     display: flex;
     flex-wrap: wrap;
     background-color: #f1f1f1;
+    overflow-y: hidden;
+    height: 100%;
 }
