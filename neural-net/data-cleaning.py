@@ -37,14 +37,14 @@ def main():
         data.loc[(data['Home Team'] == "MIA"), 'Home Team'] = "FLO"
         data.loc[(data['Visting Team'] == "MIA"), 'Visting Team'] = "FLO"
 
+        #Chenge BA formula thx
         data['Visiting Team Batting Average'] = data['Visting Team Hits'] / (data['Visting Team At-Bats'] - data['Visiting Team Sac Hits'] - data['Visting Team Sac Flys'] - data['Visting Team HBP'] - data['Visting Team Walks'] - data['Visting Team Int Walks'])
         data['Home Team Batting Average'] = data['Home Team Hits'] / (data['Home Team At-Bats'] - data['Home Team Sac Hits'] - data['Home Team Sac Flys'] - data['Home Team HBP'] - data['Home Team Walks'] - data['Home Team Int Walks'])
         data['Visiting Team OBP'] = (data['Visting Team Hits'] + data['Visting Team Walks'] + data['Visting Team HBP']) / (data['Visting Team At-Bats'] + data['Visting Team Walks'] + data['Visting Team HBP'] + data['Visting Team Sac Flys'])
         data['Home Team OBP'] = (data['Home Team Hits'] + data['Home Team Walks'] + data['Home Team HBP']) / (data['Home Team At-Bats'] + data['Home Team Walks'] + data['Home Team HBP'] + data['Home Team Sac Flys'])
         data['Visiting Team Slugging'] = ((data['Visting Team Hits'] - data['Visting Team Doubles'] - data['Visting Team Triples'] - data['Visting Team Home-Runs']) + (data['Visting Team Doubles'] * 2) + (data['Visting Team Triples'] * 3) + (data['Visting Team Home-Runs'] * 4)) / (data['Visting Team At-Bats'])
         data['Home Team Slugging'] = ((data['Home Team Hits'] - data['Home Team Doubles'] - data['Home Team Triples'] - data['Home Team Home-Runs']) + (data['Home Team Doubles'] * 2) + (data['Home Team Triples'] * 3) + (data['Home Team Home-Runs'] * 4)) / (data['Home Team At-Bats'])
-        data['Visiting Team OPS'] = data['Visiting Team OBP'] + data['Visiting Team Slugging']
-        data['Home Team OPS'] = data['Home Team OBP'] + data['Home Team Slugging']
+
 
         data.loc[(data['Home Team'] == teamAbbr[x]) & (data['Home Team Score'] > data['Visiting Team Score']), 'Win'] = 1
 
