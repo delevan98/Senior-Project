@@ -37,15 +37,19 @@ def main():
         data.loc[(data['Home Team'] == "MIA"), 'Home Team'] = "FLO"
         data.loc[(data['Visting Team'] == "MIA"), 'Visting Team'] = "FLO"
 
-        #Chenge BA formula thx
-        data['Visiting Team Batting Average'] = data['Visting Team Hits'] / (data['Visting Team At-Bats'] - data['Visiting Team Sac Hits'] - data['Visting Team Sac Flys'] - data['Visting Team HBP'] - data['Visting Team Walks'] - data['Visting Team Int Walks'])
-        data['Home Team Batting Average'] = data['Home Team Hits'] / (data['Home Team At-Bats'] - data['Home Team Sac Hits'] - data['Home Team Sac Flys'] - data['Home Team HBP'] - data['Home Team Walks'] - data['Home Team Int Walks'])
+
+        data['Visiting Team Batting Average'] = data['Visting Team Hits'] / (data['Visting Team At-Bats'])
+        data['Home Team Batting Average'] = data['Home Team Hits'] / (data['Home Team At-Bats'])
         data['Visiting Team OBP'] = (data['Visting Team Hits'] + data['Visting Team Walks'] + data['Visting Team HBP']) / (data['Visting Team At-Bats'] + data['Visting Team Walks'] + data['Visting Team HBP'] + data['Visting Team Sac Flys'])
         data['Home Team OBP'] = (data['Home Team Hits'] + data['Home Team Walks'] + data['Home Team HBP']) / (data['Home Team At-Bats'] + data['Home Team Walks'] + data['Home Team HBP'] + data['Home Team Sac Flys'])
         data['Visiting Team Slugging'] = ((data['Visting Team Hits'] - data['Visting Team Doubles'] - data['Visting Team Triples'] - data['Visting Team Home-Runs']) + (data['Visting Team Doubles'] * 2) + (data['Visting Team Triples'] * 3) + (data['Visting Team Home-Runs'] * 4)) / (data['Visting Team At-Bats'])
         data['Home Team Slugging'] = ((data['Home Team Hits'] - data['Home Team Doubles'] - data['Home Team Triples'] - data['Home Team Home-Runs']) + (data['Home Team Doubles'] * 2) + (data['Home Team Triples'] * 3) + (data['Home Team Home-Runs'] * 4)) / (data['Home Team At-Bats'])
 
+        data['Visiting Team OPS'] = data['Visiting Team OBP'] + data['Visiting Team Slugging']
+        data['Home Team OPS'] = data['Home Team OBP'] + data['Home Team Slugging']
 
+
+        #Determining if teamAbb[x] won the game
         data.loc[(data['Home Team'] == teamAbbr[x]) & (data['Home Team Score'] > data['Visiting Team Score']), 'Win'] = 1
 
         data.loc[(data['Visting Team'] == teamAbbr[x]) & (data['Visiting Team Score'] > data['Home Team Score']), 'Win'] = 1
@@ -54,11 +58,20 @@ def main():
 
         data.loc[(data['Visting Team'] == teamAbbr[x]) & (data['Visiting Team Score'] < data['Home Team Score']), 'Win'] = 0
 
+        # Determining if teamAbbr[x] won their previous game
+        data.loc[(data['Home Team'].shift() == teamAbbr[x]) & (data['Home Team Score'].shift() > data['Visiting Team Score'].shift()), 'wonPrev'] = 1
+        data.loc[(data['Home Team'].shift() == teamAbbr[x]) & (data['Home Team Score'].shift() < data['Visiting Team Score'].shift()), 'wonPrev'] = 0
+
+        data.loc[(data['Visting Team'].shift() == teamAbbr[x]) & (data['Visiting Team Score'].shift() > data['Home Team Score'].shift()), 'wonPrev'] = 1
+        data.loc[(data['Visting Team'].shift() == teamAbbr[x]) & (data['Visiting Team Score'].shift() < data['Home Team Score'].shift()), 'wonPrev'] = 0
+
+
+
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
         print(data.tail(10))
 
-        final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'wonPrev', 'atBats', 'Hits',
+        final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'atBats', 'Hits',
                                       'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
                                       'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
                                       'OPS', 'Win'])
@@ -78,7 +91,7 @@ def main():
         description = data.describe()
         description.to_csv("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\"+ teamAbbr[x]+"_desc_stats.csv")
 
-        write_averages(data, teamAbbr[x])
+        write_averages(final, teamAbbr[x])
 
         #print(data['Win'].value_counts())
 
@@ -87,12 +100,12 @@ def write_averages(data, teamAbbr):
         print("File has already been created!")
     else:
         avg_file = open("team_averages.csv", "w+")
-        data = dropCols(data)
+        data.drop(['League', 'teamAbbr'], axis=1, inplace=True)
         data['Team Abbr'] = "Team Abbr"
         data.iloc[:0].to_csv('team_averages.csv', index=False, header=True)
 
     try:
-        data = dropCols(data)
+        data.drop(['League', 'teamAbbr'], axis=1, inplace=True)
     except KeyError:
         print("Columns have already been deleted!")
 
@@ -101,84 +114,32 @@ def write_averages(data, teamAbbr):
     description['TeamAbbr'] = teamAbbr
     description.iloc[1:2].to_csv('team_averages.csv', index=False, header=False,mode='a')
 
-def dropCols(data):
-    data.drop(['Date', 'Visting Team Stolen Bases', 'Home Team Stolen Bases',
-               'Visting Team Caught Stealing',
-               'Home Team Caught Stealing', 'Visting Team G Double Play', 'Home Team G Double Play',
-               'Visting Team Awarded First on Interference', 'Home Team Awarded First on Interference',
-               'Visting Team Balks', 'Home Team Balks', 'Visting Team Put-outs', 'Home Team Put-outs',
-               'Visting Team Assists', 'Visting Team Passed Balls', 'Home Team Passed Balls',
-               'Visting Team Double Plays', 'Attendance', 'Home Team Double Plays',
-               'Home Team Triple Plays', 'Visting Team Triple Plays', 'Home Team Triples',
-               'Visiting Team Sac Hits', 'Home Team Int Walks', 'Visting Team Int Walks',
-               'Home Team Sac Hits', 'Length of Game in Outs', 'Visting Team Sac Flys', 'Home Team Sac Flys',
-               'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
-               'Visiting Team Game Number', 'Home Team Game Number'], axis=1, inplace=True)
-
-    try:
-        data.drop(['Unnamed: 75'], axis=1, inplace=True)
-
-    except KeyError:
-        print("Column is not in the file!!!")
-
-    return data
-
 #This function was created in DS 201 on October 4, 2019
 def fillTeamDF(data, final, teamAbbr):
 
     for (idx, row) in data.iterrows():
-        #print(row)
-        final['teamAbbr'] = teamAbbr
+        #print(row.loc['Home Team'])
+        #print(idx)
         if(row.loc['Home Team'] == teamAbbr):
-            final.loc['League'] = row['League.1']
-            final.loc['Score'] = row['Home Team Score']
-            final.loc['isHomeTeam'] = 1
-            #final['wonPrev'] = row['Home Team Score'].shift() > row['Visiting Team Score']
-            final.loc['atBats'] = row['Home Team At-Bats']
-            final.loc['Hits'] = row['Home Team Hits']
-            final.loc['Doubles'] = row['Home Team Doubles']
-            final.loc['Triples'] = row['Home Team Triples']
-            final.loc['homeRuns'] = row['Home Team Home-Runs']
-            final.loc['RBI'] = row['Home Team RBI']
-            final.loc['Walks'] = row['Home Team Walks']
-            final.loc['Strikeouts'] = row['Home Team Strikeouts']
-            final.loc['LOB'] = row['Home Team LOB']
-            final.loc['pitchersUsed'] = row['Home Team Pitchers Used']
-            final.loc['indER'] = row['Home Team Ind ER']
-            final.loc['teamER'] = row['Home Team Team ER']
-            final.loc['Errors'] = row['Home Team Errors']
-            final.loc['battingAverage'] = row['Home Team Batting Average']
-            final.loc['OBP'] = row['Home Team OBP']
-            final.loc['Slugging'] = row['Home Team Slugging']
-            final.loc['OPS'] = row['Home Team OPS']
-            final.loc['Win'] = row['Win']
+            final.loc[idx+1] = [teamAbbr, row['League.1'], row['Home Team Score'], 1, row['Home Team At-Bats'], row['Home Team Hits'], row['Home Team Doubles'],
+                               row['Home Team Triples'], row['Home Team Home-Runs'], row['Home Team RBI'], row['Home Team Walks'], row['Home Team Strikeouts'],
+                               row['Home Team LOB'], row['Home Team Pitchers Used'], row['Home Team Ind ER'], row['Home Team Team ER'], row['Home Team Errors'],
+                               row['Home Team Batting Average'], row['Home Team OBP'], row['Home Team Slugging'], row['Home Team OPS'], row['Win'] ]
 
         else:
-            final.loc['League'] = row['League']
-            final.loc['Score'] = row['Visiting Team Score']
-            final.loc['isHomeTeam'] = 0
-            #final['wonPrev'] = row['Visiting Team Score'].shift() > row['Home Team Score']
-            final.loc['atBats'] = row['Visting Team At-Bats']
-            final.loc['Hits'] = row['Visting Team Hits']
-            final.loc['Doubles'] = row['Visting Team Doubles']
-            final.loc['Triples'] = row['Visting Team Triples']
-            final.loc['homeRuns'] = row['Visting Team Home-Runs']
-            final.loc['RBI'] = row['Visting Team RBI']
-            final.loc['Walks'] = row['Visting Team Walks']
-            final.loc['Strikeouts'] = row['Visting Team Strikeouts']
-            final.loc['LOB'] = row['Visiting Team LOB']
-            final.loc['pitchersUsed'] = row['Visting Team Pitchers Used']
-            final.loc['indER'] = row['Visting Team Ind ER']
-            final.loc['teamER'] = row['Visting Team Team ER']
-            final.loc['Errors'] = row['Visting Team Errors']
-            final.loc['battingAverage'] = row['Visiting Team Batting Average']
-            final.loc['OBP'] = row['Visiting Team OBP']
-            final.loc['Slugging'] = row['Visiting Team Slugging']
-            final.loc['OPS'] = row['Visiting Team OPS']
-            final.loc['Win'] = row['Win']
+            final.loc[idx+1] = [teamAbbr, row['League'], row['Visiting Team Score'], 0, row['Visting Team At-Bats'],
+                              row['Visting Team Hits'], row['Visting Team Doubles'],
+                              row['Visting Team Triples'], row['Visting Team Home-Runs'], row['Visting Team RBI'],
+                              row['Visting Team Walks'], row['Visting Team Strikeouts'],
+                              row['Visiting Team LOB'], row['Visting Team Pitchers Used'], row['Visting Team Ind ER'],
+                              row['Visting Team Team ER'], row['Visting Team Errors'],
+                              row['Visiting Team Batting Average'], row['Visiting Team OBP'], row['Visiting Team Slugging'],
+                              row['Visiting Team OPS'], row['Win']]
 
     print('Printing final DF')
     print(final.tail(10))
+    final.to_csv(teamAbbr + '_Full.csv', index=False)
+
 
 if __name__ == "__main__":
     main()

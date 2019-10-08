@@ -26,13 +26,6 @@ def main():
                 "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
 
     data = pd.read_csv('NYA_All.csv')
-    #data = pd.read_csv(teamAbbr[x] + '_All.csv')
-    #data.plot(kind="scatter", x="Home Team OBP", y="Home Team Score")
-    #plt.show()
-
-    #data["Home Team HBP"].hist()
-    #plt.show()
-
 
     data.drop(['Visting Team','Date', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
     data.drop(['Winning Pitcher ID', 'Visting Team Stolen Bases', 'Saving Pitcher ID','Home Team Stolen Bases', 'Visting Team Caught Stealing',
@@ -48,17 +41,17 @@ def main():
                 'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
                 'Visiting Team Game Number', 'Home Team Game Number'], axis=1, inplace=True)
 
-#save,load, and make prediction
-#switch to flask and make web app and load in models
     try:
         data.drop(['Unnamed: 75'], axis=1, inplace=True)
 
     except KeyError:
         print("Column is not in the file!!!")
+    final = pd.read_csv('NYA_Full.csv')
+    final.drop(['League', 'teamAbbr'], axis=1,inplace=True)
 
     # Using Pearson Correlation
     plt.subplots(figsize=(35,35))
-    cor = data.corr()
+    cor = final.corr()
     sns.heatmap(cor, cmap=plt.cm.Reds)
     plt.gcf().subplots_adjust(top=.95,bottom=0.35)
     plt.xticks(rotation=45,ha='right')
@@ -66,7 +59,7 @@ def main():
     plt.show()
     fig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
     plt.close('all')
-    # use stat to find if yankees OBP performance is greater than average???
+
     #X_train, X_test, y_train, y_test = train_test_split(data.drop('Home Team Score', axis=1),
                                                         #data['Home Team Score'], test_size=0.30,
                                                         #random_state=101)
@@ -81,11 +74,9 @@ def main():
 
 
     # print(data.info())
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
-                                                        data['Win'], test_size=0.30,
+    X_train, X_test, y_train, y_test = train_test_split(final.drop('Win', axis=1),
+                                                        final['Win'], test_size=0.20,
                                                         random_state=101)
-
-    print(data.isna().any())
 
     logmodel = LogisticRegression()
     logmodel.fit(X_train, y_train)
