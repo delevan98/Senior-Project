@@ -1,10 +1,14 @@
-.navbar-brand {
+.navbar-brand,
+.navbar-nav a{
   font-size: large;
+  font-family: 'SF Sports Night';
+  font-size: 2.5em !important;
 }
 
 body{
 	font:15px/1.5 Arial, Helvetica,sans-serif;
 	padding: 0px;
+	margin: 0px;
 	background-color:#f4f3f3;
 	height: 100%;
 	overflow-y: auto;
@@ -30,6 +34,8 @@ header{
 	padding-top:30px;
 
 }
+
+div {padding-left: 10px; padding-right: 10px;}
 
 main
 {
@@ -72,6 +78,7 @@ header h2{
   margin: 40px;
   border-style: solid;
   border-width: thin;
+  columns: 2 200px;
 }
 
 .time {
@@ -99,16 +106,29 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
-  float: right;
+  /*float: right;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
+
+.awayTeam>* {
+        flex: 1 1 80px;
+    }
 
 .awayLogo {
   width: 129px;
   height: 129px;
-  text-align: center;
-  float: right;
+  /*float: right;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
+
+.awayLogo>* {
+        flex: 1 1 80px;
+}
+
 
 .awayPrediction {
   width: 87.93px;
@@ -117,8 +137,14 @@ header h2{
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  text-align: center;
-  float: right;
+ /*float: right;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.awayPrediction>* {
+        flex: 1 1 80px;
 }
 
 .homeTeamRect {
@@ -127,37 +153,65 @@ header h2{
 }
 
 .homeTeam {
-  width: 89.28px;
+  width: 74.11px;
   height: 23px;
   font-family: "High School USA Serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  float: left;
-  text-align: left;
+  /*float: left;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 
+.homeTeam>* {
+        flex: 1 1 80px;
+        margin: 0;
 }
 
 .homeLogo {
-  width: 111px;
-  height: 111px;
-  float: left;
-  text-align: left;
+  width: 129px;
+  height: 129px;
+  /*float: left;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.homeLogo>* {
+        flex: 1 1 80px;
+        margin: 0;
 }
 
 .homePrediction {
-  width: 83px;
+  width: 87.93px;
   height: 23px;
   font-family: "High School USA Serif";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
-  text-align: left;
-  float: left;
-
+  /*float: left;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.scorePrediction {
+.homePrediction>* {
+        flex: 1 1 80px;
+        margin: 0;
+}
+
+.homeScorePrediction {
+  width: 76.64px;
+  height: 46px;
+  font-family: "High School USA Serif";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 46px;
+}
+
+.awayScorePrediction {
   width: 76.64px;
   height: 46px;
   font-family: "High School USA Serif";

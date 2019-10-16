@@ -7,23 +7,28 @@
         {%for game in games%}
         <div class="rectangle">
             <div class="time">{{game["Time"]}}</div>
-            <div>{% if game["HomePrediction"] == 1%}
+        <div style="margin: 0; width: 50%">
+            {% if game["HomePrediction"] == 1%}
                 <div class="homePrediction" style="color:red;">Win!</div>
                 {% elif game["HomePrediction"] == 0%}
                 <div class="homePrediction" style="color:blue;">Loss!</div>
-                {% endif %}</div>
-                <img class="homeLogo" src="{{game['HomeLogoPath']}}" alt="Home Logo" height="110" width="110"/>
+            {% endif %}
+                <img class="homeLogo" src="{{game['HomeLogoPath']}}" alt="Home Logo"/>
             <div class="homeTeam">{{game["HomeTeamAbbr"]}}</div>
-
-            <div>
+            <div class="homeScorePrediction">{{game["HomeScore"]}}</div>
+        </div>
+        <div style="margin: 0; width: 50%;">
             {% if game["AwayPrediction"] == 1%}
                 <div class="awayPrediction" style="color:red;">Win!</div>
                 {% elif game["AwayPrediction"] == 0%}
                 <div class="awayPrediction" style="color:blue">Loss!</div>
             {% endif %}
-            </div>
-            <img src="{{game['AwayLogoPath']}}" alt="Away Logo" height="110" width="110"/>
+
+                <img class="awayLogo" src="{{game['AwayLogoPath']}}" alt="Away Logo"/>
             <div class="awayTeam">{{game["AwayTeamAbbr"]}}</div>
+            <div class="awayScorePrediction">{{game["AwayScore"]}}</div>
+        </div>
+        <br style="clear:both;"/>
         </div>
         {%endfor%}
         </div>

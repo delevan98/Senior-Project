@@ -6,16 +6,12 @@ import math
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 import seaborn as sns
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import ExtraTreesClassifier
 import pickle
-
-import glob
-import sys
-import csv
-import json
-
+import tensorflow as tf
 
 def main():
     os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
@@ -25,33 +21,15 @@ def main():
                 "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
                 "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
 
-    data = pd.read_csv('NYA_All.csv')
+    data = pd.read_csv('combinedData.csv')
 
-    data.drop(['Visting Team','Date', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
-    data.drop(['Winning Pitcher ID', 'Visting Team Stolen Bases', 'Saving Pitcher ID','Home Team Stolen Bases', 'Visting Team Caught Stealing',
-                'Home Team Caught Stealing', 'Visting Team G Double Play', 'Home Team G Double Play',
-                'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID', 'Home Starter Pitcher ID',
-                'Visting Team Awarded First on Interference', 'Home Team Awarded First on Interference',
-                'Visting Team Balks', 'Home Team Balks', 'Visting Team Put-outs', 'Home Team Put-outs',
-                'Visting Team Assists', 'Visting Team Passed Balls', 'Home Team Passed Balls',
-                'Visting Team Double Plays','Attendance', 'Home Team Double Plays',
-                'Home Team Triple Plays', 'Visting Team Triple Plays', 'Home Team Triples',
-                'Visiting Team Sac Hits', 'Home Team Int Walks', 'Visting Team Int Walks',
-                'Home Team Sac Hits', 'Length of Game in Outs', 'Visting Team Sac Flys', 'Home Team Sac Flys',
-                'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
-                'Visiting Team Game Number', 'Home Team Game Number'], axis=1, inplace=True)
+    data.drop(['Unnamed: 0'], axis=1,inplace=True)
 
-    try:
-        data.drop(['Unnamed: 75'], axis=1, inplace=True)
-
-    except KeyError:
-        print("Column is not in the file!!!")
-    final = pd.read_csv('NYA_Full.csv')
-    final.drop(['League', 'teamAbbr'], axis=1,inplace=True)
+    data.drop(['League', 'teamAbbr', 'RBI'], axis=1,inplace=True)
 
     # Using Pearson Correlation
     plt.subplots(figsize=(35,35))
-    cor = final.corr()
+    cor = data.corr()
     sns.heatmap(cor, cmap=plt.cm.Reds)
     plt.gcf().subplots_adjust(top=.95,bottom=0.35)
     plt.xticks(rotation=45,ha='right')
@@ -60,23 +38,32 @@ def main():
     fig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
     plt.close('all')
 
-    #X_train, X_test, y_train, y_test = train_test_split(data.drop('Home Team Score', axis=1),
-                                                        #data['Home Team Score'], test_size=0.30,
-                                                        #random_state=101)
-    #linmodel = LinearRegression()
-    #linmodel.fit(X_train,y_train)
-
-    #linear_reg_score_train = linmodel.score(X_train, y_train)
-    #print("Percentage correct on training set = ", 100. * linear_reg_score_train, "%")
-
-    #predictions = linmodel.predict(X_test)
-    #print("Predictions: ", predictions)
-
-
-    # print(data.info())
-    X_train, X_test, y_train, y_test = train_test_split(final.drop('Win', axis=1),
-                                                        final['Win'], test_size=0.20,
+    data.drop(['Win'], axis=1, inplace=True)
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+                                                        data['Score'], test_size=0.30,
                                                         random_state=101)
+    scoreModel = LinearRegression()
+    scoreModel.fit(X_train,y_train)
+
+    linear_reg_score_train = scoreModel.score(X_train, y_train)
+    print("Percentage correct on training set = ", 100. * linear_reg_score_train, "%")
+
+    predictions = scoreModel.predict(X_test)
+    print("Predictions: ", np.floor(predictions))
+
+    final_mse = mean_squared_error(y_test, np.floor(predictions))
+    final_rmse = np.sqrt(final_mse)
+
+    print(final_rmse)
+
+    pickle.dump(scoreModel, open('linmodel.pkl', 'wb'))
+
+    data = pd.read_csv('combinedData.csv')
+    data.drop(['League', 'teamAbbr', 'Unnamed: 0'], axis=1, inplace=True)
+    print(data.tail(5))
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
+                                                        data['Win'], test_size=0.20,
+                                                        random_state=93)
 
     logmodel = LogisticRegression()
     logmodel.fit(X_train, y_train)
@@ -128,6 +115,26 @@ def main():
 
     else:
         print("Model failed to save!")
+
+
+    #----------------Neural net work------------------------
+
+    epochs = 1000
+    learning_rate = .01
+
+    data = pd.read_csv('combinedData.csv')
+
+    data.drop(['Unnamed: 0'], axis=1, inplace=True)
+
+    data.drop(['League', 'teamAbbr', 'RBI', 'Win'], axis=1, inplace=True)
+
+    m,n= data.shape
+
+    data_plus_bias = np.c_[np.ones((m, 1)), data]
+
+    X =  tf.constant(data_plus_bias, dtype=tf.float32, name="X")
+    y = tf.constant(data['Score'].respae(-1,1), dtype=tf.float32, name="y")
+    theta = tf.Variable(tf.random_uniform([n + 1, 1], -1.0,1.0), name="theta")
 
 
 
