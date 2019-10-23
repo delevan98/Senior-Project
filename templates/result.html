@@ -7,7 +7,7 @@
         {%for game in games%}
         <div class="rectangle">
             <div class="time">{{game["Time"]}}</div>
-        <div style="margin: 0; width: 50%">
+        <div style="padding-top:10px;">
             {% if game["HomePrediction"] == 1%}
                 <div class="homePrediction" style="color:red;">Win!</div>
                 {% elif game["HomePrediction"] == 0%}
@@ -17,7 +17,7 @@
             <div class="homeTeam">{{game["HomeTeamAbbr"]}}</div>
             <div class="homeScorePrediction">{{game["HomeScore"]}}</div>
         </div>
-        <div style="margin: 0; width: 50%;">
+        <div style="padding-top:43px;">
             {% if game["AwayPrediction"] == 1%}
                 <div class="awayPrediction" style="color:red;">Win!</div>
                 {% elif game["AwayPrediction"] == 0%}

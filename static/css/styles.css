@@ -35,7 +35,7 @@ header{
 
 }
 
-div {padding-left: 10px; padding-right: 10px;}
+div {padding-left: 10px; padding-right: 10px; margin: 0px;}
 
 main
 {
@@ -78,19 +78,30 @@ header h2{
   margin: 40px;
   border-style: solid;
   border-width: thin;
-  columns: 2 200px;
+  columns: 2 100px;
+  padding: 0px;
 }
 
 .time {
   width: 365px;
-  padding: 10px;
   height: 23px;
   font-family: "High School USA Serif";
   text-align: center;
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
+}
+
+.time>* {
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-end;
 }
 
 .awayTeamRect {
@@ -110,11 +121,14 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .awayTeam>* {
-        flex: 1 1 80px;
-    }
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-end;
+}
 
 .awayLogo {
   width: 129px;
@@ -123,10 +137,13 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .awayLogo>* {
-        flex: 1 1 80px;
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-end;
 }
 
 
@@ -141,10 +158,13 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .awayPrediction>* {
-        flex: 1 1 80px;
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-end;
 }
 
 .homeTeamRect {
@@ -163,11 +183,13 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .homeTeam>* {
-        flex: 1 1 80px;
-        margin: 0;
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-start;
 }
 
 .homeLogo {
@@ -177,11 +199,13 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .homeLogo>* {
-        flex: 1 1 80px;
-        margin: 0;
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-start;
 }
 
 .homePrediction {
@@ -195,11 +219,14 @@ header h2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin:auto;
 }
 
 .homePrediction>* {
-        flex: 1 1 80px;
-        margin: 0;
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-start;
+
 }
 
 .homeScorePrediction {
@@ -209,6 +236,13 @@ header h2{
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
+  margin:auto;
+}
+
+.homeScorePrediction>* {
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-start;
 }
 
 .awayScorePrediction {
@@ -218,6 +252,13 @@ header h2{
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
+  margin:auto;
+}
+
+.awayScorePrediction>* {
+        flex: 1 1 10px;
+        align-items: center;
+        justify-content: flex-end;
 }
 
 li.game {
@@ -237,4 +278,5 @@ li.game {
     background-color: #f1f1f1;
     overflow-y: hidden;
     height: 100%;
+    margin: auto;
 }
