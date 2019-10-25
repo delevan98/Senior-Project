@@ -22,7 +22,6 @@ def home():
     print(winPredictions)
 
     linearDF = modifyLinear(data,games)
-    linearDF.to_csv('gameDataLin.csv')
     linearDF.drop(['Win','Score','RBI', 'teamAbbr'], axis=1, inplace=True)
     scorePredictions = linModel.predict(linearDF)
     print(np.floor(scorePredictions))

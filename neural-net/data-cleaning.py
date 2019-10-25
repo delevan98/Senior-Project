@@ -82,15 +82,6 @@ def main():
         data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
                    'Home Starter Pitcher ID'], axis=1, inplace=True)
 
-
-        corr_matrix = data.corr()
-        #print(corr_matrix["Home Team Score"].sort_values(ascending=False))
-        corr_matrix.to_csv(
-            "C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\"+ teamAbbr[x]+"_correlation_matrix.csv")
-
-        description = data.describe()
-        description.to_csv("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\"+ teamAbbr[x]+"_desc_stats.csv")
-
         write_averages(final, teamAbbr[x])
 
         #print(data['Win'].value_counts())
