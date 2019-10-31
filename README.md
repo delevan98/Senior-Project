@@ -36,3 +36,18 @@ Once the project has been completely cloned and all requirements have been insta
 If you want to run the project from the beginning, start with data-cleaning.py. However, I do have to warn you to delete the team_averages.csv file before you do so. Part of the data-cleaning.py file appends a team's 10 game average to a csv file. If the file is not deleted the averages will keep getting appended without deleting the old ones, leading to a very large file.
 
 After succesfully running data-cleaning.py the next file is ready to be executed, neural-network.py. Once that file has finished running you are now ready to run the server.py file!
+
+
+# TO-DO
+- [x] Data Pre-proccessing
+- [x] Simple machine learning models
+- [x] Simple web-app
+- [x] Get 2019 MLB Schedule
+- [x] Hypothetical matchup page
+- [ ] Calculate additional sabermetrics
+- [ ] Create web-scraper/ Get 2019 data
+- [ ] Allow users to see predictions for multiple days
+- [ ] Dark mode
+- [ ] Better models (ex. Neural networks)
+- [ ] Prediction checks and balances
+- [ ] Incorporate pitching data
