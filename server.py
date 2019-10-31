@@ -7,6 +7,13 @@ import pandas as pd
 from sklearn import preprocessing
 import json
 
+
+teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
+				"CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
+			    "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
+				"TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
+				"MIL", "WAS"]
+
 app = Flask(__name__)
 
 
@@ -24,19 +31,35 @@ def home():
     linearDF = modifyLinear(data,games)
     linearDF.drop(['Win','Score','RBI', 'teamAbbr'], axis=1, inplace=True)
     scorePredictions = linModel.predict(linearDF)
-    print(np.floor(scorePredictions))
+    print(np.round(scorePredictions))
     gameData=createJSON(games, winPredictions, scorePredictions)
     return render_template('result.html',games=gameData)
 
-#@app.route('/predict',methods=['POST'])
-#def get_win():
+@app.route('/predict',methods=['GET','POST'])
+def get_win():
+    logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
 
-#    model = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl','rb'))
-#    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-#    data.drop('Win', 'Team Abbr', axis=1)
-#    predictions = model.predict(data)
-#    print(predictions)
-#    return render_template('result.html',prediction = predictions)
+    matchupData = []
+
+    if request.method == "POST":
+        awayAbbr = request.form.get("Away Team")
+        homeAbbr = request.form.get("Home Team")
+
+        matchup = pd.DataFrame(columns=['Home Team', 'Away Team', 'Game Time'])
+        matchup.loc[1] = [homeAbbr, awayAbbr, "September 21, 2019"]
+        logDF = modifyDF(data,matchup)
+        logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
+        winPredictions = logModel.predict(logDF)
+
+        linearDF = modifyLinear(data, matchup)
+        linearDF.drop(['Win', 'Score', 'RBI', 'teamAbbr'], axis=1, inplace=True)
+        scorePredictions = linModel.predict(linearDF)
+
+        matchupData = createJSON(matchup, winPredictions, scorePredictions)
+
+    return render_template('matchup.html',teams = teamAbbr, predictions=matchupData)
 
 def createJSON(games,predictions,scores):
     gameDataFinal = []

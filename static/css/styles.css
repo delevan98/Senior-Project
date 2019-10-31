@@ -1,9 +1,21 @@
 .navbar-brand,
 .navbar-nav a{
-  font-size: large;
+  /*font-size: large;*/
   font-family: 'SF Sports Night';
-  font-size: 2.5em !important;
+  font-size: 1.25em !important;
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+  height: 55px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float: none;
+  vertical-align: top;
 }
+
+
+.navbar-brand img {height: 45px;}
+
+.navbar {min-height:45px !important;}
 
 body{
 	font:15px/1.5 Arial, Helvetica,sans-serif;
@@ -279,4 +291,65 @@ li.game {
     overflow-y: hidden;
     height: 100%;
     margin: auto;
+}
+
+.homeTeamMatchup {
+  width: 502px;
+  height: 502px;
+}
+
+.awayTeamMatchup {
+  width: 502px;
+  height: 502px;
+}
+
+.teamAbbrWin {
+  width: 110.02px;
+  height: 82px;
+  font-family: "High School USA Sans";
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 82px;
+  margin: auto;
+}
+
+.teamAbbrLoss {
+  width: 110.02px;
+  height: 82px;
+  color: #878686;
+  font-family: "High School USA Sans";
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 82px;
+  margin: auto;
+}
+
+.scoreWin {
+  width: 96px;
+  height: 180px;
+  font-family: "High School USA Sans";
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 185px;
+  align-self: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.scoreLoss {
+  width: 96px;
+  height: 180px;
+  color: #878686;
+  font-family: "High School USA Sans";
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 185px;
+  align-self: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.triangle {
+  width: 187px;
+  height: 187px;
 }

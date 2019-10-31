@@ -1,10 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
+{% block main %}
 
-</body>
-</html>
+  <div>
+    <form action="/predict" method="post">
+      <div class="form-group" style="display: inline-block; margin: 40px;">
+          <select class="form-control" name="Home Team" required>
+              <option disabled selected value>Home Team</option>
+              {% for x in range(30) %}
+                  <option value="{{ teams[x] }}">{{ teams[x] }}</option>
+              {% endfor %}
+          </select>
+      </div>
+      <div class="form-group" style="display: inline-block; margin: 40px;">
+          <select class="form-control" name="Away Team" required>
+              <option disabled selected value>Away Team</option>
+              {% for x in range(30) %}
+                <option value="{{ teams[x] }}">{{ teams[x] }}</option>
+              {% endfor %}
+          </select>
+      </div>
+
+      <div style="display: inline-block;">
+          <button class="btn btn-primary" type="submit">Predict Matchups</button>
+      </div>
+
+  </form>
+  </div>
+
+    <div class="flex-container" overflow="visible">
+    {% for prediction in predictions%}
+
+            {% if prediction["HomePrediction"] == 1%}
+
+                <div>
+                    <div class="teamAbbrWin">{{prediction["HomeTeamAbbr"]}}</div>
+                    <div>
+                        <img class="homeTeamMatchup" src="{{prediction['HomeLogoPath']}}" alt="Home Logo"/>
+                    </div>
+                </div>
+
+                <div class="scoreWin">{{prediction["HomeScore"]}}</div>
+                <div style="align-self: center;">
+                   <img class="triangle" src="/static/leftTriangle.png"/>
+                </div>
+
+
+                {% elif prediction["HomePrediction"] == 0%}
+                    <div>
+                        <div class="teamAbbrLoss">{{prediction["HomeTeamAbbr"]}}</div>
+                        <div>
+                            <img class="homeTeamMatchup" src="{{prediction['HomeLogoPath']}}" alt="Home Logo"/>
+                        </div>
+                    </div>
+
+                    <div class="scoreLoss">{{prediction["HomeScore"]}}</div>
+                    <div style="align-self: center;">
+                        <img class="triangle" src="/static/rightTriangle.png"/>
+                    </div>
+
+            {% endif %}
+
+            {% if prediction["AwayPrediction"] == 1%}
+                <div class="scoreWin">{{prediction["AwayScore"]}}</div>
+                <div>
+                    <div class="teamAbbrWin">{{prediction["AwayTeamAbbr"]}}</div>
+                    <div>
+                        <img class="awayTeamMatchup" src="{{prediction['AwayLogoPath']}}" alt="Away Logo"/>
+                    </div>
+
+                </div>
+
+
+
+                {% elif prediction["AwayPrediction"] == 0%}
+                    <div class="scoreLoss">{{prediction["AwayScore"]}}</div>
+                    <div>
+                        <div class="teamAbbrLoss">{{prediction["AwayTeamAbbr"]}}</div>
+                        <div>
+                            <img class="awayTeamMatchup" src="{{prediction['AwayLogoPath']}}" alt="Away Logo"/>
+                        </div>
+
+                    </div>
+
+
+            {% endif %}
+
+  {% endfor %}
+    </div>
+{% endblock %}

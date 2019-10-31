@@ -17,8 +17,20 @@
 
 </head>
 <body>
-        <nav class="navbar navbar-expand-md navbar-light bg-light border">
-            <a class="navbar-brand" href="/">POBGUMLA</a>
+        <nav class="navbar navbar-fixed-top navbar-expand-md navbar-light bg-light border">
+
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="/">
+                    <img src="/static/Logo.png" alt="Logo" style="height: 100%;">
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/predict">Hypothetical Matchups</a>
+                </li>
+            </ul>
         </nav>
         <main>
             {% block main %}{% endblock %}
