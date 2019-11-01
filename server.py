@@ -19,10 +19,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
-    games = pd.read_csv('/app/games/games_3_28_2019.csv')
+    logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games_3_28_2019.csv')
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
     winPredictions = logModel.predict(logDF)
@@ -37,9 +37,9 @@ def home():
 
 @app.route('/predict',methods=['GET','POST'])
 def get_win():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
 
     matchupData = []
 
