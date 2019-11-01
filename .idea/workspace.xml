@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80818b23-832b-427e-b599-02eda02a2470" name="Default Changelist" comment="Added matchup page and associated style page">
-      <change afterPath="$PROJECT_DIR$/neural-net/getGameSchedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataProcessing.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataVisualization.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games_3_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games_9_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictingBaseball.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentationSQRT(4).ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
