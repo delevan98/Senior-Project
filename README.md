@@ -1,6 +1,7 @@
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 # Predicting the Outcomes of Baseball Games Using Machine Learning Approaches
 
+The app is hosted at https://machinelearningbaseball.herokuapp.com/ for your viewing pleasure.
 
 # Overview
 
