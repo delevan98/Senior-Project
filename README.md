@@ -45,12 +45,12 @@ After succesfully running data-cleaning.py the next file is ready to be executed
 - [x] Simple web-app
 - [x] Get 2019 MLB Schedule
 - [x] Hypothetical matchup page
+- [x] Dark mode
 - [ ] Prediction checks and balances
 - [ ] Calculate additional sabermetrics
 - [ ] Convert abbreviations to real names
 - [ ] Allow users to see predictions for multiple days
 - [ ] Create web-scraper/ Get 2019 data
 - [ ] Get and save predictions for 2019 games
-- [ ] Dark mode
 - [ ] Better models (ex. Neural networks)
 - [ ] Incorporate pitching data
