@@ -6,43 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="80818b23-832b-427e-b599-02eda02a2470" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/COL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/COL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/DET_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/DET_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/team_averages.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/data-cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/data-cleaning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matchup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="697">
+              <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -64,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/matchup.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -147,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state>
               <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -186,11 +150,11 @@
         <option value="$PROJECT_DIR$/games_3_28_2019.csv" />
         <option value="$PROJECT_DIR$/neural-net/getGameSchedule.py" />
         <option value="$PROJECT_DIR$/neural-net/data-cleaning.py" />
-        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/result.html" />
         <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/templates/matchup.html" />
+        <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
   </component>
@@ -492,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572610054141</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dark Mode">
+      <created>1573351059398</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1573351059398</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -539,7 +510,8 @@
     <MESSAGE value="Adding data visualization notebook for DS 201" />
     <MESSAGE value="Added matchup page and associated style page" />
     <MESSAGE value="Filesystem change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filesystem change" />
+    <MESSAGE value="Dark Mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dark Mode" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data-scraper/src/GetDataFromFile.java">
@@ -648,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neural-net/data-cleaning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -675,16 +637,6 @@
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#br#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,6 +664,26 @@
             <element signature="n#style#0;n#div#5;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#7;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#9;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
