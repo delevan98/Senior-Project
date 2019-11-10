@@ -22,7 +22,7 @@ def home():
     logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
     linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
     data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-    games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games_3_28_2019.csv')
+    games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
     winPredictions = logModel.predict(logDF)
@@ -66,17 +66,14 @@ def createJSON(games,predictions,scores):
     gameData = {}
     keys = ["Time", "HomeTeamAbbr","HomePrediction","HomeLogoPath","HomeScore", "AwayTeamAbbr","AwayPrediction","AwayLogoPath", "AwayScore"]
     labels = predictions.astype(np.int32)
-    print(labels)
     for x in range(games.shape[0]):
 
         awayTeamPrediction = 1
         awayTeamPrediction ^= labels[x]
         values = [games.iloc[x,2], games.iloc[x,0], int(labels[x]),"static/" +games.iloc[x,0]+"_Logo.png",np.int32(np.floor(scores[x*2])), games.iloc[x,1], int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", np.int32(np.floor(scores[2*x+1]))]
-        print(values)
         gameData = dict(zip(keys,values))
         gameDataFinal.append(gameData)
 
-    print(gameDataFinal)
     return gameDataFinal
 
 def modifyDF(data,games):

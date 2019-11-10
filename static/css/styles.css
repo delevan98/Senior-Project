@@ -1,29 +1,57 @@
 .navbar-brand,
 .navbar-nav a{
-  /*font-size: large;*/
   font-family: 'SF Sports Night';
-  font-size: 1.25em !important;
-  padding-top:5px !important;
-  padding-bottom:5px !important;
+  font-size: 1.75em !important;
+  /*padding-top:5px !important;*/
+  /*padding-bottom:5px !important;*/
   height: 55px;
   margin-left: 20px;
   margin-right: 20px;
   float: none;
-  vertical-align: top;
+  vertical-align: center;
+  color: var(--font-color) !important;
 }
 
 
-.navbar-brand img {height: 45px;}
+.navbar-brand img {
+    height: 45px;
+    padding: 0px;
 
-.navbar {min-height:45px !important;}
+}
 
+.navbar-brand {
+    display: inline-block !important;
+    padding: 0px !important;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+
+}
+
+.navbar {
+    min-height:45px !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0px 0px 8px var(--font-color) !important;
+    padding: 0px;
+
+}
+
+.bg-light{
+    background-color: var(--primary-color) !important;
+}
+
+.border{
+    border: 1px solid var(--primary-color) !important;
+}
 body{
 	font:15px/1.5 Arial, Helvetica,sans-serif;
 	padding: 0px;
 	margin: 0px;
-	background-color:#f4f3f3;
+	background-color: var(--bg-color) !important;
 	height: 100%;
 	overflow-y: auto;
+	color: var(--font-color) !important;
 }
 
 .container{
@@ -61,12 +89,7 @@ main
 			width:100%;
 			margin:0px;
 		}
-#brandname{
-	float:left;
-	font-size:30px;
-	color: #fff;
-	margin: 10px;
-}
+
 
 header h2{
 	text-align:center;
@@ -74,9 +97,9 @@ header h2{
 
 }
 
-.btn-info {background-color: #2196F3;
+.btn-info {background-color: var(--bg-color) !important;
 	height:40px;
-	width:100px;} /* Blue */
+	width:100px;}
 .btn-info:hover {background: #0b7dda;}
 
 .rectangle {
@@ -84,8 +107,8 @@ header h2{
   height: 265px;
   border-radius: 9px;
   /*display: inline-block;*/
-  background: #f0eded;
-  box-shadow: 0px 0px 8px rgba(100,100,100,0.5);
+  background: var(--primary-color) !important;
+  box-shadow: 0px 0px 8px var(--font-color) !important;
   position: relative;
   margin: 40px;
   border-style: solid;
@@ -159,7 +182,7 @@ header h2{
 }
 
 
-.awayPrediction {
+.winPrediction {
   width: 87.93px;
   height: 23px;
   font-family: "High School USA Serif";
@@ -171,9 +194,10 @@ header h2{
   flex-direction: column;
   flex-wrap: wrap;
   margin:auto;
+  color: var(--win-color) !important;
 }
 
-.awayPrediction>* {
+.winPrediction>* {
         flex: 1 1 10px;
         align-items: center;
         justify-content: flex-end;
@@ -220,7 +244,7 @@ header h2{
         justify-content: flex-start;
 }
 
-.homePrediction {
+.lossPrediction {
   width: 87.93px;
   height: 23px;
   font-family: "High School USA Serif";
@@ -232,9 +256,10 @@ header h2{
   flex-direction: column;
   flex-wrap: wrap;
   margin:auto;
+  color: var(--loss-color) !important;
 }
 
-.homePrediction>* {
+.lossPrediction>* {
         flex: 1 1 10px;
         align-items: center;
         justify-content: flex-start;
@@ -273,21 +298,10 @@ header h2{
         justify-content: flex-end;
 }
 
-li.game {
-  width: 25%;
-  display: inline-block;
-  border: 2px solid gray;
-  padding: 4px;
-  margin: 8px;
-  list-style: none;
-  background-color: white;
-  text-align: center;
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: #f1f1f1;
+    background-color: var(--bg-color) !important;
     overflow-y: hidden;
     height: 100%;
     margin: auto;
@@ -306,6 +320,7 @@ li.game {
 .teamAbbrWin {
   width: 110.02px;
   height: 82px;
+  color: var(--font-color) !important;
   font-family: "High School USA Sans";
   font-size: 64px;
   font-weight: 400;
@@ -327,6 +342,7 @@ li.game {
 .scoreWin {
   width: 96px;
   height: 180px;
+  color: var(--font-color) !important;
   font-family: "High School USA Sans";
   font-size: 144px;
   font-weight: 400;
@@ -353,3 +369,103 @@ li.game {
   width: 187px;
   height: 187px;
 }
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 70px solid transparent;
+  border-bottom: 70px solid transparent;
+  margin-left: 2%;
+  border-left: 70px solid var(--font-color);
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 70px solid transparent;
+  border-bottom: 70px solid transparent;
+
+  border-right: 70px solid var(--font-color);
+}
+
+:root {
+    --primary-color: #f0eded;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #f8f9fa;
+    --heading-color: #f8f9fa;
+    --win-color: #ff0000;
+    --loss-color: #0000ff;
+    --button-color: #007bff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #4d4545;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #393232;
+    --heading-color: #8d6262;
+    --win-color: #ed8d8d;
+    --loss-color: #00e7ff;
+    --button-color: #c31717;
+}
+
+/*slider switch css */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  em {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
