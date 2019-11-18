@@ -6,7 +6,16 @@ import os
 
 def main():
     year = 2019
-    getSchedule(year)
+    #getSchedule(year)
+    #getGamePKs(year)
+    teamAbbr = ["CHN", "PHI", "PIT", "CIN", "SLN", "BOS", "CHA",
+                "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
+                "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
+                "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
+                "MIL", "WAS"]
+    # Explore each variable in dataset
+    for x in range(30):
+        getGameData(teamAbbr[x],year)
 
 
 def getSchedule(year):
@@ -105,6 +114,24 @@ def convertMonth(month):
 
     newMonth = months[month]
     return newMonth
+
+def getGamePKs(year):
+    x = 1
+    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games')
+    for month in range(4, 11):  # Month is always 1..12
+        for day in range(1, monthrange(year, month)[1] + 1):
+            date = str(month) + "/" + str(day) + "/" + str(year)
+            games = mlb.schedule(start_date=date, end_date=date)
+
+            for game in games:
+                game_id = game['game_id']
+                print(mlb.boxscore_data(game_id))
+                x = x + 1
+
+
+def getGameData(teamAbbr,year):
+    url = "http://www.baseball-reference.com/teams/tgl.cgi?team=" + teamAbbr + "&t=b&year=" + str(year)
+
 if __name__ == "__main__":
     main()
 
