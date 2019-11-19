@@ -1,0 +1,100 @@
+---
+title: "ModelEvaluationR"
+author: "Mike Delevan"
+output: html_notebook
+---
+
+```{r}
+baseball_df <- read.csv(file="C:/Users/Mike Delevan/Documents/gl2010_18/combinedData.csv", header=TRUE, sep=",")
+
+head(baseball_df)
+
+```
+```{r}
+summary(baseball_df)
+```
+
+We can get a lot of useful information regarding the data using the output from describe. One important finding is tha in the dataset there is approximately 50% rows with a win value and approximately 50% rows with a loss value. This is important for machine learning because we want to give the model evenly distributed data. Just having an even split might even reduce overfitting because the model will be generalized to both win and loss thus being a better predictor. If there were more wins in the dataset, the system would learn from that data and may end up predicting more wins than losses, which is not the intended function of the system.
+
+We can also see that on average, teams score around 4 points a game which may seem low, but compared to soccer it is a pretty good value. Also, on average a team can attribute at least one run to a homerun and the other 3 points through batting base runners in. Let's start doing multiple linear regression using a majority of the variables in the combined dataset.
+
+### **Multiple linear regression**
+
+Let's plot 3 different variables with respect to score to see the relationships between the variables and Score. We can then move on from these plots to get correlation values for the variables to confirm any inferences we may make from the graphs.
+
+```{r}
+p1 <- baseball_df %>% ggplot(aes(x=OBP,y=Score)) + geom_point()
+p2 <- baseball_df %>% ggplot(aes(x=Strikeouts,y=Score)) + geom_point()
+p3 <- baseball_df %>% ggplot(aes(x=battingAverage,y=Score)) + geom_point()
+grid.arrange(p1,p2,p3,nrow=1)
+```
+
+```{r}
+(with(baseball_df,cor(OBP,Score)))
+(with(baseball_df,cor(Strikeouts,Score)))
+(with(baseball_df,cor(battingAverage,Score)))
+```
+
+Between these three values the batting average and OBP are the most  positively correlated with the Score. On the other hand, Strikeouts are minimally negatively correlated with Score as we inferred using the previous graphs and linear fits.
+
+Let's create a multiple linear regression model using all variables in the dataset minus the team abbreviations (Categorical), league (categorical), RBI (Direct Correlation), OPS (Redundant Variable), and X (Row Numbers).
+
+```{r}
+baseball_lm <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_df)
+
+tidy(baseball_lm)
+```
+The output from tidy tells us a lot about the predictions for the slope values for each variable in the dataset. Many of the slope estimates are very small or ar close to 0 with extremely small p values. Many of these p values are 0 which jumps out at me because that's usually never seen and I don't know how to interpret it. One estimate that confuses me is for battingAverage because it is negative. I'm pretty sure that BA and Score have a positive relationship as evidenced by the tree way graph I made earlier. 
+
+To get an idea how well suited the linear model is for the data, let's plot the residuals vs fitted values:
+```{r}
+augment(baseball_lm,data=baseball_df) %>% ggplot(aes(x=.fitted,y=.resid)) + geom_point()
+```
+
+
+```{r}
+augment(baseball_lm,data=baseball_df) %>% 
+  ggplot(aes(x=.fitted,y=.resid)) + 
+  geom_point() + 
+  geom_hline(yintercept = 0) + 
+  geom_smooth(se=FALSE)
+```
+The graph is rather linear except on values near both ends of the graph. However it is linear enough that we can say that linear regression is plausible to use on this data. However, better models will probably be used in the future.
+
+
+### **Feature Selection Using Backward AIC**
+
+Let's get a summary of the information contained in our linear model: 
+
+```{r}
+summary(baseball_lm)
+```
+One major thing we can see from this chart is that a large majority of the variables in the dataset are significant in some way. To know for sure we should run backwards AIC selection on our dataset to get the best set of features for our model. 
+
+```{r}
+(baseball_selection <- ols_step_backward_aic(baseball_lm))
+```
+The results from backwards selection confirm our statements for the output from summary. Now we are certain that teamER is not a good predictor of score and will be removed in the model. It seems that a linear model can accurately explain most of the dataset and will most likely be used going forward.
+
+### **Cross-Validation**
+
+First let's get the training error to get a benchmark RMSE value 
+
+```{r}
+train_ids <- createDataPartition(baseball_df$Score,p=0.80,list = F)
+baseball_train <- baseball_df[train_ids, ]
+baseball_test <- baseball_df[-train_ids, ]
+
+baseball_fit_train <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train)
+baseball_fit_aug <- augment(baseball_fit_train,data=baseball_train)
+sqrt(sum(baseball_fit_aug$.resid^2)/length(baseball_fit_aug$.resid))
+```
+We get a 1.045 RMSe value which actually isn't too bad becauseit symbolizes that the model is typically 1 point off the actual score. However the meat and potatoes will be in calculating the test RMSE, because that will let us know if the model is overfitting and how well its modeling the data.
+
+```{r}
+tC <- trainControl(method="repeatedcv",number=10,repeats = 5)
+baseball_train_lm <- train(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train,method="lm",trControl=tC)
+
+baseball_train_lm$results
+```
+Using 10-fold cross validation with 5 repeats we find that the estimate for RMSE is 1.05.
