@@ -110,7 +110,7 @@ header h2{
   background: var(--primary-color) !important;
   box-shadow: 0px 0px 8px var(--font-color) !important;
   position: relative;
-  margin: 40px;
+  margin: 35px;
   border-style: solid;
   border-width: thin;
   columns: 2 100px;
@@ -120,7 +120,7 @@ header h2{
 .time {
   width: 365px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -148,7 +148,7 @@ header h2{
 .awayTeam {
   width: 74.11px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -185,7 +185,7 @@ header h2{
 .winPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -211,7 +211,7 @@ header h2{
 .homeTeam {
   width: 74.11px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -247,7 +247,7 @@ header h2{
 .lossPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -269,7 +269,7 @@ header h2{
 .homeScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -285,7 +285,7 @@ header h2{
 .awayScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -308,13 +308,23 @@ header h2{
 }
 
 .homeTeamMatchup {
+  /*max-width:502px;
+  height: auto;*/
   width: 502px;
-  height: 502px;
+  height: 502px;*/
+  /*max-width:100%;
+  height:auto;
+  max-height:100%;*/
 }
 
 .awayTeamMatchup {
+  /*max-width:502px;
+  height: auto;*/
   width: 502px;
   height: 502px;
+  /*max-width:100%;
+  height:auto;
+  max-height:100%;*/
 }
 
 .teamAbbrWin {

@@ -48,8 +48,8 @@ def main():
     scoreModel = LinearRegression()
     scoreModel.fit(X_train,y_train)
 
-    linear_reg_score_train = scoreModel.score(X_train, y_train)
-    print("Percentage correct on training set = ", 100. * linear_reg_score_train, "%")
+    #linear_reg_score_train = scoreModel.score(X_train, y_train)
+    #print("Percentage correct on training set = ", 100. * linear_reg_score_train, "%")
 
     predictions = scoreModel.predict(X_test)
     print("Predictions: ", np.floor(predictions))
@@ -60,6 +60,31 @@ def main():
     print(final_rmse)
 
     pickle.dump(scoreModel, open('linmodel.pkl', 'wb'))
+
+
+    from sklearn.ensemble import RandomForestRegressor
+
+    data = pd.read_csv('combinedData.csv')
+
+    data.drop(['Unnamed: 0'], axis=1, inplace=True)
+
+    data.drop(['League', 'teamAbbr', 'RBI'], axis=1, inplace=True)
+
+    data.drop(['Win'], axis=1, inplace=True)
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+                                                        data['Score'], test_size=0.20,
+                                                        random_state=101)
+
+    rf = RandomForestRegressor(n_estimators=1000, random_state=42)
+
+    rf.fit(X_train, y_train)
+
+    predictions = rf.predict(X_test)
+
+    final_mse = mean_squared_error(y_test, np.floor(predictions))
+    final_rmse = np.sqrt(final_mse)
+
+    print("Random Forest RMSE: " + str(final_rmse))
 
     data = pd.read_csv('combinedData.csv')
     data.drop(['League', 'teamAbbr', 'Unnamed: 0'], axis=1, inplace=True)
