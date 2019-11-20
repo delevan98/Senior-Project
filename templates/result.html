@@ -9,9 +9,9 @@
             <div class="time">{{game["Time"]}}</div>
         <div style="padding-top:10px;">
             {% if game["HomePrediction"] == 1%}
-                <div class="homePrediction" style="color:red;">Win!</div>
+                <div class="winPrediction">Win!</div>
                 {% elif game["HomePrediction"] == 0%}
-                <div class="homePrediction" style="color:blue;">Loss!</div>
+                <div class="lossPrediction">Loss!</div>
             {% endif %}
                 <img class="homeLogo" src="{{game['HomeLogoPath']}}" alt="Home Logo"/>
             <div class="homeTeam">{{game["HomeTeamAbbr"]}}</div>
@@ -19,9 +19,9 @@
         </div>
         <div style="padding-top:43px;">
             {% if game["AwayPrediction"] == 1%}
-                <div class="awayPrediction" style="color:red;">Win!</div>
+                <div class="winPrediction">Win!</div>
                 {% elif game["AwayPrediction"] == 0%}
-                <div class="awayPrediction" style="color:blue">Loss!</div>
+                <div class="lossPrediction">Loss!</div>
             {% endif %}
 
                 <img class="awayLogo" src="{{game['AwayLogoPath']}}" alt="Away Logo"/>

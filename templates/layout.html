@@ -9,7 +9,6 @@
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="/static/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <title>Predicting Outcomes of Baseball Games Using Machine Learning Approaches</title>
@@ -17,7 +16,7 @@
 
 </head>
 <body>
-        <nav class="navbar navbar-fixed-top navbar-expand-md navbar-light bg-light border">
+        <nav class="navbar navbar-fixed-top navbar-expand-md bg-light border">
 
             <ul class="navbar-nav">
                 <a class="navbar-brand" href="/">
@@ -30,6 +29,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/predict">Hypothetical Matchups</a>
                 </li>
+
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                    </label>
+                </div>
+                <script src="/static/darkModeSwitch.js"></script>
             </ul>
         </nav>
         <main>

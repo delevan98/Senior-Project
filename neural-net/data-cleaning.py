@@ -48,6 +48,9 @@ def main():
         data['Visiting Team OPS'] = data['Visiting Team OBP'] + data['Visiting Team Slugging']
         data['Home Team OPS'] = data['Home Team OBP'] + data['Home Team Slugging']
 
+        #data['Visiting Team FP'] = (data['Visting Team Put-outs'] + data['Visting Team Assists']) / (data['Visting Team Put-outs'] + data['Visting Team Assists'] + data['Visting Team Errors'])
+        #data['Home Team FP'] = (data['Home Team Put-outs'] + data['Home Team Assists']) / (data['Home Team Put-outs'] + data['Home Team Assists'] + data['Home Team Errors'])
+
 
         #Determining if teamAbb[x] won the game
         data.loc[(data['Home Team'] == teamAbbr[x]) & (data['Home Team Score'] > data['Visiting Team Score']), 'Win'] = 1
@@ -69,19 +72,14 @@ def main():
 
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
-        print(data.tail(10))
 
         final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'atBats', 'Hits',
                                       'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
                                       'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
-                                      'OPS', 'Win'])
+                                      'OPS', 'Win', 'wonPrev'])
 
         fillTeamDF(data, final, teamAbbr[x])
-
-        data.drop(['Visting Team', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
-        data.drop(['Winning Pitcher ID', 'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID',
-                   'Home Starter Pitcher ID'], axis=1, inplace=True)
-
+        print(final)
         write_averages(final, teamAbbr[x])
 
         #print(data['Win'].value_counts())
@@ -100,6 +98,7 @@ def write_averages(data, teamAbbr):
     except KeyError:
         print("Columns have already been deleted!")
 
+    data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors']] = data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors']].astype(int)
     description = data.tail(10).describe()
     print(description)
     description['TeamAbbr'] = teamAbbr
@@ -115,7 +114,7 @@ def fillTeamDF(data, final, teamAbbr):
             final.loc[idx+1] = [teamAbbr, row['League.1'], row['Home Team Score'], 1, row['Home Team At-Bats'], row['Home Team Hits'], row['Home Team Doubles'],
                                row['Home Team Triples'], row['Home Team Home-Runs'], row['Home Team RBI'], row['Home Team Walks'], row['Home Team Strikeouts'],
                                row['Home Team LOB'], row['Home Team Pitchers Used'], row['Home Team Ind ER'], row['Home Team Team ER'], row['Home Team Errors'],
-                               row['Home Team Batting Average'], row['Home Team OBP'], row['Home Team Slugging'], row['Home Team OPS'], row['Win'] ]
+                               row['Home Team Batting Average'], row['Home Team OBP'], row['Home Team Slugging'], row['Home Team OPS'], row['Win'], row['wonPrev'] ]
 
         else:
             final.loc[idx+1] = [teamAbbr, row['League'], row['Visiting Team Score'], 0, row['Visting Team At-Bats'],
@@ -125,10 +124,8 @@ def fillTeamDF(data, final, teamAbbr):
                               row['Visiting Team LOB'], row['Visting Team Pitchers Used'], row['Visting Team Ind ER'],
                               row['Visting Team Team ER'], row['Visting Team Errors'],
                               row['Visiting Team Batting Average'], row['Visiting Team OBP'], row['Visiting Team Slugging'],
-                              row['Visiting Team OPS'], row['Win']]
+                              row['Visiting Team OPS'], row['Win'], row['wonPrev']]
 
-    print('Printing final DF')
-    print(final.tail(10))
     final.to_csv(teamAbbr + '_Full.csv', index=False)
 
 

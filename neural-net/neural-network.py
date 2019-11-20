@@ -12,6 +12,9 @@ from sklearn.feature_selection import RFE
 from sklearn.ensemble import ExtraTreesClassifier
 import pickle
 import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
 
 def main():
     os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
@@ -40,7 +43,7 @@ def main():
 
     data.drop(['Win'], axis=1, inplace=True)
     X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
-                                                        data['Score'], test_size=0.30,
+                                                        data['Score'], test_size=0.20,
                                                         random_state=101)
     scoreModel = LinearRegression()
     scoreModel.fit(X_train,y_train)
@@ -94,11 +97,24 @@ def main():
     saveFig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Sample_Conf_Matrix.png")
     plt.close()
 
+    from sklearn import metrics
 
-    rfe = RFE(logmodel, 9)  # running RFE
-    rfe = rfe.fit(X_train, y_train)
-    print(rfe.support_)  # Printing the boolean results
-    print(rfe.ranking_)
+    y_pred = logmodel.predict_proba(X_test)[:,1]
+    from plot_metric.functions import BinaryClassification
+    # Visualisation with plot_metric
+    bc = BinaryClassification(y_test, y_pred, labels=["Win", "Loss"])
+
+    plt.figure(figsize=(5, 5))
+    bc.plot_roc_curve()
+    plt.show()
+
+    #from sklearn.model_selection import RepeatedKFold
+    #kf = RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)
+
+    #for train_index, test_index in kf.split(X):
+     #   print("Train:", train_index, "Validation:", test_index)
+     #   X_train, X_test = X[train_index], X[test_index]
+    #    y_train, y_test = y[train_index], y[test_index]
 
     forest = ExtraTreesClassifier(n_estimators=500)
     forest.fit(X_train, y_train)
@@ -121,20 +137,34 @@ def main():
 
     epochs = 1000
     learning_rate = .01
-
     data = pd.read_csv('combinedData.csv')
-
     data.drop(['Unnamed: 0'], axis=1, inplace=True)
 
-    data.drop(['League', 'teamAbbr', 'RBI', 'Win'], axis=1, inplace=True)
+    data.drop(['League', 'teamAbbr', 'RBI'], axis=1, inplace=True)
 
-    m,n= data.shape
+    data.drop(['Win'], axis=1, inplace=True)
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+                                                        data['Score'], test_size=0.20,
+                                                        random_state=101)
 
-    data_plus_bias = np.c_[np.ones((m, 1)), data]
 
-    X =  tf.constant(data_plus_bias, dtype=tf.float32, name="X")
-    y = tf.constant(data['Score'].respae(-1,1), dtype=tf.float32, name="y")
-    theta = tf.Variable(tf.random_uniform([n + 1, 1], -1.0,1.0), name="theta")
+    model = build_model(X_train)
+
+    model.summary()
+
+    class PrintDot(keras.callbacks.Callback):
+        def on_epoch_end(self, epoch, logs):
+            if epoch % 100 == 0: print('')
+            print('.', end='')
+
+    EPOCHS = 1000
+
+    history = model.fit(
+        X_train, y_train,
+        epochs=EPOCHS, validation_split=0.2, verbose=0,
+        callbacks=[PrintDot()])
+
+    plot_history(history)
 
 
 
@@ -142,6 +172,37 @@ def main():
 def saveModel(model):
     pickle.dump(model, open('logmodel.pkl', 'wb'))
     return 1
+
+def build_model(X_train):
+  model = keras.Sequential([
+    layers.Dense(64, activation='relu', input_shape=[len(X_train.keys())]),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(1)
+  ])
+
+  optimizer = tf.keras.optimizers.RMSprop(0.001)
+
+  model.compile(loss='mse',
+                optimizer=optimizer,
+                metrics=['accuracy','mse'])
+  return model
+
+def plot_history(history):
+  print(history.history)
+  hist = pd.DataFrame(history.history)
+  hist['epoch'] = history.epoch
+  hist.tail(10)
+
+  plt.figure()
+  plt.xlabel('Epoch')
+  plt.ylabel('Mean Square Error [$Score^2$]')
+  plt.plot(hist['epoch'], hist['mean_squared_error'],
+           label='Train Error')
+  plt.plot(hist['epoch'], hist['val_mean_squared_error'],
+           label = 'Val Error')
+  plt.ylim([0,5])
+  plt.legend()
+  plt.show()
 
 if __name__ == "__main__":
     main()
