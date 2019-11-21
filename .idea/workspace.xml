@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/linmodel.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/linmodel.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/neural-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/neural-network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/games_3_28_2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/games/games_3_28_2019.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matchup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchup.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+            <state relative-caret-position="493">
+              <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -48,8 +44,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/matchup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+            <state relative-caret-position="409">
+              <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#9;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,17 +81,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5372">
-              <caret line="316" column="20" selection-start-line="316" selection-start-column="20" selection-end-line="316" selection-end-column="20" />
+            <state relative-caret-position="524">
+              <caret line="343" column="14" lean-forward="true" selection-start-line="343" selection-start-column="14" selection-end-line="343" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neural-net/neural-network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+            <state relative-caret-position="-1216">
+              <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -128,16 +130,16 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/result.html" />
         <option value="$PROJECT_DIR$/neural-net/getGameSchedule.py" />
-        <option value="$PROJECT_DIR$/server.py" />
-        <option value="$PROJECT_DIR$/static/css/styles.css" />
-        <option value="$PROJECT_DIR$/templates/matchup.html" />
         <option value="$PROJECT_DIR$/neural-net/neural-network.py" />
+        <option value="$PROJECT_DIR$/templates/matchup.html" />
+        <option value="$PROJECT_DIR$/static/css/styles.css" />
+        <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
+    <option name="x" value="1842" />
+    <option name="y" value="-329" />
     <option name="width" value="1026" />
     <option name="height" value="546" />
   </component>
@@ -157,7 +159,7 @@
             <path>
               <item name="Senior-Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Senior-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="data-scraper" type="462c0819:PsiDirectoryNode" />
+              <item name="notebooks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,7 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.neural-network">
+  <component name="RunManager" selected="Python.server">
     <configuration name="data-cleaning" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -302,8 +304,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.neural-network" />
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.neural-network" />
         <item itemvalue="Python.getGameSchedule" />
         <item itemvalue="Python.data-cleaning" />
         <item itemvalue="Python.server (1)" />
@@ -447,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573351450377</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Random Forest Regression">
+      <created>1574279352983</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574279352983</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Finish web development">
+      <created>1574306468625</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574306468625</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -460,22 +476,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-319" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.124255955" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.087987356" />
       <window_info id="Structure" order="1" sideWeight="0.50162864" side_tool="true" weight="0.1406744" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841937" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.45238096" visible="true" weight="0.33387887" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.45258167" visible="true" weight="0.15492958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49894625" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49841937" weight="0.21343446" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.54761904" side_tool="true" visible="true" weight="0.33387887" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.54741836" side_tool="true" visible="true" weight="0.15492958" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49947312" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -496,7 +512,9 @@
     <MESSAGE value="Filesystem change" />
     <MESSAGE value="Dark Mode" />
     <MESSAGE value="Dark mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dark mode" />
+    <MESSAGE value="Random Forest Regression" />
+    <MESSAGE value="Finish web development" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish web development" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data-scraper/src/GetDataFromFile.java">
@@ -573,32 +591,12 @@
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural-net/getGameSchedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="132" column="76" selection-start-line="132" selection-start-column="76" selection-end-line="132" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neural-net/data-cleaning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="55" column="121" selection-start-line="55" selection-start-column="121" selection-end-line="55" selection-end-column="121" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,26 +619,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/neural-net/neural-network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5372">
-          <caret line="316" column="20" selection-start-line="316" selection-start-column="20" selection-end-line="316" selection-end-column="20" />
+        <state relative-caret-position="-1216">
+          <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/matchup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+        <state relative-caret-position="409">
+          <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#9;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural-net/neural-network.py">
+    <entry file="file://$PROJECT_DIR$/neural-net/getGameSchedule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+        <state relative-caret-position="426">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="97" selection-end-column="24" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="343" column="14" lean-forward="true" selection-start-line="343" selection-start-column="14" selection-end-line="343" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
