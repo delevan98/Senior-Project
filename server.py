@@ -70,7 +70,29 @@ def createJSON(games,predictions,scores):
 
         awayTeamPrediction = 1
         awayTeamPrediction ^= labels[x]
-        values = [games.iloc[x,2], games.iloc[x,0], int(labels[x]),"static/" +games.iloc[x,0]+"_Logo.png",np.int32(np.floor(scores[x*2])), games.iloc[x,1], int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", np.int32(np.floor(scores[2*x+1]))]
+        homeTeamPrediction = labels[x]
+        homeTeamName = convertName(games.iloc[x,0])
+        awayTeamName = convertName(games.iloc[x,1])
+        homeScorePrediction = np.int32(np.floor(scores[x*2]))
+        awayScorePrediction = np.int32(np.floor(scores[2*x+1]))
+
+        #Checks and balances
+        #Tie Predicted
+        if((homeScorePrediction == awayScorePrediction) and labels[x] == 1):
+            homeScorePrediction = homeScorePrediction + 1
+        #Tie Predicted
+        elif((homeScorePrediction == awayScorePrediction) and labels[x] == 0):
+            awayScorePrediction = awayScorePrediction + 1
+
+        elif((homeTeamPrediction == 1) and homeScorePrediction < awayScorePrediction):
+            homeTeamPrediction = 0
+            awayTeamPrediction = 1
+
+        elif((awayTeamPrediction == 1) and awayScorePrediction < homeScorePrediction):
+            awayTeamPrediction = 0
+            homeTeamPrediction = 1
+
+        values = [games.iloc[x,2], homeTeamName, int(homeTeamPrediction),"static/" +games.iloc[x,0]+"_Logo.png",int(homeScorePrediction), awayTeamName, int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", int(awayScorePrediction)]
         gameData = dict(zip(keys,values))
         gameDataFinal.append(gameData)
 
@@ -123,6 +145,43 @@ def modifyLinear(data,games):
 
     print(df.tail(10))
     return df
+
+def convertName(teamAbbr):
+    teamNames = {"ARI": "Diamondbacks",
+                 "ATL": "Braves",
+                 "BAL": "Orioles",
+                 "BOS": "Red Sox",
+                 "CHA": "White Sox",
+                 "CHN": "Cubs",
+                 "CIN": "Reds",
+                 "CLE": "Indians",
+                 "COL": "Rockies",
+                 "DET": "Tigers",
+                 "HOU": "Astros",
+                 "KCA": "Royals",
+                 "ANA": "Angels",
+                 "LAN": "Dodgers",
+                 "FLO": "Marlins",
+                 "MIL": "Brewers",
+                 "MIN": "Twins",
+                 "NYA": "Yankees",
+                 "NYN": "Mets",
+                 "OAK": "Athletics",
+                 "PHI": "Phillies",
+                 "PIT": "Pirates",
+                 "SDN": "Padres",
+                 "SFN": "Giants",
+                 "SEA": "Mariners",
+                 "SLN": "Cardinals",
+                 "TBA": "Rays",
+                 "TEX": "Rangers",
+                 "TOR": "Blue Jays",
+                 "WAS": "Nationals"
+
+    }
+
+    convertedName = teamNames[teamAbbr]
+    return convertedName
 if __name__ == '__main__':
     app.run()
 

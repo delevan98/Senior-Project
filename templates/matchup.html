@@ -35,28 +35,28 @@
 
             {% if prediction["HomePrediction"] == 1%}
 
-                <div>
+                <div style="margin:auto;">
                     <div class="teamAbbrWin">{{prediction["HomeTeamAbbr"]}}</div>
                     <div>
                         <img class="homeTeamMatchup" src="{{prediction['HomeLogoPath']}}" alt="Home Logo"/>
                     </div>
                 </div>
 
-                <div class="scoreWin">{{prediction["HomeScore"]}}</div>
+                <div class="scoreWinHome">{{prediction["HomeScore"]}}</div>
                 <div class="arrow-left" style="align-self: center;">
 
                 </div>
 
 
                 {% elif prediction["HomePrediction"] == 0%}
-                    <div>
+                    <div style="margin:auto;">
                         <div class="teamAbbrLoss">{{prediction["HomeTeamAbbr"]}}</div>
                         <div>
                             <img class="homeTeamMatchup" src="{{prediction['HomeLogoPath']}}" alt="Home Logo"/>
                         </div>
                     </div>
 
-                    <div class="scoreLoss">{{prediction["HomeScore"]}}</div>
+                    <div class="scoreLossHome">{{prediction["HomeScore"]}}</div>
                     <div class="arrow-right"style="align-self: center;">
 
                     </div>
@@ -64,8 +64,8 @@
             {% endif %}
 
             {% if prediction["AwayPrediction"] == 1%}
-                <div class="scoreWin">{{prediction["AwayScore"]}}</div>
-                <div>
+                <div class="scoreWinAway">{{prediction["AwayScore"]}}</div>
+                <div style="margin:auto;">
                     <div class="teamAbbrWin">{{prediction["AwayTeamAbbr"]}}</div>
                     <div>
                         <img class="awayTeamMatchup" src="{{prediction['AwayLogoPath']}}" alt="Away Logo"/>
@@ -76,8 +76,8 @@
 
 
                 {% elif prediction["AwayPrediction"] == 0%}
-                    <div class="scoreLoss">{{prediction["AwayScore"]}}</div>
-                    <div>
+                    <div class="scoreLossAway">{{prediction["AwayScore"]}}</div>
+                    <div style="margin:auto;">
                         <div class="teamAbbrLoss">{{prediction["AwayTeamAbbr"]}}</div>
                         <div>
                             <img class="awayTeamMatchup" src="{{prediction['AwayLogoPath']}}" alt="Away Logo"/>
