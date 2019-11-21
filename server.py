@@ -210,7 +210,7 @@ def convertAbbr(team):
                  "Orioles": "BAL",
                  "Red Sox": "BOS",
                  "White Sox": "CHA",
-                 "ubs": "CHN",
+                 "Cubs": "CHN",
                  "Reds": "CIN",
                  "Indians": "CLE",
                  "Rockies": "COL",
