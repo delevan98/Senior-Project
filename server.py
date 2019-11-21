@@ -23,6 +23,12 @@ def home():
     linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
     games = pd.read_csv('/app/games/games_3_28_2019.csv')
+
+    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    #games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
+
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
     winPredictions = logModel.predict(logDF)
@@ -40,12 +46,24 @@ def get_win():
     logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
     linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
+
+    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
     teamNames = []
     matchupData = []
 
+    for x in range(30):
+        abbreviation = teamAbbr[x]
+        teamNames.append(convertName(abbreviation))
+
     if request.method == "POST":
-        awayAbbr = request.form.get("Away Team")
-        homeAbbr = request.form.get("Home Team")
+        awayName = request.form.get("Away Team")
+        homeName = request.form.get("Home Team")
+
+        awayAbbr = convertAbbr(awayName)
+        homeAbbr = convertAbbr(homeName)
+
 
         matchup = pd.DataFrame(columns=['Home Team', 'Away Team', 'Game Time'])
         matchup.loc[1] = [homeAbbr, awayAbbr, "September 21, 2019"]
@@ -59,8 +77,7 @@ def get_win():
 
         matchupData = createJSON(matchup, winPredictions, scorePredictions)
 
-        for x in range(30):
-            teamNames[x] = convertName(teamAbbr[x])
+
 
 
     return render_template('matchup.html',teams = teamNames, predictions=matchupData)
@@ -186,6 +203,43 @@ def convertName(teamAbbr):
 
     convertedName = teamNames[teamAbbr]
     return convertedName
+
+def convertAbbr(team):
+    teamNames = {"Diamondbacks": "ARI",
+                 "Braves": "ATL",
+                 "Orioles": "BAL",
+                 "Red Sox": "BOS",
+                 "White Sox": "CHA",
+                 "ubs": "CHN",
+                 "Reds": "CIN",
+                 "Indians": "CLE",
+                 "Rockies": "COL",
+                 "Tigers": "DET",
+                 "Astros": "HOU",
+                 "Royals": "KCA",
+                 "Angels": "ANA",
+                 "Dodgers": "LAN",
+                 "Marlins": "FLO",
+                 "Brewers": "MIL",
+                 "Twins": "MIN",
+                 "Yankees": "NYA",
+                 "Mets": "NYN",
+                 "Athletics": "OAK",
+                 "Phillies": "PHI",
+                 "Pirates": "PIT",
+                 "Padres": "SDN",
+                 "Giants": "SFN",
+                 "Mariners": "SEA",
+                 "Cardinals": "SLN",
+                 "Rays": "TBA",
+                 "Rangers": "TEX",
+                 "Blue Jays": "TOR",
+                 "Nationals": "WAS"
+    }
+
+    convertedName = teamNames[team]
+    return convertedName
+
 if __name__ == '__main__':
     app.run()
 
