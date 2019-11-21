@@ -40,7 +40,7 @@ def get_win():
     logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
     linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
-
+    teamNames = []
     matchupData = []
 
     if request.method == "POST":
@@ -59,7 +59,11 @@ def get_win():
 
         matchupData = createJSON(matchup, winPredictions, scorePredictions)
 
-    return render_template('matchup.html',teams = teamAbbr, predictions=matchupData)
+        for x in range(30):
+            teamNames[x] = convertName(teamAbbr[x])
+
+
+    return render_template('matchup.html',teams = teamNames, predictions=matchupData)
 
 def createJSON(games,predictions,scores):
     gameDataFinal = []
