@@ -108,14 +108,6 @@ def main():
     bc.plot_roc_curve()
     plt.show()
 
-    #from sklearn.model_selection import RepeatedKFold
-    #kf = RepeatedKFold(n_splits=5, n_repeats=10, random_state=None)
-
-    #for train_index, test_index in kf.split(X):
-     #   print("Train:", train_index, "Validation:", test_index)
-     #   X_train, X_test = X[train_index], X[test_index]
-    #    y_train, y_test = y[train_index], y[test_index]
-
     forest = ExtraTreesClassifier(n_estimators=500)
     forest.fit(X_train, y_train)
     importances = forest.feature_importances_
