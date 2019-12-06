@@ -23,6 +23,12 @@ def home():
     linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
     games = pd.read_csv('/app/games/games_3_28_2019.csv')
+
+    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    #games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
+
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
     winPredictions = logModel.predict(logDF)
@@ -41,11 +47,23 @@ def get_win():
     linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
 
+    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    teamNames = []
     matchupData = []
 
+    for x in range(30):
+        abbreviation = teamAbbr[x]
+        teamNames.append(convertName(abbreviation))
+
     if request.method == "POST":
-        awayAbbr = request.form.get("Away Team")
-        homeAbbr = request.form.get("Home Team")
+        awayName = request.form.get("Away Team")
+        homeName = request.form.get("Home Team")
+
+        awayAbbr = convertAbbr(awayName)
+        homeAbbr = convertAbbr(homeName)
+
 
         matchup = pd.DataFrame(columns=['Home Team', 'Away Team', 'Game Time'])
         matchup.loc[1] = [homeAbbr, awayAbbr, "September 21, 2019"]
@@ -59,7 +77,10 @@ def get_win():
 
         matchupData = createJSON(matchup, winPredictions, scorePredictions)
 
-    return render_template('matchup.html',teams = teamAbbr, predictions=matchupData)
+
+
+
+    return render_template('matchup.html',teams = teamNames, predictions=matchupData)
 
 def createJSON(games,predictions,scores):
     gameDataFinal = []
@@ -70,7 +91,29 @@ def createJSON(games,predictions,scores):
 
         awayTeamPrediction = 1
         awayTeamPrediction ^= labels[x]
-        values = [games.iloc[x,2], games.iloc[x,0], int(labels[x]),"static/" +games.iloc[x,0]+"_Logo.png",np.int32(np.floor(scores[x*2])), games.iloc[x,1], int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", np.int32(np.floor(scores[2*x+1]))]
+        homeTeamPrediction = labels[x]
+        homeTeamName = convertName(games.iloc[x,0])
+        awayTeamName = convertName(games.iloc[x,1])
+        homeScorePrediction = np.int32(np.floor(scores[x*2]))
+        awayScorePrediction = np.int32(np.floor(scores[2*x+1]))
+
+        #Checks and balances
+        #Tie Predicted
+        if((homeScorePrediction == awayScorePrediction) and labels[x] == 1):
+            homeScorePrediction = homeScorePrediction + 1
+        #Tie Predicted
+        elif((homeScorePrediction == awayScorePrediction) and labels[x] == 0):
+            awayScorePrediction = awayScorePrediction + 1
+
+        elif((homeTeamPrediction == 1) and homeScorePrediction < awayScorePrediction):
+            homeTeamPrediction = 0
+            awayTeamPrediction = 1
+
+        elif((awayTeamPrediction == 1) and awayScorePrediction < homeScorePrediction):
+            awayTeamPrediction = 0
+            homeTeamPrediction = 1
+
+        values = [games.iloc[x,2], homeTeamName, int(homeTeamPrediction),"static/" +games.iloc[x,0]+"_Logo.png",int(homeScorePrediction), awayTeamName, int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", int(awayScorePrediction)]
         gameData = dict(zip(keys,values))
         gameDataFinal.append(gameData)
 
@@ -123,6 +166,80 @@ def modifyLinear(data,games):
 
     print(df.tail(10))
     return df
+
+def convertName(teamAbbr):
+    teamNames = {"ARI": "Diamondbacks",
+                 "ATL": "Braves",
+                 "BAL": "Orioles",
+                 "BOS": "Red Sox",
+                 "CHA": "White Sox",
+                 "CHN": "Cubs",
+                 "CIN": "Reds",
+                 "CLE": "Indians",
+                 "COL": "Rockies",
+                 "DET": "Tigers",
+                 "HOU": "Astros",
+                 "KCA": "Royals",
+                 "ANA": "Angels",
+                 "LAN": "Dodgers",
+                 "FLO": "Marlins",
+                 "MIL": "Brewers",
+                 "MIN": "Twins",
+                 "NYA": "Yankees",
+                 "NYN": "Mets",
+                 "OAK": "Athletics",
+                 "PHI": "Phillies",
+                 "PIT": "Pirates",
+                 "SDN": "Padres",
+                 "SFN": "Giants",
+                 "SEA": "Mariners",
+                 "SLN": "Cardinals",
+                 "TBA": "Rays",
+                 "TEX": "Rangers",
+                 "TOR": "Blue Jays",
+                 "WAS": "Nationals"
+
+    }
+
+    convertedName = teamNames[teamAbbr]
+    return convertedName
+
+def convertAbbr(team):
+    teamNames = {"Diamondbacks": "ARI",
+                 "Braves": "ATL",
+                 "Orioles": "BAL",
+                 "Red Sox": "BOS",
+                 "White Sox": "CHA",
+                 "Cubs": "CHN",
+                 "Reds": "CIN",
+                 "Indians": "CLE",
+                 "Rockies": "COL",
+                 "Tigers": "DET",
+                 "Astros": "HOU",
+                 "Royals": "KCA",
+                 "Angels": "ANA",
+                 "Dodgers": "LAN",
+                 "Marlins": "FLO",
+                 "Brewers": "MIL",
+                 "Twins": "MIN",
+                 "Yankees": "NYA",
+                 "Mets": "NYN",
+                 "Athletics": "OAK",
+                 "Phillies": "PHI",
+                 "Pirates": "PIT",
+                 "Padres": "SDN",
+                 "Giants": "SFN",
+                 "Mariners": "SEA",
+                 "Cardinals": "SLN",
+                 "Rays": "TBA",
+                 "Rangers": "TEX",
+                 "Blue Jays": "TOR",
+                 "Nationals": "WAS"
+    }
+
+    convertedName = teamNames[team]
+    return convertedName
+
 if __name__ == '__main__':
     app.run()
 

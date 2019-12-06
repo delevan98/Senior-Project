@@ -110,7 +110,7 @@ header h2{
   background: var(--primary-color) !important;
   box-shadow: 0px 0px 8px var(--font-color) !important;
   position: relative;
-  margin: 40px;
+  margin: 35px;
   border-style: solid;
   border-width: thin;
   columns: 2 100px;
@@ -120,7 +120,7 @@ header h2{
 .time {
   width: 365px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -146,9 +146,10 @@ header h2{
 }
 
 .awayTeam {
-  width: 74.11px;
+  /*width: 74.11px;*/
+  width: auto;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -185,7 +186,7 @@ header h2{
 .winPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -209,9 +210,10 @@ header h2{
 }
 
 .homeTeam {
-  width: 74.11px;
+  /*width: 74.11px;*/
+  width: auto;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -247,7 +249,7 @@ header h2{
 .lossPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -269,7 +271,7 @@ header h2{
 .homeScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -285,7 +287,7 @@ header h2{
 .awayScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Serif";
+  font-family: "High School USA Sans";
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -308,17 +310,27 @@ header h2{
 }
 
 .homeTeamMatchup {
-  width: 502px;
-  height: 502px;
+  /*max-width:502px;
+  height: auto;*/
+  width: 400px;
+  height: 400px;*/
+  /*max-width:100%;
+  height:auto;
+  max-height:100%;*/
 }
 
 .awayTeamMatchup {
-  width: 502px;
-  height: 502px;
+  /*max-width:502px;
+  height: auto;*/
+  width: 400px;
+  height: 400px;
+  /*max-width:100%;
+  height:auto;
+  max-height:100%;*/
 }
 
 .teamAbbrWin {
-  width: 110.02px;
+  width: auto;
   height: 82px;
   color: var(--font-color) !important;
   font-family: "High School USA Sans";
@@ -329,7 +341,7 @@ header h2{
 }
 
 .teamAbbrLoss {
-  width: 110.02px;
+  width: auto;
   height: 82px;
   color: #878686;
   font-family: "High School USA Sans";
@@ -339,7 +351,7 @@ header h2{
   margin: auto;
 }
 
-.scoreWin {
+.scoreWinHome {
   width: 96px;
   height: 180px;
   color: var(--font-color) !important;
@@ -348,11 +360,37 @@ header h2{
   font-weight: 400;
   line-height: 185px;
   align-self: center;
-  margin-left: 5%;
+  /*margin-left: 5%;*/
+  margin-right: 3%;
+}
+
+.scoreLossHome {
+  width: 96px;
+  height: 180px;
+  color: #878686;
+  font-family: "High School USA Sans";
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 185px;
+  align-self: center;
+  /*margin-left: 5%;*/
   margin-right: 5%;
 }
 
-.scoreLoss {
+.scoreWinAway {
+  width: 96px;
+  height: 180px;
+  color: var(--font-color) !important;
+  font-family: "High School USA Sans";
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 185px;
+  align-self: center;
+  margin-left: 3%;
+  /*margin-right: 5%;*/
+}
+
+.scoreLossAway {
   width: 96px;
   height: 180px;
   color: #878686;
@@ -362,7 +400,7 @@ header h2{
   line-height: 185px;
   align-self: center;
   margin-left: 5%;
-  margin-right: 5%;
+  /*margin-right: 5%;*/
 }
 
 .triangle {

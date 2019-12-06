@@ -4,6 +4,24 @@ author: "Mike Delevan"
 output: html_notebook
 ---
 
+```{r,warning=FALSE,message=FALSE}
+library(tidyverse)
+library(broom)
+library(caret)
+library(boot)
+library(tidyr)
+library(fastR2)
+library(ISLR)
+library(ggplot2)
+library(GGally)
+library(e1071)
+library(cutpointr)
+library(gridExtra)
+library(olsrr)
+library(ROCR)
+library(class)
+```
+
 ```{r}
 baseball_df <- read.csv(file="C:/Users/Mike Delevan/Documents/gl2010_18/combinedData.csv", header=TRUE, sep=",")
 
@@ -40,7 +58,11 @@ Between these three values the batting average and OBP are the most  positively 
 Let's create a multiple linear regression model using all variables in the dataset minus the team abbreviations (Categorical), league (categorical), RBI (Direct Correlation), OPS (Redundant Variable), and X (Row Numbers).
 
 ```{r}
-baseball_lm <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_df)
+train_ids <- createDataPartition(baseball_df$Score,p=0.80,list = F)
+baseball_train <- baseball_df[train_ids, ]
+baseball_test <- baseball_df[-train_ids, ]
+
+baseball_lm <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train)
 
 tidy(baseball_lm)
 ```
@@ -48,12 +70,12 @@ The output from tidy tells us a lot about the predictions for the slope values f
 
 To get an idea how well suited the linear model is for the data, let's plot the residuals vs fitted values:
 ```{r}
-augment(baseball_lm,data=baseball_df) %>% ggplot(aes(x=.fitted,y=.resid)) + geom_point()
+augment(baseball_lm,data=baseball_train) %>% ggplot(aes(x=.fitted,y=.resid)) + geom_point()
 ```
 
 
 ```{r}
-augment(baseball_lm,data=baseball_df) %>% 
+augment(baseball_lm,data=baseball_train) %>% 
   ggplot(aes(x=.fitted,y=.resid)) + 
   geom_point() + 
   geom_hline(yintercept = 0) + 
@@ -81,10 +103,6 @@ The results from backwards selection confirm our statements for the output from 
 First let's get the training error to get a benchmark RMSE value 
 
 ```{r}
-train_ids <- createDataPartition(baseball_df$Score,p=0.80,list = F)
-baseball_train <- baseball_df[train_ids, ]
-baseball_test <- baseball_df[-train_ids, ]
-
 baseball_fit_train <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train)
 baseball_fit_aug <- augment(baseball_fit_train,data=baseball_train)
 sqrt(sum(baseball_fit_aug$.resid^2)/length(baseball_fit_aug$.resid))
@@ -98,3 +116,13 @@ baseball_train_lm <- train(Score ~ . - teamAbbr - League - RBI - OPS - X,data=ba
 baseball_train_lm$results
 ```
 Using 10-fold cross validation with 5 repeats we find that the estimate for RMSE is 1.05.
+
+Now that we have the estimate for RMSE let's try to use the test data to get the actual test RMSE value. We will then compare it it with the cross-validated value.
+```{r}
+pred_vals <- predict(baseball_fit_train,baseball_test) 
+
+(test_rmse <- RMSE(pred_vals,baseball_test$Score))
+
+```
+
+The actual test RMSE was found to be a little higher than the cross validated RMSE value. This test RMSE value of 1.049761 means that in an actual application of the model it will be about 1 point off of the real score. The model works well for the given task but could be improved by using multiple models to get an consensus on an average prediction.
