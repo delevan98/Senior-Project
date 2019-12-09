@@ -16,15 +16,13 @@ knitr::opts_chunk$set(python.reticulate = FALSE)
 
 # **1 Abstract**
 
-  Major League Baseball, also known as America’s pastime, continues to be one of the most popular sports in the US and contains a faithful fanbase that closely pays attention to the statistics surrounding the game. This study intended to capture the interest in the statistics of baseball by utilizing openly avaiable data to train machine learning algorithms to predict the outcome of upcoming games. To achieve the goals of this study the data was first programmatically loaded, pre-processed, visualized, and feature engineered to transform it into acceptable input for the machine learning algorithms. Then, multiple machine learning algorithms were researched and tested to determine the architectures that performed the highest. The chosen models were then evaluated for their accuracy using mutliple methods.
-
-**Conclusions need to go here when I actually get conclusions**
+  Major League Baseball, also known as America's pastime, continues to be one of the most popular sports in the US and contains a faithful fanbase that closely pays attention to the statistics surrounding the game. This study intended to capture the interest in the statistics of baseball by utilizing openly avaiable data to train machine learning algorithms to predict the outcome of upcoming games. To achieve the goals of this study the data was first programmatically loaded, pre-processed, visualized, and feature engineered to transform it into acceptable input for the machine learning algorithms. Then, multiple machine learning algorithms were researched and tested to determine the architectures that performed the highest. The chosen models were then evaluated for their accuracy using mutliple methods, such as cross validation. The cross validation results showed that the models were predicted to perform well on the test data. When tested, the models were found to perform well and achieved great results when predicting games that there was already data for.
 
 # **2 Problem Description and Objectives**
 
   Major League Baseball is one of the oldest and most popular sports in the US and thus has a wide range of data available for statistical and predictive analysis. This data can be found in a wide range of places on the internet and can contain information on just about every occurrence in any baseball game right down to the pitch. Using this data, a lot can be predicted such as a pitchers next pitch, the probability that a team will win their next game, or even who is most likely to win the World Series. This project will pull this historical data from online databases and use it to predict the probability that a team will win their next game and the margin of victory. A recent attempt at predicting the winner of a certain matchup using machine learning and artificial neural networks achieved a precision of 58%**(Cite)**. Given the task, this precision is actually very good because it is hard to accurately predict the winner of a game due to the amount of variables. If data scientists were able to predict the winner of baseball games with 90% accuracy sports betting would most likely cease to exist. The goal of this project intends to utilize exploratory data analysis to achieve a greater than 50% precision on predicting the winner of upcoming baseball games. 
 
-  The objectives for the system will be to take historical and recent baseball game data and use it to predict the winner of upcoming baseball games and the game’s score. It will also need to be represented graphically so it is easy for a user to see the predictions for upcoming games. The data will need to be programmatically loaded, pre-processed, and analyzed to find patterns within the data for feature engineering. Various neural networks and machine learning algorithms will be researched, designed, trained and tested to find the best architecture that will best be able to predict the outcomes and scores of games. This may include trying several different models to see which one performs the best and mitigating any underperforming neural network architectures. The predictions from the chosen architecture will then be evaluated using multiple evaluation methods.
+  The objectives for the system will be to take historical and recent baseball game data and use it to predict the winner of upcoming baseball games and the game's score. It will also need to be represented graphically so it is easy for a user to see the predictions for upcoming games. The data will need to be programmatically loaded, pre-processed, and analyzed to find patterns within the data for feature engineering. Various neural networks and machine learning algorithms will be researched, designed, trained and tested to find the best architecture that will best be able to predict the outcomes and scores of games. This may include trying several different models to see which one performs the best and mitigating any underperforming neural network architectures. The predictions from the chosen architecture will then be evaluated using multiple evaluation methods.
 
 # **3  Data Description**
 
@@ -71,7 +69,7 @@ knitr::opts_chunk$set(python.reticulate = FALSE)
 102-103| Visitor starting pitcher identifier and name.
 104-105| Home starting pitcher identifier and name.
 106-132| Visitor starting players identifier, name and defensive position, listed in the order (1-9) they appeared in the batting order. 
-133-159| Home starting players’ identifier, name and defensive position listed in the order (1-9) they appeared in the batting order. 
+133-159| Home starting players identifier, name and defensive position listed in the order (1-9) they appeared in the batting order. 
 160| Additional information. 
 161| Acquisition information. 
 
@@ -97,7 +95,7 @@ All of these were done effortlessly and quickly using the Pandas package in Pyth
 
 Another interesting thing happened during this step, I got a warning saying 'TypeError: unsupported operand type(s) for -: 'int' and 'str'' which I thought was strange. After some investigation into my files I found that some lines had information that was offset by about 3 cells. Below is a snippet of what this offset looks like. What happens is that a game will get suspended and restarted on a different day. Retrosheet documents this restart by adding in 3 new indeces into their data, thus throwing off my Java parser.
 
-![Bad Row](C:\Users\Mike Delevan\Desktop\Wallpapers\Random\Error1)
+
 
 This small error had only a few occurences in the dataset, about 35 bad rows out of about 40,000. It was solved not programmatically but rather manually because doing it programmatically would haven taken up too much development time. After this issue was solved it was time to do feature subset selection.
 
@@ -371,7 +369,7 @@ Once the data was thouroughly pre-processed it was ready to be fed into a new lo
 ## **Linear Regression - Processed Data**
 This model was tasked with predicting the scores for upcoming games much like the previous two models. However in this case, the prediction is a number and therefore needs a regression model like linear regression. Again this model used the same 80/20 train/test split just like the previous two models. Because this model was written R, many different diagnostic plots and statistics can be calculated and interpreted for the model. One of these is the p-values for each variable in the training dataset. In this model, it was found that a large majority of the original variables, like doubles, had slope estimates close to 0 with a very small p-value, meaning that the estimates are statistically significant. Most of the feature engineered variables, such as OBP or batting average, were found to have large slope estimates and very small p-values, signifying that they are statistically significant.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
 library(broom)
 library(caret)
@@ -388,6 +386,8 @@ library(olsrr)
 library(ROCR)
 library(class)
 
+baseball_df <- read.csv(file="C:/Users/Mike Delevan/Documents/gl2010_18/combinedData.csv", header=TRUE, sep=",")
+
 train_ids <- createDataPartition(baseball_df$Score,p=0.80,list = F)
 baseball_train <- baseball_df[train_ids, ]
 baseball_test <- baseball_df[-train_ids, ]
@@ -402,10 +402,156 @@ augment(baseball_lm,data=baseball_train) %>%
 
 ```
 
-The next diagnostic plot that was created can be found in Figure 7, which is a residuals vs fitted plot. This plot uses the predictions made by the trained model and displays them with their respective residual values. In this case the residuals are the actual values minus the predicted values, or in mathematical terms $y - \hat{y}$. What we want from this graph is for it to be equally distributed across 0 on the x axis, or in other terms a slope of 0. If this is the case then the data is linear and can be well approximated by linear regression. In the figure we can see that the data has an oblong shape but looks generally well distributed across the x-axis. However there is some non-linearity around both ends which could signify that we need to omit some outliers from the dataset. However, the graph looks linear enough for us to say that our baseball data is well approximated by a linear model and thus can move onto more training. After training the model the root mean squared error, $\sqrt{ \frac{1}{N}\sum_{i=1}^{N} (y - \hat{y}})^2}$ was calculated for all the predictions made during training. We caluclated the RMSE value to be **1.045** which signifies that on average, the predictions made by our linear regression model are 1 point off of the actual score. In the subsequent sections, we will employ cross-validation to estimate a test error and check whether or not the model is overfitting the data.
+The next diagnostic plot that was created can be found in Figure 7, which is a residuals vs fitted plot. This plot uses the predictions made by the trained model and displays them with their respective residual values. In this case the residuals are the actual values minus the predicted values, or in mathematical terms $y - \hat{y}$. What we want from this graph is for it to be equally distributed across 0 on the x axis, or in other terms a slope of 0. If this is the case then the data is linear and can be well approximated by linear regression. In the figure we can see that the data has an oblong shape but looks generally well distributed across the x-axis. However there is some non-linearity around both ends which could signify that we need to omit some outliers from the dataset. However, the graph looks linear enough for us to say that our baseball data is well approximated by a linear model and thus can move onto more training. After training the model the root mean squared error, $\sqrt{ \frac{1}{N}\sum_{i=1}^{N} (y - \hat{y})^2}$ was calculated for all the predictions made during training. We caluclated the RMSE value to be **1.045** which signifies that on average, the predictions made by our linear regression model are 1 point off of the actual score. In the subsequent sections, we will employ cross-validation to estimate a test error and check whether or not the model is overfitting the data.
 
 # **6 Model Evaluation**
 
+To evaluate the models, 10-fold cross validation was used to assess the predictive abilities of both the regression model and the classification model. Doing 10-fold cross validation will allow us to estimate the test error without ever using the test data. This is done using the training data and multiple repeats to come up with a population error value which will become our estimated test error. For the regression model, 10-fold cross validation calculated an estimated test error of **1.047** which was slightly higher than the training error which is expected. For the classification model using processed data, the 10-fold cross validation calculated the test accuracy to be **98.76%** which, again, is slightly lower than the training accuracy. Once the estimate was calculated, we attempted to predict the winners and scores of games in the heldout test data and 15 actual games in the 2019 season. If the model performs like it did in the training and in the cross validation, the results for the test data should be promising.
+
 # **7 Results **
 
+## **Logistic Regression - Unprocessed Data**
+
+As seen before, the logistic regression model trained on unprocessed data produced poor results on the training data. When test data was used, the results were even worse than the training data. In this case the model obtained a **48%** accuracy rate on the unprocessed data. This was expected due to the poor performance on the training data. Figure 8 depicts the confusion matrix for the model using unprocessed data. The confusion matrix lets us know what kind of mistakes the model makes when it comes to the test data. Using the confusion matrix we can see that the model predicts more correct wins then losses but still has a very low accuracy rate.
+
+```{python, echo=FALSE}
+import pandas as pd
+import os
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import seaborn as sns
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import ExtraTreesClassifier
+import pickle
+
+data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\combinedDataBad.csv')
+
+data.drop(['Visting Team','Date', 'League', 'Home Team', 'League.1', 'Park ID'], axis=1, inplace=True)
+data.drop(['Winning Pitcher ID', 'Visting Team Stolen Bases', 'Saving Pitcher ID','Home Team Stolen Bases', 'Visting Team Caught Stealing',
+            'Home Team Caught Stealing', 'Visting Team G Double Play', 'Home Team G Double Play',
+            'Losing Pitcher ID', 'Saving Pitcher ID', 'Visiting Starter Pitcher ID', 'Home Starter Pitcher ID',
+            'Visting Team Awarded First on Interference', 'Home Team Awarded First on Interference',
+            'Visting Team Balks', 'Home Team Balks', 'Visting Team Put-outs', 'Home Team Put-outs',
+            'Visting Team Assists', 'Visting Team Passed Balls', 'Home Team Passed Balls',
+            'Visting Team Double Plays','Attendance', 'Home Team Double Plays',
+            'Home Team Triple Plays', 'Visting Team Triple Plays', 'Home Team Triples',
+            'Visiting Team Sac Hits', 'Home Team Int Walks', 'Visting Team Int Walks',
+            'Home Team Sac Hits', 'Length of Game in Outs', 'Visting Team Sac Flys', 'Home Team Sac Flys',
+            'Home Team Wild Pitches', 'Home Team HBP', 'Visting Team HBP', 'Visting Team Wild Pitches',
+            'Visiting Team Game Number', 'Home Team Game Number', 'wonPrev'], axis=1, inplace=True)
+
+try:
+    data.drop(['Unnamed: 0'], axis=1, inplace=True)
+    data.drop(['Unnamed: 75'], axis=1, inplace=True)
+
+except KeyError:
+    print("Column is not in the file!!!")
+
+data.dropna(axis=0)
+
+logmodel = LogisticRegression()
+
+X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
+                                                        data['Win'], test_size=0.20,
+                                                        random_state=101)
+
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
+logmodel.fit(X_train, y_train)
+
+predictions = logmodel.predict(X_test)
+
+from sklearn.metrics import confusion_matrix
+conf_matrix = confusion_matrix(y_test, predictions)
+
+#plt.figure(figsize=(10,10))
+ax = plt.subplot()
+sns.heatmap(pd.DataFrame(conf_matrix),annot=True, cmap="YlGnBu", fmt='d')
+ax.set_xlabel('Predicted labels')
+ax.set_ylabel('True labels')
+ax.set_title('Confusion Matrix')
+ax.xaxis.set_ticklabels(['Loss', 'Win'])
+ax.yaxis.set_ticklabels(['Loss', 'Win'])
+plt.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\notebooks\\unprocConfMatrix.png")
+
+```
+
+![Confusion matrix for the predictions made by the logistic regression model trained on unprocessed data](C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\notebooks\\unprocConfMatrix.png)
+
+## **Logistic Regression - Processed Data**
+After discovering the poor performance of the unprocessed data, the same procedure was done for the processed data wtih additional metrics. In this case the model was trained on the processed data and then the test processed data was fed in for predictions. For this model, the test accuracy that was calculated was **98.65%**. This value is slightly lower than both the training accuracy and the cross-validated estimate for the accuracy. Training on processed data increased our test error by about 50% which is an incredible boost in performance. Checking out the confusion matrix in Figure 9 shows us that the model predicts the same amount of correct losses and wins and rarely makes incorrect predictions. When the model was applied to the Opening Day 2019 games, the model achieved a **73%** accuracy on these real games. The sharp decrease in accuracy is explained by the use of 10-game averages to make predictions. Because we did not have the data for the games like we did in the training, we had to synthesize data to predict off of. This obviously caused a sharp decrease in performance but may be able to be salvaged by using different models in later iterations of the project.
+
+```{python, echo=FALSE}
+import pandas as pd
+import os
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import seaborn as sns
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import ExtraTreesClassifier
+import pickle
+
+data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\combinedData.csv')
+
+data.drop(['teamAbbr','League', 'Unnamed: 0'], axis=1, inplace=True)
+
+X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
+                                                        data['Win'], test_size=0.20,
+                                                        random_state=101)
+
+logmodel = LogisticRegression()
+X_train.drop(['Doubles'], axis=1, inplace=True)
+X_test.drop(['Doubles'], axis=1, inplace=True)
+
+from warnings import simplefilter
+simplefilter(action='ignore', category=FutureWarning)
+
+logmodel.fit(X_train, y_train)
+predictions = logmodel.predict(X_test)
+
+from sklearn.metrics import classification_report
+print(classification_report(y_test, predictions))
+from sklearn.metrics import confusion_matrix
+conf_matrix = confusion_matrix(y_test, predictions)
+print(conf_matrix)
+
+#plt.figure(figsize=(10,10))
+ax = plt.subplot()
+sns.heatmap(pd.DataFrame(conf_matrix),annot=True, cmap="YlGnBu", fmt='d')
+ax.set_xlabel('Predicted labels')
+ax.set_ylabel('True labels')
+ax.set_title('Confusion Matrix')
+ax.xaxis.set_ticklabels(['Loss', 'Win'])
+ax.yaxis.set_ticklabels(['Loss', 'Win'])
+plt.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\notebooks\\procConfMatrix.png")
+
+```
+
+![Confusion matrix for the predictions made by the logistic regression model trained on processed data](C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\notebooks\\procConfMatrix.png)
+
+To further assess the model an ROC curve was constructed and is found in Figure 10. This curve found in the graph is used to assess the threshold value for logistic regression. If the threshold value is optimal then the curve will follow the two dotted black lines found in the figure, almost a 90 degree angle. For our model, the ROC curve follows these dotted lines almost exactly showing that our threshold value is optimal for the given problem. Plotted for reference (red) is the ROC curve for a logistic regression model that just does random guesses (ie a 50% accuracy rate). Our model heavily outperforms a random guess logistic regression model and this confirms that the current threshold value of 0.5 is optimal.
+
+![ROC Curve generated for the logistic regression model trained on processed data](C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\notebooks\\ROCCurve.png)
+
+## **Linear Regression - Processed Data**
+
+We tested the linear regression model using the unseen processed test data. In this case, the actual test error was calculated to be **1.049** which was slightly higher than the training error and the cross validation estimated error. Again the model performs extremely well on all data is is, on average, only 1 point off of the actual score for a game. When the model was applied to Opening Day 2019 games, it achieved a **3.5** RMSE value which is a sharp drop from our previous results. Again this can be attributed to using 10-game averages to predict future games because we do not have data for future games yet. There is also a high variability in score due to the many factors at play in a baseball game that vary from team to team and game to game. Our model may not be able to perfectly predict the score because there just is not enough variables to encapsulate all of the factors attributed to score. However, when the scores were used to predict the winner of the game, a classification task, we achieved a **61%** accuracy score. Although this is slightly less than the accuracy achieved by the logistic regression model, it is still an interesting result that may need more research.
+
 # **8 Conclusion**
+
+The goal of this project was to utilize machine learning to predict the winner of a baseball game and the score for the game. These goals included exploratory data analysis, data visualization, model training, cross validation, and model testing. Overall the classification and regression models performed extremely well on training and testing data. When applied to actual games where we did not know the game statistics, the models performed worse than before but still had decent results.
+
+The exploratory data analysis and data visualization proved to be the key aspects of the project. Using exploratory data analysis, we were able to discover variables in the dataset that were not of any importance to the task at hand and thus removed them from the dataset. From that, many variables were found to be of importance to the predictive abilities of the models and thus kept in the dataset. From there new variables were created in the dataset out of already existing variables to help improve model performance. We even reduced the size of the dataset even more to try and increase performance yet again. These efforts proved worthwhile because model performance jumped from 48% to 98% after using the processed data.
+
+Both linear regression and logistic regression models were trained and tested to evaluate their predictive abilities when it comes to predicting the score and a winner of a game. Benchmark training performance was calculated along with the estimated test performance for each model. The models were then tested using heldout data to assess their predictive abilities on data that they have never seen before. In this case the models did slightly worse than what was predicted, but not enough to warrant more research. The regression model achieved a 1.049 RMSE value which indicates the model is 1 point off of the actual score. The classification model achieved a 98.65% accuracy on the test set, indicating a strong predictive performance. When the models were applied to actual 2019 Opening Day games, they achieved a 3.5 RMSE value and a 73% accuracy rate. This drop in performance is attributed to the use of 10 game averages to predict upcoming games. If the data for a future game was available before the game was played (impossible), then we could get the same performance.
+
+These kinds of promising results warrant further research in this area. This additional research would include new features and variables which are more powerful than the ones we already use. This would include pitcher data and powerful statistical prediction values which can predict the winner of a game using formulas. Another point of research would include the use of deep neural networks and AI to predict the winners of games and the score. These models are more flexible than linear and logistic regression, and may result in improved performance. It will be interesting to see how the project will evolve with the use of artificial intelligence and neural networks.
