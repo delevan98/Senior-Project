@@ -18,7 +18,6 @@ This project aims to predict the outcomes of baseball games using machine learni
 * Jupyter Notebook
 
 # Requirements
-I've had a lot of trouble in the past using requirements.txt files therefore one is not included. Usually when I cloned project from Github and tried to install the packages using the requirements.txt file, there were always errors or version incompatibilities. If there is a way to make a requirements.txt file without specifying the version number please let me know. For now here is a list of the library requirements:
 
 * pandas
 * os
