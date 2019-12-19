@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="scoreWin">{{prediction["HomeScore"]}}</div>
+            <div class="scoreWinHome">{{prediction["HomeScore"]}}</div>
             <div class="arrow-left" style="align-self: center;">
 
             </div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
 
-                <div class="scoreLoss">{{prediction["HomeScore"]}}</div>
+                <div class="scoreLossHome">{{prediction["HomeScore"]}}</div>
                 <div class="arrow-right"style="align-self: center;">
 
                 </div>
@@ -64,7 +64,7 @@
         {% endif %}
 
         {% if prediction["AwayPrediction"] == 1%}
-            <div class="scoreWin">{{prediction["AwayScore"]}}</div>
+            <div class="scoreWinAway">{{prediction["AwayScore"]}}</div>
             <div style="margin: auto;">
                 <div class="teamAbbrWin">{{prediction["AwayTeamAbbr"]}}</div>
                 <div>
@@ -76,7 +76,7 @@
 
 
             {% elif prediction["AwayPrediction"] == 0%}
-                <div class="scoreLoss">{{prediction["AwayScore"]}}</div>
+                <div class="scoreLossAway">{{prediction["AwayScore"]}}</div>
                 <div style="margin: auto;">
                     <div class="teamAbbrLoss">{{prediction["AwayTeamAbbr"]}}</div>
                     <div>
