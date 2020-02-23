@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
+    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="Data scraper generalized for all tables">
+      <change afterPath="$PROJECT_DIR$/data-scraper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-scraper/br-scraper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-scraper/br-scraper/batting.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/data-scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/data-scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/data-scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/br-scraper/data-scraper-working.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/data-cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/data-cleaning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/neural-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/neural-network.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +50,40 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper\br-scraper" />
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper\scraper" />
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper\data-scraper" />
+      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project\static\css" />
+      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project\static\css" />
-      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project\static" />
-      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
-      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project\neural-net\Stats and Correlations" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.data-scraper">
+  <component name="RunManager" selected="Python.data-scraper-working">
+    <configuration name="data-scraper-working" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Senior-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data-scraper/br-scraper" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/br-scraper/data-scraper-working.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="data-scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +97,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/data-scraper.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper\data-scraper\data-scraper-working.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get-daily-data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Senior-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data-scraper/br-scraper" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/br-scraper/get-daily-data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -103,6 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data-scraper-working" />
+        <item itemvalue="Python.get-daily-data" />
         <item itemvalue="Python.data-scraper" />
         <item itemvalue="Python.server" />
       </list>
@@ -122,7 +173,7 @@
       <workItem from="1581209245562" duration="1901000" />
       <workItem from="1581291426771" duration="3397000" />
       <workItem from="1581298534560" duration="15996000" />
-      <workItem from="1581647823028" duration="15271000" />
+      <workItem from="1581647823028" duration="26051000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -313,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581430451853</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Data scraper generalized for all tables">
+      <created>1581995183791</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1581995183791</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -374,51 +432,62 @@
     <MESSAGE value="Finish web development" />
     <MESSAGE value="Finish v1 web dev work" />
     <MESSAGE value="DS 201 Report" />
-    <option name="LAST_COMMIT_MESSAGE" value="DS 201 Report" />
+    <MESSAGE value="Data scraper generalized for all tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data scraper generalized for all tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1581383996771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1581383996771" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1581430451260">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1582495165901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581430451260" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582495165901" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1581298313479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581298313479" />
-    <state width="916" height="184" key="GridCell.Tab.0.bottom" timestamp="1581993518858">
+    <state width="1877" height="184" key="GridCell.Tab.0.bottom" timestamp="1582470854586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581993518858" />
-    <state width="916" height="184" key="GridCell.Tab.0.center" timestamp="1581993518858">
+    <state width="1877" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582470854586" />
+    <state width="1877" height="184" key="GridCell.Tab.0.center" timestamp="1582470854586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="184" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581993518858" />
-    <state width="916" height="184" key="GridCell.Tab.0.left" timestamp="1581993518858">
+    <state width="1877" height="184" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582470854586" />
+    <state width="1877" height="184" key="GridCell.Tab.0.left" timestamp="1582470854586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="184" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581993518858" />
-    <state width="916" height="184" key="GridCell.Tab.0.right" timestamp="1581993518858">
+    <state width="1877" height="184" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582470854586" />
+    <state width="1877" height="184" key="GridCell.Tab.0.right" timestamp="1582470854586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="184" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581993518858" />
+    <state width="1877" height="184" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582470854586" />
+    <state x="1229" y="231" key="RollbackChangesDialog" timestamp="1582335492283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1229" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582335492283" />
     <state x="959" y="20" width="916" height="713" key="SettingsEditor" timestamp="1581374893138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="959" y="20" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581374893138" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581430460310">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581995206741">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581430460310" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581995206741" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581209102657" />
+    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582251410048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582251410048" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Senior_Project$data_scraper.coverage" NAME="data-scraper Coverage Results" MODIFIED="1581993518853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$data_scraper.coverage" NAME="data-scraper Coverage Results" MODIFIED="1582335996618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$data_scraper_working.coverage" NAME="data-scraper-working Coverage Results" MODIFIED="1582470854567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$get_daily_data.coverage" NAME="get-daily-data Coverage Results" MODIFIED="1582336218022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
   </component>
 </project>
