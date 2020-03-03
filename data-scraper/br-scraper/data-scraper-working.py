@@ -3,12 +3,14 @@ import requests
 import time
 import pandas as pd
 import re
+import os
 
-teamAbbr = ["CHC","PHI","PIT", "CIN", "SLN", "BOS", "CHW",
+teamAbbr = ["CHC","PHI","PIT", "CIN", "STL", "BOS", "CHW",
 				"CLE", "DET", "NYY", "BAL", "LAD", "SFG", "MIN",
 			    "HOU", "NYM", "ATL", "OAK", "KCR", "SDP", "TEX",
-				"TOR", "SEA", "MIA", "COL", "ANA", "TBR", "ARI",
+				"TOR", "SEA", "MIA", "COL", "LAA", "TBR", "ARI",
 				"MIL", "WSN"]
+os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
 
 class BaseballScraper:
 
@@ -121,10 +123,74 @@ class BaseballScraper:
 ## Execute this nightly in a cron job with the previous day as the date##
 ## input and do the steps above                                        ##
 
+def convertAbbr(team):
+    teamNames = {"ARI": "ARI",
+                 "ATL": "ATL",
+                 "BAL": "BAL",
+                 "BOS": "BOS",
+                 "CHW": "CHA",
+                 "CHC": "CHN",
+                 "CIN": "CIN",
+                 "CLE": "CLE",
+                 "COL": "COL",
+                 "DET": "DET",
+                 "HOU": "HOU",
+                 "KCR": "KCA",
+                 "LAA": "ANA",
+                 "LAD": "LAN",
+                 "MIA": "FLO",
+                 "MIL": "MIL",
+                 "MIN": "MIN",
+                 "NYY": "NYA",
+                 "NYM": "NYN",
+                 "OAK": "OAK",
+                 "PHI": "PHI",
+                 "PIT": "PIT",
+                 "SDP": "SDN",
+                 "SFG": "SFN",
+                 "SEA": "SEA",
+                 "STL": "SLN",
+                 "TBR": "TBA",
+                 "TEX": "TEX",
+                 "TOR": "TOR",
+                 "WSN": "WAS"
+    }
+
+    convertedName = teamNames[team]
+    return convertedName
+
 scraper = BaseballScraper()
-battingData = scraper.parse(page_url="teams/tgl.cgi?team=CHC&t=b&year=2019")
-print(battingData)
-battingData.to_csv('batting.csv', index=False)
+
+for team in teamAbbr:
+    print(team)
+    for x in range(2010,2019):
+        print(x)
+
+        if((x == 2010 or x == 2011) and team == "MIA"):
+            teamName = "FLA"
+
+        else:
+            teamName = team
+
+        time.sleep(20)
+        pitchingData = scraper.parse(page_url="teams/tgl.cgi?team=" + teamName + "&t=p&year=" +str(x))
+
+        teamName = convertAbbr(team)
+        df = pd.read_csv(teamName + str(x) + ".csv")
+        dfWithPitching = pd.concat([df, pitchingData], axis=1)
+        dfWithPitching.to_csv(teamName + str(x) + ".csv", index=False)
+
+
+#pitchingData = scraper.parse(page_url="teams/tgl.cgi?team=CIN&t=p&year=2010")
+#pitchingData.to_csv("pitching.csv", index=False)
+
+#df = pd.read_csv("CIN2010.csv")
+
+#dfWithPitching = pd.concat([df, pitchingData], axis=1)
+
+#dfWithPitching.to_csv('CIN2010.csv', index=False)
+#print(battingData)
+#battingData.to_csv('batting.csv', index=False)
 
 #time.sleep(20)
 
@@ -137,4 +203,5 @@ battingData.to_csv('batting.csv', index=False)
 #battingDataDate = scraper.parse(page_url="teams/tgl.cgi?team=CHC&t=b&year=2019", date="2019-04-20")
 #print(battingDataDate)
 #battingDataDate.to_csv('singleRow.csv', index=False)
+
 
