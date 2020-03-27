@@ -6,6 +6,7 @@ from flask import request
 import pandas as pd
 from sklearn import preprocessing
 import json
+import tensorflow as tf
 
 
 teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
@@ -19,15 +20,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
-    games = pd.read_csv('/app/games/games_3_28_2019.csv')
+    #logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
+    #linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
+    #data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    #games = pd.read_csv('/app/games/games_3_28_2019.csv')
 
-    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
-    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-    #games = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
+    logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+    data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
 
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
@@ -35,7 +38,8 @@ def home():
     print(winPredictions)
 
     linearDF = modifyLinear(data,games)
-    linearDF.drop(['Win','Score','RBI', 'teamAbbr'], axis=1, inplace=True)
+    linearDF.drop(['teamAbbr', 'Win'], axis=1, inplace=True)
+    print(linearDF.dtypes)
     scorePredictions = linModel.predict(linearDF)
     print(np.round(scorePredictions))
     gameData=createJSON(games, winPredictions, scorePredictions)
@@ -72,7 +76,8 @@ def get_win():
         winPredictions = logModel.predict(logDF)
 
         linearDF = modifyLinear(data, matchup)
-        linearDF.drop(['Win', 'Score', 'RBI', 'teamAbbr'], axis=1, inplace=True)
+        linearDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
+        print(linearDF.dtypes)
         scorePredictions = linModel.predict(linearDF)
 
         matchupData = createJSON(matchup, winPredictions, scorePredictions)
@@ -121,47 +126,51 @@ def createJSON(games,predictions,scores):
 
 def modifyDF(data,games):
     df = pd.DataFrame(columns=['teamAbbr', 'Score', 'isHomeTeam', 'atBats', 'Hits',
-                                  'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
-                                  'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
-                                  'OPS', 'Win'])
+                                  'Doubles', 'Triples', 'homeRuns', 'Walks', 'Strikeouts', 'LOB',
+                                  'pitchersUsed', 'Errors', 'battingAverage', 'OBP', 'Slugging',
+                                  'OPS', 'Win', 'wonPrev', 'WHIP', 'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA',
+                                  'HAllowed', 'defensiveSO'])
 
     for (idx, row) in games.iterrows():
         for (idx2, row2) in data.iterrows():
             # Set is home team to 1 and wonPrev to its value as it is an average in this row
-            if(row2.loc['Team Abbr'] == row.loc['Home Team']):
-                df.loc[idx + 1] = [row2['Team Abbr'], row2['Score'], 1, row2['atBats'],
-                                 row2['Hits'], row2['Doubles'], row2['Triples'], row2['homeRuns'], row2['RBI'],
-                                 row2['Walks'], row2['Strikeouts'], row2['LOB'], row2['pitchersUsed'], row2['indER'],
-                                 row2['teamER'], row2['Errors'], row2['battingAverage'], row2['OBP'], row2['Slugging'],
-                                 row2['OPS'], row2['Win']]
+            if(row2.loc['TeamAbbr'] == row.loc['Home Team']):
+                df.loc[idx + 1] = [row2['TeamAbbr'], row2['Score'], 1, row2['atBats'],
+                                 row2['Hits'], row2['Doubles'], row2['Triples'], row2['homeRuns'],
+                                 row2['Walks'], row2['Strikeouts'], row2['LOB'], row2['pitchersUsed'],
+                                 row2['Errors'], row2['battingAverage'], row2['OBP'], row2['Slugging'],
+                                 row2['OPS'], row2['Win'], row2['wonPrev'], row2['WHIP'], row2['KPercent'],
+                                 row2['BBPercent'], row2['FIP'], row2['BABIP'], row2['ERA'], row2['HAllowed'],
+                                 row2['defensiveSO']]
 
     print(df.tail(10))
     return df
 
 def modifyLinear(data,games):
-    df = pd.DataFrame(columns=['teamAbbr', 'Score', 'isHomeTeam', 'atBats', 'Hits',
-                               'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
-                               'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
-                               'OPS', 'Win'])
+    df = pd.DataFrame(columns=['teamAbbr', 'isHomeTeam', 'atBats', 'Hits',
+                               'Doubles', 'Triples', 'homeRuns', 'Walks', 'Strikeouts', 'LOB',
+                               'Errors', 'battingAverage', 'OBP', 'Slugging',
+                               'OPS', 'Win', 'wonPrev', 'WHIP', 'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA',
+                               'HAllowed', 'defensiveSO'])
     x = 0
     for (idx, row) in games.iterrows():
         for (idx2,row2) in data.iterrows():
             # Set is home team to 1 and wonPrev to its value as it is an average in this row
-            if(row.loc['Home Team'] == row2.loc['Team Abbr']):
-                df.loc[x+1] = [row2['Team Abbr'], row2['Score'], 1, row2['atBats'],
-                                 row2['Hits'], row2['Doubles'], row2['Triples'], row2['homeRuns'], row2['RBI'],
-                                 row2['Walks'], row2['Strikeouts'], row2['LOB'], row2['pitchersUsed'], row2['indER'],
-                                 row2['teamER'], row2['Errors'], row2['battingAverage'], row2['OBP'], row2['Slugging'],
-                                 row2['OPS'], row2['Win']]
+            if(row.loc['Home Team'] == row2.loc['TeamAbbr']):
+                df.loc[x+1] = [row2['TeamAbbr'], np.float64(1), row2['atBats'],
+                                 row2['Hits'], row2['Doubles'], row2['Triples'], row2['homeRuns'],
+                                 row2['Walks'], row2['Strikeouts'], row2['LOB'], row2['Errors'], row2['battingAverage'], row2['OBP'], row2['Slugging'],
+                                 row2['OPS'], row2['Win'], row2['wonPrev'], row2['WHIP'], row2['KPercent'],
+                                 row2['BBPercent'], row2['FIP'], row2['BABIP'], row2['ERA'], row2['HAllowed'], row2['defensiveSO']]
                 x = x + 1
 
         for (idx3,row3) in data.iterrows():
-            if(row.loc['Away Team'] == row3.loc['Team Abbr']):
-                df.loc[x+1] = [row3['Team Abbr'], row3['Score'], 0, row3['atBats'],
-                                   row3['Hits'], row3['Doubles'], row3['Triples'], row3['homeRuns'], row3['RBI'],
-                                   row3['Walks'], row3['Strikeouts'], row3['LOB'], row3['pitchersUsed'], row3['indER'],
-                                   row3['teamER'], row3['Errors'], row3['battingAverage'], row3['OBP'],
-                                   row3['Slugging'], row3['OPS'], row3['Win']]
+            if(row.loc['Away Team'] == row3.loc['TeamAbbr']):
+                df.loc[x+1] = [row3['TeamAbbr'], np.float64(0), row3['atBats'],
+                                   row3['Hits'], row3['Doubles'], row3['Triples'], row3['homeRuns'],
+                                   row3['Walks'], row3['Strikeouts'], row3['LOB'], row3['Errors'], row3['battingAverage'], row3['OBP'],
+                                   row3['Slugging'], row3['OPS'], row3['Win'], row3['wonPrev'], row3['WHIP'], row3['KPercent'],
+                                   row3['BBPercent'], row3['FIP'], row3['BABIP'], row3['ERA'], row3['HAllowed'], row3['defensiveSO']]
                 x = x + 1
 
     print(df.tail(10))
