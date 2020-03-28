@@ -51,7 +51,6 @@ def get_win():
     linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
     data = pd.read_csv('/app/data-scraper/team_averages.csv')
 
-    #####
     #logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
     #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
     #linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
