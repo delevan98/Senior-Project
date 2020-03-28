@@ -3,7 +3,7 @@ import os
 
 
 def main():
-    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\baseData')
     #os.chdir('/data-scraper')
 
     teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
@@ -20,6 +20,7 @@ def main():
                                      'OPS', 'Win', 'wonPrev', 'WHIP', 'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA', 'HAllowed',
                                      'defensiveSO'])
     for x in range(30):
+        os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\baseData')
         all_filenames = []
         for y in range(2010,2019):
             all_filenames.append(teamAbbr[x] + str(y) + ".csv")
@@ -95,6 +96,7 @@ def main():
         print('In main')
         print(averages)
 
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
     averages.to_csv('team_averages.csv', index=False)
 
 
@@ -150,6 +152,7 @@ def fillTeamDF(data, final, teamAbbr):
                               row['Visiting Team OPS'], row['Win'], row['wonPrev'], row['WHIP'],  row['KPercent'],
                               row['BBPercent'], fip, row['BABIP'], row['earned_run_avg'], row['H'], row['SO']]
 
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
     final.to_csv(teamAbbr + '_Full.csv', index=False)
 
 def getFIPConstant(date):

@@ -1,0 +1,6 @@
+#Files that won't be compiled into a slug in Heroku
+
+/app/neural-net/stats-and-correlations
+/app/neural-net/data-cleaning.py
+/app/notebooks
+/app/baseData

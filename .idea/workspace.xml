@@ -2,7 +2,310 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.slugignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ANA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ARI_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/ATL_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BAL_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/BOS_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CHN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CIN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/CLE_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/COL_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/DET_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/FLO_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/HOU_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/KCA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/LAN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIL_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/MIN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/NYN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/OAK_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PHI_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/PIT_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SDN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SEA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SFN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/SLN_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TBA_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TEX_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/TOR_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2010.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2010.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2011.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2011.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2012.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2012.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2013.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2014.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2014.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2016.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS2018.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/WAS_All.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/pitching.csv" beforeDir="false" afterPath="$PROJECT_DIR$/baseData/pitching.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/data-cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/data-cleaning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +351,11 @@
       <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\baseData" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net\models" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\games" />
-      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper\br-scraper" />
     </key>
   </component>
   <component name="RunManager" selected="Python.server">
@@ -192,7 +495,7 @@
       <workItem from="1581298534560" duration="15996000" />
       <workItem from="1581647823028" duration="26796000" />
       <workItem from="1582758249184" duration="11655000" />
-      <workItem from="1585351945224" duration="3647000" />
+      <workItem from="1585351945224" duration="4866000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -425,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585354913489</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Remove non-essential files">
+      <created>1585355874125</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1585355874125</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -498,10 +808,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1581383996771" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585354912912">
+    <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585356369245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354912912" />
+    <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585357095687">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585357095687" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1581298313479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -530,10 +844,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="959" y="20" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581374893138" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585354922056">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585355882939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354922056" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585355882939" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
