@@ -2,172 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-001--1.45834.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-002--1.40810.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-004--1.37053.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-005--1.29841.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-006--1.28754.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-009--1.27348.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-012--1.27057.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-013--1.26109.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-018--1.24178.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-020--1.24084.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-023--1.24003.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-024--1.23213.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-028--1.22599.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-034--1.21688.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-036--1.20793.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-039--1.20388.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-043--1.19920.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-046--1.19011.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-048--1.18748.hdf5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-scraper/Weights-050--1.18234.hdf5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ANA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ANA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ARI_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ARI_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATL2013.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATL_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATL_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAL_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAL_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOS_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BOS_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLE_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLE_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COL_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COL_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DET_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DET_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FLO_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FLO_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HOU_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HOU_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KCA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KCA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MIL_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MIL_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MIN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MIN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NYA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NYA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NYN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NYN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAK_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAK_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHI_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHI_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PIT_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PIT_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SLN_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SLN_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TBA_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TBA_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEX_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEX_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TOR_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TOR_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WAS_All.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WAS_Full.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weights-050--1.17033.hdf5" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/Weights-050--1.17033.hdf5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combinedData.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-cleaning.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ANA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ANA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ARI_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ARI_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ATL2013.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ATL2013.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ATL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ATL_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BAL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BAL_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BOS_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BOS_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CIN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CIN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CLE_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CLE_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/COL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/COL_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/COL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/COL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/DET_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/DET_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/DET_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/DET_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/FLO_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/FLO_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/HOU_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/HOU_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/KCA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/KCA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/LAN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/LAN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIL_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIL_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/OAK_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/OAK_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PHI_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PHI_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PIT_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PIT_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SDN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SDN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SEA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SEA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SFN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SFN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SLN_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SLN_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TBA_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TBA_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TEX_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TEX_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TOR_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TOR_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/WAS_All.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/WAS_All.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/combinedData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/combinedData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/linmodel.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/linmodel.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/logmodel.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/logmodel.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/team_averages.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/team_averages.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamesSchedule.db" beforeDir="false" afterPath="$PROJECT_DIR$/games/gamesSchedule.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getGameSchedule.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linmodel.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logmodel.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/data-cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/data-cleaning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/getGameSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/getGameSchedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/neural-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/neural-network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/stats-and-correlations/Sample_Conf_Matrix.png" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stats-and-correlations/Sample_Conf_Matrix.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pitching.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/regModel" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/models/regModel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stat-models.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stat-models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team_averages.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +192,7 @@
       <workItem from="1581298534560" duration="15996000" />
       <workItem from="1581647823028" duration="26796000" />
       <workItem from="1582758249184" duration="11655000" />
-      <workItem from="1585351945224" duration="1646000" />
+      <workItem from="1585351945224" duration="1888000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -562,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582495247276</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add in pitcher data, tensorflow NN, and a game schedule DB">
+      <created>1585353717505</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1585353717505</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -625,37 +467,38 @@
     <MESSAGE value="DS 201 Report" />
     <MESSAGE value="Data scraper generalized for all tables" />
     <MESSAGE value="Data scraper date search ability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data scraper date search ability" />
+    <MESSAGE value="Add in pitcher data, tensorflow NN, and a game schedule DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add in pitcher data, tensorflow NN, and a game schedule DB" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1581383996771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1581383996771" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585353672187">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585353714251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585353672187" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585353714251" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1581298313479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581298313479" />
-    <state width="916" height="188" key="GridCell.Tab.0.bottom" timestamp="1585353584898">
+    <state width="916" height="188" key="GridCell.Tab.0.bottom" timestamp="1585354024303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585353584898" />
-    <state width="916" height="188" key="GridCell.Tab.0.center" timestamp="1585353584898">
+    <state width="916" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585354024303" />
+    <state width="916" height="188" key="GridCell.Tab.0.center" timestamp="1585354024303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585353584898" />
-    <state width="916" height="188" key="GridCell.Tab.0.left" timestamp="1585353584898">
+    <state width="916" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585354024303" />
+    <state width="916" height="188" key="GridCell.Tab.0.left" timestamp="1585354024303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585353584898" />
-    <state width="916" height="188" key="GridCell.Tab.0.right" timestamp="1585353584898">
+    <state width="916" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585354024303" />
+    <state width="916" height="188" key="GridCell.Tab.0.right" timestamp="1585354024303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585353584898" />
+    <state width="916" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585354024303" />
     <state x="1229" y="231" key="RollbackChangesDialog" timestamp="1582335492283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -664,10 +507,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="959" y="20" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581374893138" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582495255240">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585353727590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582495255240" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585353727590" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
