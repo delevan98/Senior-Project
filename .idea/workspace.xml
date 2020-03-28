@@ -3,222 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-scraper/combinedDataBad.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_31_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_10_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_3_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_4_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_31_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_5_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_6_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_31_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_7_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_31_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_8_9_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_10_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_11_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_12_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_13_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_14_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_15_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_16_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_17_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_18_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_19_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_1_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_20_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_21_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_22_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_23_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_24_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_25_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_26_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_27_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_28_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_29_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_2_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_30_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_3_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_4_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_5_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_6_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_7_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_8_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/games_9_9_2019.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -408,7 +192,7 @@
       <workItem from="1581298534560" duration="15996000" />
       <workItem from="1581647823028" duration="26796000" />
       <workItem from="1582758249184" duration="11655000" />
-      <workItem from="1585351945224" duration="2951000" />
+      <workItem from="1585351945224" duration="3647000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -634,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585354194833</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Remove non-essential files">
+      <created>1585354913489</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1585354913489</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -699,17 +490,18 @@
     <MESSAGE value="Data scraper date search ability" />
     <MESSAGE value="Add in pitcher data, tensorflow NN, and a game schedule DB" />
     <MESSAGE value="Directory change for Heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="Directory change for Heroku" />
+    <MESSAGE value="Remove non-essential files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove non-essential files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1581383996771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1581383996771" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585354194406">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585354912912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354194406" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354912912" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1581298313479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -738,10 +530,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="959" y="20" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581374893138" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585354200567">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585354922056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354200567" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585354922056" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
