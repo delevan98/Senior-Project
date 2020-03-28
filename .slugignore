@@ -1,7 +1,15 @@
 #Files that won't be compiled into a slug in Heroku
 
-/neural-net/stats-and-correlations
+/neural-net/stats-and-correlations/*.png
+/notebooks/*.ipynb
+/notebooks/*.Rmd
+/notebooks/*.html
+/notebooks/*.pdf
+/notebooks/*.tex
+/notebooks/*.bib
+/notebooks/*.jpg
+/notebooks/.ipynb_checkpoints
+/static/css/matchup.sketch
 /neural-net/data-cleaning.py
-/notebooks
-/baseData
+/baseData/*.csv
 /.ipynb_checkpoints

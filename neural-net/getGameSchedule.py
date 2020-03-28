@@ -12,9 +12,9 @@ def main():
 def getSchedule(year):
     x = 1
 
-    os.chdir('/games')
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games')
 
-    for month in range(4, 11):  # Month is always 1..12
+    for month in range(4, 11):
         for day in range(1, monthrange(year, month)[1] + 1):
 
             date = str(month)+"/"+str(day)+"/"+str(year)
@@ -54,8 +54,7 @@ def getSchedule(year):
                 if(homeActualScore > awayActualScore):
                     actualHomeWin = 1
 
-
-                insertVariblesIntoTable(game_id, homeTeamAbbr, awayTeamAbbr, date, gameTime, homeActualScore, awayActualScore, actualHomeWin)
+                insertVariblesIntoTable(game_id, homeTeamAbbr, awayTeamAbbr, game['game_date'], gameTime, homeActualScore, awayActualScore, actualHomeWin)
                 #schedule.loc[x] = [homeTeam,awayTeam,monthName+" "+str(day)+" @ "+str(hours)+":"+minutes+setting]
                 x = x+1
 
@@ -137,6 +136,14 @@ def convertMonth(month):
 
     newMonth = months[month]
     return newMonth
+
+
+def formatMonth(month):
+    if(month >= 1 and month < 10):
+        month = str(0) + str(month)
+
+    return month
+
 
 def getGamePKs(year):
     x = 1

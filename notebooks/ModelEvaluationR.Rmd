@@ -23,7 +23,7 @@ library(class)
 ```
 
 ```{r}
-baseball_df <- read.csv(file="C:/Users/Mike Delevan/Documents/gl2010_18/combinedData.csv", header=TRUE, sep=",")
+baseball_df <- read.csv(file="C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\combinedData.csv", header=TRUE, sep=",")
 
 head(baseball_df)
 
@@ -62,7 +62,7 @@ train_ids <- createDataPartition(baseball_df$Score,p=0.80,list = F)
 baseball_train <- baseball_df[train_ids, ]
 baseball_test <- baseball_df[-train_ids, ]
 
-baseball_lm <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train)
+baseball_lm <- lm(Score ~ . - teamAbbr - League - RBI - OPS,data=baseball_train)
 
 tidy(baseball_lm)
 ```
@@ -103,7 +103,7 @@ The results from backwards selection confirm our statements for the output from 
 First let's get the training error to get a benchmark RMSE value 
 
 ```{r}
-baseball_fit_train <- lm(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train)
+baseball_fit_train <- lm(Score ~ . - teamAbbr - League - RBI - OPS,data=baseball_train)
 baseball_fit_aug <- augment(baseball_fit_train,data=baseball_train)
 sqrt(sum(baseball_fit_aug$.resid^2)/length(baseball_fit_aug$.resid))
 ```
@@ -111,7 +111,7 @@ We get a 1.045 RMSe value which actually isn't too bad becauseit symbolizes that
 
 ```{r}
 tC <- trainControl(method="repeatedcv",number=10,repeats = 5)
-baseball_train_lm <- train(Score ~ . - teamAbbr - League - RBI - OPS - X,data=baseball_train,method="lm",trControl=tC)
+baseball_train_lm <- train(Score ~ . - teamAbbr - League - RBI - OPS,data=baseball_train,method="lm",trControl=tC)
 
 baseball_train_lm$results
 ```
