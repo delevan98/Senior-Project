@@ -1,208 +1,168 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-import numpy as np
-import math
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-import seaborn as sns
-from sklearn.feature_selection import RFE
-from sklearn.ensemble import ExtraTreesClassifier
 import pickle
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, LSTM, Embedding, Flatten, Activation
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import StratifiedKFold
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+from keras.callbacks import ModelCheckpoint
+from sklearn.metrics import mean_squared_error
 
 def main():
-    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
     teamAbbr = ["CHN", "PIT", "PHI", "CIN", "SLN", "BOS", "CHA",
                 "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
                 "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
                 "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
-                "MIL", "WAS"] #Re-insert CHN  and PIT after deleting bad row
+                "MIL", "WAS"]
 
-    data = pd.read_csv('combinedData.csv')
+    ## NEURAL NETWORK CLASSIFIER ##
 
-    data.drop(['Unnamed: 0'], axis=1,inplace=True)
+    #tf.debugging.set_log_device_placement(True)
 
-    data.drop(['League', 'teamAbbr', 'RBI'], axis=1,inplace=True)
+    with tf.device('/GPU:0'):
+        epochs = 1000
+        learning_rate = .01
+        data = pd.read_csv('combinedData.csv')
 
-    # Using Pearson Correlation
-    plt.subplots(figsize=(35,35))
-    cor = data.corr()
-    sns.heatmap(cor, cmap=plt.cm.Reds)
-    plt.gcf().subplots_adjust(top=.95,bottom=0.35)
-    plt.xticks(rotation=45,ha='right')
-    fig = plt.gcf()
-    plt.show()
-    fig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Correlation_Heatmap.png")
-    plt.close('all')
-
-    data.drop(['Win'], axis=1, inplace=True)
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
-                                                        data['Score'], test_size=0.20,
-                                                        random_state=101)
-    scoreModel = LinearRegression()
-    scoreModel.fit(X_train,y_train)
-
-    #linear_reg_score_train = scoreModel.score(X_train, y_train)
-    #print("Percentage correct on training set = ", 100. * linear_reg_score_train, "%")
-
-    predictions = scoreModel.predict(X_test)
-    print("Predictions: ", np.floor(predictions))
-
-    final_mse = mean_squared_error(y_test, np.floor(predictions))
-    final_rmse = np.sqrt(final_mse)
-
-    print(final_rmse)
-
-    pickle.dump(scoreModel, open('linmodel.pkl', 'wb'))
-
-
-    from sklearn.ensemble import RandomForestRegressor
-
-    data = pd.read_csv('combinedData.csv')
-
-    data.drop(['Unnamed: 0'], axis=1, inplace=True)
-
-    data.drop(['League', 'teamAbbr', 'RBI'], axis=1, inplace=True)
-
-    data.drop(['Win'], axis=1, inplace=True)
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
-                                                        data['Score'], test_size=0.20,
-                                                        random_state=101)
-
-    rf = RandomForestRegressor(n_estimators=1000, random_state=42)
-
-    rf.fit(X_train, y_train)
-
-    predictions = rf.predict(X_test)
-
-    final_mse = mean_squared_error(y_test, np.floor(predictions))
-    final_rmse = np.sqrt(final_mse)
-
-    print("Random Forest RMSE: " + str(final_rmse))
-
-    data = pd.read_csv('combinedData.csv')
-    data.drop(['League', 'teamAbbr', 'Unnamed: 0'], axis=1, inplace=True)
-    print(data.tail(5))
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
-                                                        data['Win'], test_size=0.20,
-                                                        random_state=93)
-
-    logmodel = LogisticRegression()
-    logmodel.fit(X_train, y_train)
-
-
-    logistic_reg_score_train = logmodel.score(X_train, y_train)
-    print("Percentage correct on training set = ", 100. * logistic_reg_score_train, "%")
-
-    predictions = logmodel.predict(X_test)
-
-    from sklearn.metrics import classification_report
-    print(classification_report(y_test, predictions))
-    from sklearn.metrics import confusion_matrix
-    conf_matrix = confusion_matrix(y_test, predictions)
-    print(conf_matrix)
-
-    #plt.figure(figsize=(10,10))
-    ax = plt.subplot()
-    sns.heatmap(pd.DataFrame(conf_matrix),annot=True, cmap="YlGnBu", fmt='d')
-    ax.set_xlabel('Predicted labels')
-    ax.set_ylabel('True labels')
-    ax.set_title('Confusion Matrix')
-    ax.xaxis.set_ticklabels(['Loss', 'Win'])
-    ax.yaxis.set_ticklabels(['Loss', 'Win'])
-    saveFig = plt.gcf()
-    plt.show()
-
-    saveFig.savefig("C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\neural-net\\stats-and-correlations\\Sample_Conf_Matrix.png")
-    plt.close()
-
-    from sklearn import metrics
-
-    y_pred = logmodel.predict_proba(X_test)[:,1]
-    from plot_metric.functions import BinaryClassification
-    # Visualisation with plot_metric
-    bc = BinaryClassification(y_test, y_pred, labels=["Win", "Loss"])
-
-    plt.figure(figsize=(5, 5))
-    bc.plot_roc_curve()
-    plt.show()
-
-    forest = ExtraTreesClassifier(n_estimators=500)
-    forest.fit(X_train, y_train)
-    importances = forest.feature_importances_
-    std = np.std([tree.feature_importances_ for tree in forest.estimators_], axis=0)
-    indices = np.argsort(importances)[::-1]
-    print("Feature Ranking:")
-
-    for f in range(X_train.shape[1]):
-        print("%d. %s (%f)" % (f + 1, X_train.columns[indices[f]], importances[indices[f]]))
-
-    if(saveModel(logmodel) == 1):
-        print("Successfully saved model!")
-
-    else:
-        print("Model failed to save!")
-
-
-    #----------------Neural net work------------------------
-
-    epochs = 1000
-    learning_rate = .01
-    data = pd.read_csv('combinedData.csv')
-    data.drop(['Unnamed: 0'], axis=1, inplace=True)
-
-    data.drop(['League', 'teamAbbr', 'RBI'], axis=1, inplace=True)
-
-    data.drop(['Win'], axis=1, inplace=True)
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
-                                                        data['Score'], test_size=0.20,
-                                                        random_state=101)
-
-
-    model = build_model(X_train)
-
-    model.summary()
-
-    class PrintDot(keras.callbacks.Callback):
-        def on_epoch_end(self, epoch, logs):
-            if epoch % 100 == 0: print('')
-            print('.', end='')
-
-    EPOCHS = 1000
-
-    history = model.fit(
-        X_train, y_train,
-        epochs=EPOCHS, validation_split=0.2, verbose=0,
-        callbacks=[PrintDot()])
-
-    plot_history(history)
+        #data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER', 'ERA', 'pitchersUsed'], axis=1, inplace=True)
+        data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'pitchersUsed', 'teamER', 'Win'], axis=1, inplace=True)
+        #data['wonPrev'].fillna(0, inplace=True)
+        data = data.astype(float)
 
 
 
+        X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+                                                            data['Score'], test_size=0.20,
+                                                            random_state=101)
+        """
+        import numpy as np
+        X_train = X_train.to_numpy()
+        X_train = X_train.reshape((X_train.shape[0], 1, X_train.shape[1]))
+        X_test = X_test.to_numpy()
+        X_test = X_test.reshape((X_test.shape[0], 1, X_test.shape[1]))
 
-def saveModel(model):
-    pickle.dump(model, open('logmodel.pkl', 'wb'))
-    return 1
+        def create_model(X_train):
+            model = Sequential()
+            print(X_train.shape[0:])
+            model.add(LSTM(12, input_shape=(X_train.shape[1],X_train.shape[2]), activation='relu', return_sequences=True))
+            model.add(Dropout(0.2))
 
-def build_model(X_train):
-  model = keras.Sequential([
-    layers.Dense(64, activation='relu', input_shape=[len(X_train.keys())]),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(1)
-  ])
+            model.add(LSTM(12, activation='relu'))
+            model.add(Dropout(0.1))
 
-  optimizer = tf.keras.optimizers.RMSprop(0.001)
+            model.add(Dense(12, activation='relu'))
+            model.add(Dropout(0.2))
 
-  model.compile(loss='mse',
-                optimizer=optimizer,
-                metrics=['accuracy','mse'])
-  return model
+            model.add(Dense(1, activation='sigmoid'))
+            return model
+
+        model = create_model(X_train)
+
+        opt = tf.keras.optimizers.Adam(lr=0.01, decay=1e-6)
+
+        model.compile(
+            loss='sparse_categorical_crossentropy',
+            optimizer=opt,
+            metrics=['accuracy'],
+        )
+
+        print(model.summary())
+
+        history = model.fit(X_train,
+                  y_train,
+                  epochs=10,
+                  validation_data=(X_test, y_test),verbose=1)
+
+        #print('Fitting model...')
+        #hist = model.fit(X_train, y_train, batch_size=64, nb_epoch=10, validation_split=0.1, verbose=1)
+
+        #score, acc = model.evaluate(X_test, y_test, batch_size=1)
+        #print('Test score:', score)
+        #print('Test accuracy:', acc
+
+        #model = build_model(X_train)
+
+        #model.summary()
+
+        #class PrintDot(keras.callbacks.Callback):
+        #    def on_epoch_end(self, epoch, logs):
+        #        if epoch % 100 == 0: print('')
+        #        print('.', end='')
+
+        #EPOCHS = 1000
+
+        #history = model.fit(
+        #    X_train, y_train,
+        #    epochs=EPOCHS, validation_split=0.2, verbose=0,
+        #    callbacks=[PrintDot()])
+        
+        """
+
+        def create_model(X_train):
+            model = Sequential()
+
+            # The Input Layer :
+            model.add(Dense(24, kernel_initializer='normal', input_dim=X_train.shape[1], activation='relu'))
+
+            # The Hidden Layers :
+            model.add(Dense(12, kernel_initializer='normal', activation='relu'))
+            model.add(Dense(12, kernel_initializer='normal', activation='relu'))
+            model.add(Dense(12, kernel_initializer='normal', activation='relu'))
+
+            # The Output Layer :
+            model.add(Dense(1, kernel_initializer='normal', activation='linear'))
+
+            return model
+
+        model = create_model(X_train)
+
+        # Compile the network :
+        model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_squared_error'])
+        model.summary()
+
+        checkpoint_name = 'Weights-{epoch:03d}--{val_loss:.5f}.hdf5'
+        checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
+        callbacks_list = [checkpoint]
+
+        history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2, callbacks=callbacks_list)
+
+        plot_history(history)
+
+        predictions = model.predict(X_test)
+        print("Predictions: ", str(np.floor(predictions)))
+
+        final_mse = mean_squared_error(y_test, predictions)
+        print(final_mse)
+        final_rmse = np.sqrt(final_mse)
+        print(final_rmse)
+
+        model.save('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+
+        ## --------------------------------------------------------------- ##
+
+#def build_model(X_train):
+#  model = keras.Sequential([
+#    layers.Dense(64, activation='relu', input_shape=[len(X_train.keys())]),
+#    layers.Dense(64, activation='relu'),
+#    layers.Dense(1)
+#  ])
+
+#  optimizer = tf.keras.optimizers.RMSprop(0.001)
+
+#  model.compile(loss='mse',
+#                optimizer=optimizer,
+#                metrics=['accuracy','mse'])
+#  return model
 
 def plot_history(history):
   print(history.history)
@@ -212,12 +172,14 @@ def plot_history(history):
 
   plt.figure()
   plt.xlabel('Epoch')
-  plt.ylabel('Mean Square Error [$Score^2$]')
+  plt.ylabel('Root Mean Square Error [$Score^2$]')
+
+  #plt.plot(hist['epoch'], hist['accuracy'], label='Train Accuracy')
   plt.plot(hist['epoch'], hist['mean_squared_error'],
            label='Train Error')
   plt.plot(hist['epoch'], hist['val_mean_squared_error'],
            label = 'Val Error')
-  plt.ylim([0,5])
+  plt.ylim([0,12])
   plt.legend()
   plt.show()
 

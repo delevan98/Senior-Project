@@ -3,16 +3,22 @@ import os
 
 
 def main():
-    #os.chdir('C:\\Users\\Mike Delevan\\git\\Senior-Project\\data-scraper')
-    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper')
-    extension = 'csv'
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
+    #os.chdir('/data-scraper')
 
     teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
 				"CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
 			    "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
 				"TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
 				"MIL", "WAS"]
+
     #Explore each variable in dataset
+
+    averages = pd.DataFrame(columns=['Score', 'isHomeTeam', 'atBats', 'Hits',
+                                     'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
+                                     'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
+                                     'OPS', 'Win', 'wonPrev', 'WHIP', 'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA', 'HAllowed',
+                                     'defensiveSO'])
     for x in range(30):
         all_filenames = []
         for y in range(2010,2019):
@@ -20,10 +26,10 @@ def main():
             #print(all_filenames)
 
         if(os.path.isfile(teamAbbr[x]+ '_All.csv')):
-            print("File has already been created!")
-        else:
-            combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
-            combined_csv.to_csv(teamAbbr[x]+ "_All.csv", index=False, encoding='utf-8-sig')
+            os.remove(teamAbbr[x] + "_All.csv")
+
+        combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
+        combined_csv.to_csv(teamAbbr[x]+ "_All.csv", index=False, encoding='utf-8-sig')
 
         try:
             data = pd.read_csv(teamAbbr[x] + '_All.csv')
@@ -69,6 +75,12 @@ def main():
         data.loc[(data['Visting Team'].shift() == teamAbbr[x]) & (data['Visiting Team Score'].shift() < data['Home Team Score'].shift()), 'wonPrev'] = 0
 
 
+        # Calculating advanced pitcher statistics
+        data['WHIP'] = (data['BB'] + data['H']) / data['IP']
+        data['KPercent'] = data['SO'] / data['batters_faced']
+        data['BBPercent'] = data['BB'] / data['batters_faced']
+        #data['FIP'] = (((13*data['HR'])+(3*(data['BB']+data['HBP']))-(2*data['SO']))/ data['IP']) + getFIPConstant(data['Date'])
+        data['BABIP'] = (data['H'] - data['HR']) / (data['AB'] - data['HR'] - data['SO'] + data['SF'])
 
         data.to_csv(teamAbbr[x] + '_All.csv', index=False)
 
@@ -76,33 +88,39 @@ def main():
         final = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'atBats', 'Hits',
                                       'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
                                       'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
-                                      'OPS', 'Win', 'wonPrev'])
+                                      'OPS', 'Win', 'wonPrev', 'WHIP',  'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA', 'HAllowed', 'defensiveSO'])
 
         fillTeamDF(data, final, teamAbbr[x])
-        print(final)
-        write_averages(final, teamAbbr[x])
+        averages = averages.append(write_averages(teamAbbr[x]))
+        print('In main')
+        print(averages)
 
-        #print(data['Win'].value_counts())
+    averages.to_csv('team_averages.csv', index=False)
 
-def write_averages(data, teamAbbr):
-    if (os.path.isfile('team_averages.csv')):
-        print("File has already been created!")
-    else:
-        avg_file = open("team_averages.csv", "w+")
-        data.drop(['League', 'teamAbbr'], axis=1, inplace=True)
-        data['Team Abbr'] = "Team Abbr"
-        data.iloc[:0].to_csv('team_averages.csv', index=False, header=True)
 
-    try:
-        data.drop(['League', 'teamAbbr'], axis=1, inplace=True)
-    except KeyError:
-        print("Columns have already been deleted!")
+def write_averages(teamAbbr):
 
-    data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors']] = data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors']].astype(int)
+    data = pd.read_csv(teamAbbr + '_Full.csv')
+
+    data.drop(['League', 'teamAbbr'], axis=1, inplace=True)
+
+    print(data.dtypes)
+
+    data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors', 'HAllowed', 'defensiveSO']] = data[['Score', 'isHomeTeam', 'atBats', 'Hits', 'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB', 'pitchersUsed', 'indER', 'teamER', 'Errors', 'HAllowed', 'defensiveSO']].astype(int)
+
     description = data.tail(10).describe()
     print(description)
     description['TeamAbbr'] = teamAbbr
-    description.iloc[1:2].to_csv('team_averages.csv', index=False, header=False,mode='a')
+    #averages.append(description.iloc[1:2])
+    #print('In function')
+    #print(averages)
+
+    lastGame = data.tail(1)
+    averageRow = description.iloc[1]
+
+    averageRow['wonPrev'] = lastGame.iloc[0]['wonPrev']
+
+    return averageRow
 
 #This function was created in DS 201 on October 4, 2019
 def fillTeamDF(data, final, teamAbbr):
@@ -110,11 +128,16 @@ def fillTeamDF(data, final, teamAbbr):
     for (idx, row) in data.iterrows():
         #print(row.loc['Home Team'])
         #print(idx)
+
+        constant = getFIPConstant(row['Date'])
+        fip = (((13 * row['HR']) + (3 * (row['BB'] + row['HBP'])) - (2 * row['SO'])) / row['IP']) + constant
+
         if(row.loc['Home Team'] == teamAbbr):
             final.loc[idx+1] = [teamAbbr, row['League.1'], row['Home Team Score'], 1, row['Home Team At-Bats'], row['Home Team Hits'], row['Home Team Doubles'],
                                row['Home Team Triples'], row['Home Team Home-Runs'], row['Home Team RBI'], row['Home Team Walks'], row['Home Team Strikeouts'],
                                row['Home Team LOB'], row['Home Team Pitchers Used'], row['Home Team Ind ER'], row['Home Team Team ER'], row['Home Team Errors'],
-                               row['Home Team Batting Average'], row['Home Team OBP'], row['Home Team Slugging'], row['Home Team OPS'], row['Win'], row['wonPrev'] ]
+                               row['Home Team Batting Average'], row['Home Team OBP'], row['Home Team Slugging'], row['Home Team OPS'], row['Win'], row['wonPrev'],
+                               row['WHIP'],  row['KPercent'], row['BBPercent'], fip, row['BABIP'], row['earned_run_avg'], row['H'], row['SO']]
 
         else:
             final.loc[idx+1] = [teamAbbr, row['League'], row['Visiting Team Score'], 0, row['Visting Team At-Bats'],
@@ -124,9 +147,28 @@ def fillTeamDF(data, final, teamAbbr):
                               row['Visiting Team LOB'], row['Visting Team Pitchers Used'], row['Visting Team Ind ER'],
                               row['Visting Team Team ER'], row['Visting Team Errors'],
                               row['Visiting Team Batting Average'], row['Visiting Team OBP'], row['Visiting Team Slugging'],
-                              row['Visiting Team OPS'], row['Win'], row['wonPrev']]
+                              row['Visiting Team OPS'], row['Win'], row['wonPrev'], row['WHIP'],  row['KPercent'],
+                              row['BBPercent'], fip, row['BABIP'], row['earned_run_avg'], row['H'], row['SO']]
 
     final.to_csv(teamAbbr + '_Full.csv', index=False)
+
+def getFIPConstant(date):
+    constants = {
+        "2010": 3.079,
+        "2011": 3.025,
+        "2012": 3.095,
+        "2013": 3.048,
+        "2014": 3.132,
+        "2015": 3.134,
+        "2016": 3.147,
+        "2017": 3.158,
+        "2018": 3.161,
+    }
+
+    gameDate = str(date)
+    fipConstant = constants[gameDate[0:4]]
+
+    return fipConstant
 
 
 if __name__ == "__main__":

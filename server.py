@@ -47,13 +47,14 @@ def home():
 
 @app.route('/predict',methods=['GET','POST'])
 def get_win():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    #logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
+    #data = pd.read_csv('/app/data-scraper/team_averages.csv')
 
-    #logModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
-    #linModel = pickle.load(open('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    #data = pd.read_csv('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+    data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
     teamNames = []
     matchupData = []
 
@@ -81,9 +82,6 @@ def get_win():
         scorePredictions = linModel.predict(linearDF)
 
         matchupData = createJSON(matchup, winPredictions, scorePredictions)
-
-
-
 
     return render_template('matchup.html',teams = teamNames, predictions=matchupData)
 

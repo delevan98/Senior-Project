@@ -3,24 +3,17 @@ import pandas as pd
 from collections import namedtuple
 from calendar import monthrange
 import os
+import sqlite3
 
 def main():
     year = 2019
-    #getSchedule(year)
-    #getGamePKs(year)
-    teamAbbr = ["CHN", "PHI", "PIT", "CIN", "SLN", "BOS", "CHA",
-                "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
-                "HOU", "NYN", "ATL", "OAK", "KCA", "SDN", "TEX",
-                "TOR", "SEA", "FLO", "COL", "ANA", "TBA", "ARI",
-                "MIL", "WAS"]
-    # Explore each variable in dataset
-    for x in range(30):
-        getGameData(teamAbbr[x],year)
-
+    getSchedule(2019)
 
 def getSchedule(year):
     x = 1
-    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games')
+
+    os.chdir('/games')
+
     for month in range(4, 11):  # Month is always 1..12
         for day in range(1, monthrange(year, month)[1] + 1):
 
@@ -28,16 +21,17 @@ def getSchedule(year):
             games = mlb.schedule(start_date=date, end_date=date)
             print(games)
 
-            schedule = pd.DataFrame(columns=['Home Team','Away Team', 'Game Time'])
+            schedule = pd.DataFrame(columns=['Home Team','Away Team', 'Game Date', 'Game Time'])
             for game in games:
-                homeTeam = game['home_name']
-                if(homeTeam == "American League All-Stars" or homeTeam == "National League All-Stars"):
-                    homeTeam = "New York Yankees"
-                homeTeam = convertName(homeTeam)
-                awayTeam = game['away_name']
-                if (awayTeam == "American League All-Stars" or awayTeam == "National League All-Stars"):
-                    awayTeam = "New York Mets"
-                awayTeam = convertName(awayTeam)
+                game_id = game['game_id']
+                homeTeamAbbr = game['home_name']
+                if(homeTeamAbbr == "American League All-Stars" or homeTeamAbbr == "National League All-Stars"):
+                    homeTeamAbbr = "New York Yankees"
+                homeTeamAbbr = convertName(homeTeamAbbr)
+                awayTeamAbbr = game['away_name']
+                if (awayTeamAbbr == "American League All-Stars" or awayTeamAbbr == "National League All-Stars"):
+                    awayTeamAbbr = "New York Mets"
+                awayTeamAbbr = convertName(awayTeamAbbr)
                 time = game['game_datetime']
 
                 scheduledTime = time[time.find('T')+1:time.find('Z')]
@@ -49,16 +43,45 @@ def getSchedule(year):
                 minutes = splitTime[1]
                 setting = "PM"
                 if hours > 12:
-                    #setting = "PM"
                     hours -= 12
 
                 monthName = convertMonth(month)
-                schedule.loc[x] = [homeTeam,awayTeam,monthName+" "+str(day)+" @ "+str(hours)+":"+minutes+setting]
+                gameTime = str(hours) + ":"+ minutes + setting
+                homeActualScore = game['home_score']
+                awayActualScore = game['away_score']
+
+                actualHomeWin = 0
+                if(homeActualScore > awayActualScore):
+                    actualHomeWin = 1
+
+
+                insertVariblesIntoTable(game_id, homeTeamAbbr, awayTeamAbbr, date, gameTime, homeActualScore, awayActualScore, actualHomeWin)
+                #schedule.loc[x] = [homeTeam,awayTeam,monthName+" "+str(day)+" @ "+str(hours)+":"+minutes+setting]
                 x = x+1
 
-            schedule.to_csv('games_'+str(month)+'_'+str(day)+'_'+str(year)+'.csv', index=False)
+            #schedule.to_csv('games_'+str(month)+'_'+str(day)+'_'+str(year)+'.csv', index=False)
             x=1
 
+def insertVariblesIntoTable(game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin):
+    try:
+        connection = sqlite3.connect("gamesSchedule.db")
+        crsr = connection.cursor()
+        sql_command = "INSERT INTO games (game_id, homeTeam, awayTeam, gameDate, gameTime," \
+                      "  actualHomeScore, actualAwayScore, actualHomeWin, predHomeScore, predAwayScore, " \
+                      " isHomeWinPredicted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, NULL);"
+
+        recordTuple = (game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin)
+        crsr.execute(sql_command, recordTuple)
+        connection.commit()
+        print("Record inserted successfully into games table")
+
+    except connection.Error as error:
+        print("Failed to insert into MySQL table {}".format(error))
+
+    finally:
+        crsr.close()
+        connection.close()
+        print("SQLite connection is closed")
 
 def convertName(team):
     teamNames = {"Arizona Diamondbacks": "ARI",
