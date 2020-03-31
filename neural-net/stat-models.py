@@ -7,11 +7,43 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import sklearn.metrics
 import seaborn as sns
 from sklearn.feature_selection import RFE
 from sklearn.ensemble import ExtraTreesClassifier
 import pickle
 import tensorflow as tf
+import xgboost as xgb
+from xgboost.sklearn import XGBRegressor
+from sklearn.model_selection import GridSearchCV
+
+
+def modelfit(alg, X_train, y_train, X_test, y_test, useTrainCV=True, cv_folds=5, early_stopping_rounds=50):
+
+    if useTrainCV:
+        xgb_param = alg.get_xgb_params()
+        xgtrain = xgb.DMatrix(X_train, label=y_train)
+        cvresult = xgb.cv(xgb_param, xgtrain, num_boost_round=alg.get_params()['n_estimators'], nfold=cv_folds,
+                          metrics='rmse', early_stopping_rounds=early_stopping_rounds)
+        alg.set_params(n_estimators=cvresult.shape[0])
+
+    # Fit the algorithm on the data
+    alg.fit(X_train, y_train, eval_metric='auc')
+
+    # Predict training set:
+    dtrain_predictions = alg.predict(X_train)
+
+    # Print model report:
+    print("\nModel Report")
+    final_mse = mean_squared_error(y_train, np.round(dtrain_predictions))
+    final_rmse = np.sqrt(final_mse)
+    print("Train RMSE : %.4g" % final_rmse)
+
+    dtest_predictions = alg.predict(X_test)
+    final_mse = mean_squared_error(y_test, np.round(dtest_predictions))
+    final_rmse = np.sqrt(final_mse)
+    print("Test RMSE : %.4g" % final_rmse)
+
 
 
 def main():
@@ -70,32 +102,71 @@ def main():
 
     from sklearn.ensemble import RandomForestRegressor
 
-    data = pd.read_csv('combinedData.csv')
+    #data = pd.read_csv('combinedData.csv')
 
     #data.drop(['Unnamed: 0'], axis=1, inplace=True)
 
-    data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER', 'pitchersUsed'], axis=1, inplace=True)
+    #data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER', 'pitchersUsed'], axis=1, inplace=True)
     #data['wonPrev'].fillna(0, inplace=True)
 
-    data.drop(['Win'], axis=1, inplace=True)
-    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
-                                                        data['Score'], test_size=0.20,
-                                                        random_state=101)
+    #data.drop(['Win'], axis=1, inplace=True)
+    #X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+     #                                                   data['Score'], test_size=0.20,
+     #                                                   random_state=101)
 
-    rf = RandomForestRegressor(n_estimators=1000, random_state=42)
+    #rf = RandomForestRegressor(n_estimators=1000, random_state=42)
 
-    rf.fit(X_train, y_train)
+    #rf.fit(X_train, y_train)
 
-    predictions = rf.predict(X_test)
+    #predictions = rf.predict(X_test)
 
-    final_mse = mean_squared_error(y_test, np.floor(predictions))
-    final_rmse = np.sqrt(final_mse)
+    #final_mse = mean_squared_error(y_test, np.floor(predictions))
+    #final_rmse = np.sqrt(final_mse)
 
-    print("Random Forest RMSE: " + str(final_rmse))
+    #print("Random Forest RMSE: " + str(final_rmse))
 
     #pickle.dump(rf, open('linmodel.pkl', 'wb'))
 
     ## --------------------------------------------------- ##
+
+    ## XGBoost Regression
+
+    data = pd.read_csv('combinedData.csv')
+    data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER', 'pitchersUsed'], axis=1, inplace=True)
+
+    data.drop(['Win'], axis=1, inplace=True)
+
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
+                                                        data['Score'], test_size=0.20,
+                                                        random_state=101)
+
+
+    xgb1 = XGBRegressor(learning_rate=.1, n_estimators=1000, max_depth=5, min_child_weight=3,
+                       gamma=0, reg_lambda=.5, subsample=.8, colsample_bytree=.8, objective='reg:squarederror',
+                       scale_pos_weight=1, seed=27)
+
+    modelfit(xgb1, X_train, y_train, X_test, y_test)
+
+    #param_test1 = {
+        #'max_depth': [6,7,8],
+        #'min_child_weight': [2,3,4],
+        #'gamma': [i / 10.0 for i in range(0, 5)],
+        #'subsample': [i / 100.0 for i in range(65, 80, 5)],
+        #'colsample_bytree': [i / 100.0 for i in range(95, 105,5 )],
+        #'reg_alpha': [0, .001, 1e-5, 1e-2, .05, 0.1, 1, 100]
+    #}
+
+    #gsearch1 = GridSearchCV(estimator=XGBRegressor(learning_rate=0.1, n_estimators=140, max_depth=5,
+    #                                                min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
+    #                                                objective='reg:squarederror', nthread=4, scale_pos_weight=1,
+    #                                                seed=27),
+    #                        param_grid=param_test1, scoring='neg_root_mean_squared_error', n_jobs=4, cv=5)
+
+    #gsearch1.fit(X_train, y_train)
+    #index = np.where(gsearch1.cv_results_['rank_test_score'] == np.amin(gsearch1.cv_results_['rank_test_score']))
+    #print(gsearch1.cv_results_['params'][int(index[0])])
+
+    ## ----------------------------------------- ##
 
     ## LOGISTIC REGRESSION ##
 

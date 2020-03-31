@@ -36,7 +36,6 @@ def main():
 
         #data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER', 'ERA', 'pitchersUsed'], axis=1, inplace=True)
         data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'pitchersUsed', 'teamER', 'Win'], axis=1, inplace=True)
-        #data['wonPrev'].fillna(0, inplace=True)
         data = data.astype(float)
 
 
@@ -44,69 +43,6 @@ def main():
         X_train, X_test, y_train, y_test = train_test_split(data.drop('Score', axis=1),
                                                             data['Score'], test_size=0.20,
                                                             random_state=101)
-        """
-        import numpy as np
-        X_train = X_train.to_numpy()
-        X_train = X_train.reshape((X_train.shape[0], 1, X_train.shape[1]))
-        X_test = X_test.to_numpy()
-        X_test = X_test.reshape((X_test.shape[0], 1, X_test.shape[1]))
-
-        def create_model(X_train):
-            model = Sequential()
-            print(X_train.shape[0:])
-            model.add(LSTM(12, input_shape=(X_train.shape[1],X_train.shape[2]), activation='relu', return_sequences=True))
-            model.add(Dropout(0.2))
-
-            model.add(LSTM(12, activation='relu'))
-            model.add(Dropout(0.1))
-
-            model.add(Dense(12, activation='relu'))
-            model.add(Dropout(0.2))
-
-            model.add(Dense(1, activation='sigmoid'))
-            return model
-
-        model = create_model(X_train)
-
-        opt = tf.keras.optimizers.Adam(lr=0.01, decay=1e-6)
-
-        model.compile(
-            loss='sparse_categorical_crossentropy',
-            optimizer=opt,
-            metrics=['accuracy'],
-        )
-
-        print(model.summary())
-
-        history = model.fit(X_train,
-                  y_train,
-                  epochs=10,
-                  validation_data=(X_test, y_test),verbose=1)
-
-        #print('Fitting model...')
-        #hist = model.fit(X_train, y_train, batch_size=64, nb_epoch=10, validation_split=0.1, verbose=1)
-
-        #score, acc = model.evaluate(X_test, y_test, batch_size=1)
-        #print('Test score:', score)
-        #print('Test accuracy:', acc
-
-        #model = build_model(X_train)
-
-        #model.summary()
-
-        #class PrintDot(keras.callbacks.Callback):
-        #    def on_epoch_end(self, epoch, logs):
-        #        if epoch % 100 == 0: print('')
-        #        print('.', end='')
-
-        #EPOCHS = 1000
-
-        #history = model.fit(
-        #    X_train, y_train,
-        #    epochs=EPOCHS, validation_split=0.2, verbose=0,
-        #    callbacks=[PrintDot()])
-        
-        """
 
         def create_model(X_train):
             model = Sequential()

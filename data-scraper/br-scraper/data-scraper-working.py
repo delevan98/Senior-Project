@@ -159,26 +159,126 @@ def convertAbbr(team):
     convertedName = teamNames[team]
     return convertedName
 
-scraper = BaseballScraper()
+def getLeague(team):
+    teamNames = {"ARI": "NL",
+                 "ATL": "NL",
+                 "BAL": "AL",
+                 "BOS": "AL",
+                 "CHW": "AL",
+                 "CHC": "NL",
+                 "CIN": "NL",
+                 "CLE": "AL",
+                 "COL": "NL",
+                 "DET": "AL",
+                 "HOU": "AL",
+                 "KCR": "AL",
+                 "LAA": "AL",
+                 "LAD": "NL",
+                 "MIA": "NL",
+                 "MIL": "NL",
+                 "MIN": "AL",
+                 "NYY": "AL",
+                 "NYM": "NL",
+                 "OAK": "AL",
+                 "PHI": "NL",
+                 "PIT": "NL",
+                 "SDP": "NL",
+                 "SFG": "NL",
+                 "SEA": "AL",
+                 "STL": "NL",
+                 "TBR": "AL",
+                 "TEX": "AL",
+                 "TOR": "AL",
+                 "WSN": "NL"
+    }
 
-for team in teamAbbr:
-    print(team)
-    for x in range(2010,2019):
-        print(x)
+    convertedName = teamNames[team]
+    return convertedName
 
-        if((x == 2010 or x == 2011) and team == "MIA"):
-            teamName = "FLA"
+def cleanData(cleanDF, teamAbbr):
+    # This DF has columns with duplicated column names
+    # read_csv will rename these columns automatically
+
+    dirtyDF = pd.read_csv('singleRow.csv')
+    print(dirtyDF)
+    league = getLeague(teamAbbr)
+    teamAbbr = convertAbbr(teamAbbr)
+
+    fullDF = pd.read_csv(teamAbbr+'_Full.csv')
+
+    lastRow = fullDF.tail(1)
+
+    wonPrev = lastRow.iloc[0]['Win']
+
+    for (idx, row) in dirtyDF.iterrows():
+        if(row['team_homeORaway'] == '@'):
+            isHomeTeam = 0
+        else:
+            isHomeTeam = 1
+
+        result = str(row['game_result'])
+        if (result[0] == 'W'):
+            homeWinOrNo = 1
 
         else:
-            teamName = team
+            homeWinOrNo = 0
 
-        time.sleep(20)
-        pitchingData = scraper.parse(page_url="teams/tgl.cgi?team=" + teamName + "&t=p&year=" +str(x))
+        whip = (row['BB.1'] + row['H.1']) / row['IP']
+        KPercent = row['SO.1'] / row['batters_faced']
 
-        teamName = convertAbbr(team)
-        df = pd.read_csv(teamName + str(x) + ".csv")
-        dfWithPitching = pd.concat([df, pitchingData], axis=1)
-        dfWithPitching.to_csv(teamName + str(x) + ".csv", index=False)
+        BBPercent = row['BB.1'] / row['batters_faced']
+        fip = (((13*row['HR.1'])+(3*(row['BB.1']+row['HBP.1']))-(2*row['SO.1']))/ row['IP']) + 3.214
+        BABIP = (row['H.1'] - row['HR.1']) / (row['AB.1'] - row['HR.1'] - row['SO.1'] + row['SF.1'])
+        # fullDF = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'atBats', 'Hits',
+        #                               'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
+        #                               'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
+        #                               'OPS', 'Win', 'wonPrev', 'WHIP', 'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA',
+        #                               'HAllowed', 'defensiveSO'])
+        cleanDF.loc[idx+1] = [teamAbbr, league, row['R'], isHomeTeam, row['AB'], row['H'], row['2B'],
+                              row['3B'], row['HR'], row['RBI'], row['BB'], row['SO'], row['LOB'],
+                              row['pitchers_number'], row['ER'], row['ER'], row['UER'], row['batting_avg'],
+                              row['onbase_perc'], row['slugging_perc'], row['onbase_plus_slugging'],
+                              homeWinOrNo, wonPrev, whip, KPercent, BBPercent, fip, BABIP, row['earned_run_avg'],
+                              row['H.1'], row['SO.1']]
+    return cleanDF
+
+
+############## Put this in a function, where date is the only parameter
+scraper = BaseballScraper()
+
+# Later: Get year through the date string passed in
+year = 2019
+
+for team in teamAbbr:
+
+    teamName = team
+
+    battingData = scraper.parse(page_url="teams/tgl.cgi?team=" + teamName + "&t=b&year=" + str(year), date='2019-03-28')
+    time.sleep(10)
+    pitchingData = scraper.parse(page_url="teams/tgl.cgi?team=" + teamName + "&t=p&year=" + str(year), date='2019-03-28')
+
+    dfWithPitching = pd.concat([battingData, pitchingData], axis=1)
+    print(dfWithPitching.dtypes)
+    dfWithPitching.drop(['date_game', 'PA'], axis=1, inplace=True)
+    dfWithPitching.to_csv("singleRow.csv", index=False)
+    #dfWithPitching.to_csv(teamName + str(x) + ".csv", index=False)
+
+    fullDF = pd.DataFrame(columns=['teamAbbr', 'League', 'Score', 'isHomeTeam', 'atBats', 'Hits',
+                                   'Doubles', 'Triples', 'homeRuns', 'RBI', 'Walks', 'Strikeouts', 'LOB',
+                                   'pitchersUsed', 'indER', 'teamER', 'Errors', 'battingAverage', 'OBP', 'Slugging',
+                                   'OPS', 'Win', 'wonPrev', 'WHIP',  'KPercent', 'BBPercent', 'FIP', 'BABIP', 'ERA',
+                                   'HAllowed', 'defensiveSO'])
+
+    fullDF = cleanData(fullDF, teamName)
+
+    fullDF.to_csv('cleanedRow.csv', index=False)
+
+    # append to _Full.csv file and move to next team.
+#########################################
+    exit(0)
+
+
+
 
 
 #pitchingData = scraper.parse(page_url="teams/tgl.cgi?team=CIN&t=p&year=2010")

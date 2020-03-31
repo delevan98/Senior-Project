@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="66">
+          <list size="67">
             <item index="0" class="java.lang.String" itemvalue="Werkzeug" />
             <item index="1" class="java.lang.String" itemvalue="Pillow" />
             <item index="2" class="java.lang.String" itemvalue="beautifulsoup4" />
@@ -71,6 +71,7 @@
             <item index="63" class="java.lang.String" itemvalue="mock" />
             <item index="64" class="java.lang.String" itemvalue="Keras" />
             <item index="65" class="java.lang.String" itemvalue="pytz" />
+            <item index="66" class="java.lang.String" itemvalue="tensorflow-cpu" />
           </list>
         </value>
       </option>
