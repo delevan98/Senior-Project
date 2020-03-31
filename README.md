@@ -47,9 +47,11 @@ After succesfully running data-cleaning.py the next file is ready to be executed
 - [x] Dark mode
 - [x] Prediction checks and balances
 - [x] Convert abbreviations to real names
+- [x] Create web-scraper/ Get 2019 data
+- [x] Incorporate pitching data
 - [ ] Calculate additional sabermetrics
 - [ ] Allow users to see predictions for multiple days
-- [ ] Create web-scraper/ Get 2019 data
 - [ ] Get and save predictions for 2019 games
 - [ ] Better models (ex. Neural networks)
-- [ ] Incorporate pitching data
+- [ ] Make web-app more lively
+- [ ] Predict 2019 season using all models to see which one is the cream of the crop
