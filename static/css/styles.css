@@ -1,6 +1,6 @@
 .navbar-brand,
 .navbar-nav a{
-  font-family: 'SF Sports Night';
+  font-family: 'Russo One', sans-serif;
   font-size: 1.75em !important;
   /*padding-top:5px !important;*/
   /*padding-bottom:5px !important;*/
@@ -67,7 +67,7 @@ body{
 }
 
 header{
-	background:#03A9F4;#35434a;
+	background:#35434a;
 	border-bottom:#448AFF 3px solid;
 	height:120px;
 	width:100%;
@@ -120,7 +120,7 @@ header h2{
 .time {
   width: 365px;
   height: 23px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -149,7 +149,7 @@ header h2{
   /*width: 74.11px;*/
   width: auto;
   height: 23px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -186,7 +186,7 @@ header h2{
 .winPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -213,7 +213,7 @@ header h2{
   /*width: 74.11px;*/
   width: auto;
   height: 23px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -249,7 +249,7 @@ header h2{
 .lossPrediction {
   width: 87.93px;
   height: 23px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
@@ -271,7 +271,7 @@ header h2{
 .homeScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -287,7 +287,7 @@ header h2{
 .awayScorePrediction {
   width: 76.64px;
   height: 46px;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 46px;
@@ -313,7 +313,7 @@ header h2{
   /*max-width:502px;
   height: auto;*/
   width: 400px;
-  height: 400px;*/
+  height: 400px;
   /*max-width:100%;
   height:auto;
   max-height:100%;*/
@@ -333,7 +333,7 @@ header h2{
   width: auto;
   height: 82px;
   color: var(--font-color) !important;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 64px;
   font-weight: 400;
   line-height: 82px;
@@ -344,7 +344,7 @@ header h2{
   width: auto;
   height: 82px;
   color: #878686;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 64px;
   font-weight: 400;
   line-height: 82px;
@@ -355,7 +355,7 @@ header h2{
   width: 96px;
   height: 180px;
   color: var(--font-color) !important;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 144px;
   font-weight: 400;
   line-height: 185px;
@@ -368,7 +368,7 @@ header h2{
   width: 96px;
   height: 180px;
   color: #878686;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 144px;
   font-weight: 400;
   line-height: 185px;
@@ -381,7 +381,7 @@ header h2{
   width: 96px;
   height: 180px;
   color: var(--font-color) !important;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 144px;
   font-weight: 400;
   line-height: 185px;
@@ -394,7 +394,7 @@ header h2{
   width: 96px;
   height: 180px;
   color: #878686;
-  font-family: "High School USA Sans";
+  font-family: 'Russo One', sans-serif;
   font-size: 144px;
   font-weight: 400;
   line-height: 185px;
@@ -450,14 +450,14 @@ header h2{
 
 /*slider switch css */
 .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-
+    display: flex;
+    align-items: center;
+}
   em {
     margin-left: 10px;
     font-size: 1rem;
   }
-}
+
 .theme-switch {
   display: inline-block;
   height: 34px;

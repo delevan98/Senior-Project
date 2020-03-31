@@ -20,17 +20,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
+    #logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
     #linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
-    games = pd.read_csv('/app/games/games_3_28_2019.csv')
+    #linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
+    #data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    #games = pd.read_csv('/app/games/games_3_28_2019.csv')
 
-    #logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
     #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    #linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
-    #data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-    #games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
+    linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+    data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
 
     logDF = modifyDF(data,games)
     logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
@@ -47,14 +47,14 @@ def home():
 
 @app.route('/predict',methods=['GET','POST'])
 def get_win():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    #logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
+    #linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
+    #data = pd.read_csv('/app/data-scraper/team_averages.csv')
 
-    #logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
     #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    #linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
-    #data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+    data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
     teamNames = []
     matchupData = []
 

@@ -141,30 +141,31 @@ def main():
                                                         random_state=101)
 
 
-    xgb1 = XGBRegressor(learning_rate=.1, n_estimators=1000, max_depth=5, min_child_weight=3,
-                       gamma=0, reg_lambda=.5, subsample=.8, colsample_bytree=.8, objective='reg:squarederror',
-                       scale_pos_weight=1, seed=27)
+    #xgb1 = XGBRegressor(learning_rate=.1, n_estimators=1000, max_depth=5, min_child_weight=3,
+     #                  gamma=0, reg_lambda=.5, subsample=.8, colsample_bytree=.8, objective='reg:squarederror',
+     #                  scale_pos_weight=1, seed=27)
 
-    modelfit(xgb1, X_train, y_train, X_test, y_test)
+    #modelfit(xgb1, X_train, y_train, X_test, y_test)
 
-    #param_test1 = {
-        #'max_depth': [6,7,8],
-        #'min_child_weight': [2,3,4],
-        #'gamma': [i / 10.0 for i in range(0, 5)],
-        #'subsample': [i / 100.0 for i in range(65, 80, 5)],
-        #'colsample_bytree': [i / 100.0 for i in range(95, 105,5 )],
-        #'reg_alpha': [0, .001, 1e-5, 1e-2, .05, 0.1, 1, 100]
-    #}
+    param_test1 = {
+        'max_depth': range(3,10,1),
+        'min_child_weight': range(1, 13, 1),
+        'gamma': [i / 10.0 for i in range(0, 5)],
+        'subsample': [i / 10.0 for i in range(0, 6)],
+        'colsample_bytree': [i / 10.0 for i in range(0, 6)],
+        'reg_alpha': [0, .001, 1e-5, 1e-2, .05, 0.1, 1, 100]
+    }
 
-    #gsearch1 = GridSearchCV(estimator=XGBRegressor(learning_rate=0.1, n_estimators=140, max_depth=5,
-    #                                                min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
-    #                                                objective='reg:squarederror', nthread=4, scale_pos_weight=1,
-    #                                                seed=27),
-    #                        param_grid=param_test1, scoring='neg_root_mean_squared_error', n_jobs=4, cv=5)
+    gsearch1 = GridSearchCV(estimator=XGBRegressor(learning_rate=0.1, n_estimators=140, max_depth=5,
+                                                    min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
+                                                    objective='reg:squarederror', nthread=4, scale_pos_weight=1,
+                                                    seed=27),
+                            param_grid=param_test1, scoring='neg_root_mean_squared_error', n_jobs=4, cv=5)
 
-    #gsearch1.fit(X_train, y_train)
-    #index = np.where(gsearch1.cv_results_['rank_test_score'] == np.amin(gsearch1.cv_results_['rank_test_score']))
-    #print(gsearch1.cv_results_['params'][int(index[0])])
+    gsearch1.fit(X_train, y_train)
+    print(gsearch1.cv_results_)
+    index = np.where(gsearch1.cv_results_['rank_test_score'] == np.amin(gsearch1.cv_results_['rank_test_score']))
+    print(gsearch1.cv_results_['params'][int(index[0])])
 
     ## ----------------------------------------- ##
 
