@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
+    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="Add custom fonts that everyone can see to web app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural-net/stat-models.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stat-models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/matchup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/matchup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +208,7 @@
       <workItem from="1581647823028" duration="26796000" />
       <workItem from="1582758249184" duration="11655000" />
       <workItem from="1585351945224" duration="54822000" />
-      <workItem from="1585623111789" duration="3371000" />
+      <workItem from="1585623111789" duration="3841000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -537,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585619712079</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Add custom fonts that everyone can see to web app">
+      <created>1585656001943</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1585656001943</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -581,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial data cleaning and prep for ANN" />
     <MESSAGE value="Beginning web development" />
     <MESSAGE value="Printing out predictions in web app + logos" />
     <MESSAGE value="Data Pre-Processing + Web Development" />
@@ -606,7 +607,8 @@
     <MESSAGE value="Add slugignore and move non-essential files" />
     <MESSAGE value="Attempting to reduce heroku slug size" />
     <MESSAGE value="Add tuned XGBoost model for use in final model testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tuned XGBoost model for use in final model testing" />
+    <MESSAGE value="Add custom fonts that everyone can see to web app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add custom fonts that everyone can see to web app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1581383996771">
@@ -621,30 +623,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585619711239">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585656039822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585619711239" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656039822" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585406081173" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1585655978597">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1585656026931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585655978597" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1585655978597">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1585656026931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585655978597" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1585655978597">
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1585656026931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585655978597" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1585655978597">
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1585656026931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585655978597" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
     <state width="914" height="347" key="GridCell.Tab.1.bottom" timestamp="1585620808343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -673,10 +675,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585407034440" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585619718466">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585656046587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585619718466" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656046587" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
