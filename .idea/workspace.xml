@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.get-predictions">
+  <component name="RunManager" selected="Python.server">
     <configuration name="get-predictions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,8 +183,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.get-predictions" />
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.get-predictions" />
         <item itemvalue="Python.neuralNetwork" />
         <item itemvalue="Python.statModels (1)" />
         <item itemvalue="Python.statModels" />
@@ -213,14 +214,7 @@
       <workItem from="1586297915133" duration="71301000" />
       <workItem from="1586624652360" duration="27550000" />
       <workItem from="1586692820956" duration="42821000" />
-      <workItem from="1586910700648" duration="8307000" />
-    </task>
-    <task id="LOCAL-00003" summary="Beginning web development">
-      <created>1568715468217</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1568715468217</updated>
+      <workItem from="1586910700648" duration="8781000" />
     </task>
     <task id="LOCAL-00004" summary="Printing out predictions in web app + logos">
       <created>1568941123866</created>
@@ -558,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586983500717</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Add in ability to select dates along with multiple predictions">
+      <created>1586984314666</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1586984314666</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -642,30 +643,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586983500299">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586984314245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983500299" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586984314245" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585406081173" />
-    <state width="914" height="185" key="GridCell.Tab.0.bottom" timestamp="1586910681388">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1586984805828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
-    <state width="914" height="185" key="GridCell.Tab.0.center" timestamp="1586910681388">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586984805828" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1586984805828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="185" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
-    <state width="914" height="185" key="GridCell.Tab.0.left" timestamp="1586910681388">
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586984805828" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1586984805828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="185" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
-    <state width="914" height="185" key="GridCell.Tab.0.right" timestamp="1586910681388">
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586984805828" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1586984805828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="185" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586984805828" />
     <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -694,10 +695,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586983397821" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586983508263">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586984319277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983508263" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586984319277" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -719,7 +720,7 @@
     <SUITE FILE_PATH="coverage/Senior_Project$fuckthishomework.coverage" NAME="fuckthishomework Coverage Results" MODIFIED="1585929686050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$neural_network.coverage" NAME="neural-network Coverage Results" MODIFIED="1585353317744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$getGameSchedule.coverage" NAME="getGameSchedule Coverage Results" MODIFIED="1586370541354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$server.coverage" NAME="server Coverage Results" MODIFIED="1586830150742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Project$server.coverage" NAME="server Coverage Results" MODIFIED="1586984805821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Project$get_daily_data.coverage" NAME="get-daily-data Coverage Results" MODIFIED="1582336218022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
     <SUITE FILE_PATH="coverage/Senior_Project$statModels__1_.coverage" NAME="statModels (1) Coverage Results" MODIFIED="1586822583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_cleaning.coverage" NAME="data-cleaning Coverage Results" MODIFIED="1585352590087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
