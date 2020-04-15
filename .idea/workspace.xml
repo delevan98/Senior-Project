@@ -213,14 +213,7 @@
       <workItem from="1586297915133" duration="71301000" />
       <workItem from="1586624652360" duration="27550000" />
       <workItem from="1586692820956" duration="42821000" />
-      <workItem from="1586910700648" duration="7504000" />
-    </task>
-    <task id="LOCAL-00002" summary="Initial data cleaning and prep for ANN">
-      <created>1567974565357</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1567974565357</updated>
+      <workItem from="1586910700648" duration="8307000" />
     </task>
     <task id="LOCAL-00003" summary="Beginning web development">
       <created>1568715468217</created>
@@ -558,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586983077121</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Add in ability to select dates along with multiple predictions">
+      <created>1586983500717</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1586983500717</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -642,10 +642,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586983076688">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586983500299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983076688" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983500299" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -694,10 +694,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586983397821" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586983081219">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586983508263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983081219" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983508263" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
