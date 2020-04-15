@@ -22,8 +22,9 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 @app.route('/')
 @app.route("/<day>")
 def home(day=str(date.today())):
+    print(day)
     date_object = datetime.strptime(day, '%Y-%m-%d')
-    print(str(date_object))
+
     next_date_object = date_object + timedelta(days=1)
     next_day = datetime.strftime(next_date_object, '%Y-%m-%d')
     previous_date_object = date_object - timedelta(days=1)
@@ -52,8 +53,8 @@ def home(day=str(date.today())):
     # scorePredictions = linModel.predict(linearDF)
     # print(np.round(scorePredictions))
 
-    #connection = sqlite3.connect("app/games/gamesSchedule.db")
-    connection = sqlite3.connect("C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\gamesSchedule.db")
+    connection = sqlite3.connect("app/games/gamesSchedule.db")
+    #connection = sqlite3.connect("C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\gamesSchedule.db")
     crsr = connection.cursor()
     print(day)
 
