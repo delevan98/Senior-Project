@@ -7,7 +7,6 @@ import tensorflow as tf
 from datetime import date, timedelta, datetime
 import sqlite3
 import re
-import getGameSchedule
 
 
 teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
@@ -146,7 +145,7 @@ def createJSON(games, predictions=None, scores=None, mode=1):
             regex = re.compile('\d+-(\d{2})-\d+')
             month = regex.findall(gameDate)
 
-            month = getGameSchedule.convertMonth(int(month[0].lstrip('0')))
+            month = convertMonth(int(month[0].lstrip('0')))
 
             regex = re.compile('\d+-\d{2}-(\d{2})')
             day = regex.findall(gameDate)
@@ -327,6 +326,23 @@ def convertAbbr(team):
 
     convertedName = teamNames[team]
     return convertedName
+
+def convertMonth(month):
+    months = {1: "January",
+              2: "February",
+              3: "March",
+              4: "April",
+              5: "May",
+              6: "June",
+              7: "July",
+              8: "August",
+              9: "September",
+              10: "October",
+              11: "November",
+              12: "December"}
+
+    newMonth = months[month]
+    return newMonth
 
 if __name__ == '__main__':
     app.run()

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.slugignore" beforeDir="false" afterPath="$PROJECT_DIR$/.slugignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,14 +213,7 @@
       <workItem from="1586297915133" duration="71301000" />
       <workItem from="1586624652360" duration="27550000" />
       <workItem from="1586692820956" duration="42821000" />
-      <workItem from="1586910700648" duration="7263000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
-      <created>1567736619558</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1567736619558</updated>
+      <workItem from="1586910700648" duration="7504000" />
     </task>
     <task id="LOCAL-00002" summary="Initial data cleaning and prep for ANN">
       <created>1567974565357</created>
@@ -559,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586982670971</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Add in ability to select dates along with multiple predictions">
+      <created>1586983077120</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586983077121</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -643,10 +642,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586982667628">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586983076688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586982667628" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983076688" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -691,14 +690,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1229" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582335492283" />
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1586300712134">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1586983397821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586300712134" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586982682311">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586983397821" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586983081219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586982682311" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586983081219" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
