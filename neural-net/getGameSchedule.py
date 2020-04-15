@@ -54,22 +54,26 @@ def getSchedule(year):
                 if(homeActualScore > awayActualScore):
                     actualHomeWin = 1
 
-                insertVariblesIntoTable(game_id, homeTeamAbbr, awayTeamAbbr, game['game_date'], gameTime, homeActualScore, awayActualScore, actualHomeWin)
+                actualAwayWin = 1 - actualHomeWin
+
+                insertVariblesIntoTable(game_id, homeTeamAbbr, awayTeamAbbr, game['game_date'], gameTime, homeActualScore, awayActualScore, actualHomeWin, actualAwayWin)
                 #schedule.loc[x] = [homeTeam,awayTeam,monthName+" "+str(day)+" @ "+str(hours)+":"+minutes+setting]
                 x = x+1
 
             #schedule.to_csv('games_'+str(month)+'_'+str(day)+'_'+str(year)+'.csv', index=False)
             x=1
 
-def insertVariblesIntoTable(game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin):
+def insertVariblesIntoTable(game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin, actualAwayWin):
     try:
         connection = sqlite3.connect("gamesSchedule.db")
         crsr = connection.cursor()
         sql_command = "INSERT INTO games (game_id, homeTeam, awayTeam, gameDate, gameTime," \
-                      "  actualHomeScore, actualAwayScore, actualHomeWin, predHomeScore, predAwayScore, " \
-                      " isHomeWinPredicted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, NULL);"
+                      "  actualHomeScore, actualAwayScore, actualHomeWin, actualAwayWin, linPredHomeScore, linPredAwayScore, " \
+                      " nnPredHomeScore, nnPredAwayScore, rfPredHomeScore, rfPredAwayScore, xgbPredHomeScore, xgbPredAwayScore," \
+                      "logHomeWinPred, logAwayWinPred) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL" \
+                      ", NULL, NULL, NULL);"
 
-        recordTuple = (game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin)
+        recordTuple = (game_id, homeTeam, awayTeam, gameDate, gameTime, homeActualScore, awayActualScore, actualHomeWin, actualAwayWin)
         crsr.execute(sql_command, recordTuple)
         connection.commit()
         print("Record inserted successfully into games table")
@@ -143,24 +147,6 @@ def formatMonth(month):
         month = str(0) + str(month)
 
     return month
-
-
-def getGamePKs(year):
-    x = 1
-    os.chdir('C:\\Users\\Mike Delevan\\PycharmProjects\\Senior-Project\\games')
-    for month in range(4, 11):  # Month is always 1..12
-        for day in range(1, monthrange(year, month)[1] + 1):
-            date = str(month) + "/" + str(day) + "/" + str(year)
-            games = mlb.schedule(start_date=date, end_date=date)
-
-            for game in games:
-                game_id = game['game_id']
-                print(mlb.boxscore_data(game_id))
-                x = x + 1
-
-
-def getGameData(teamAbbr,year):
-    url = "http://www.baseball-reference.com/teams/tgl.cgi?team=" + teamAbbr + "&t=b&year=" + str(year)
 
 if __name__ == "__main__":
     main()

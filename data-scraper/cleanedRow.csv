@@ -1,0 +1,2 @@
+teamAbbr,League,Score,isHomeTeam,atBats,Hits,Doubles,Triples,homeRuns,RBI,Walks,Strikeouts,LOB,pitchersUsed,indER,teamER,Errors,battingAverage,OBP,Slugging,OPS,Win,wonPrev,WHIP,KPercent,BBPercent,FIP,BABIP,ERA,HAllowed,defensiveSO
+WAS,NL,0,1,31,5,1,0,0,0,1,14,6,4,2,2,0,0.161,0.212,0.19399999999999998,0.406,0,0.0,0.8888888888888888,0.35294117647058826,0.08823529411764706,2.9917777777777776,0.2222222222222222,2.0,5,12

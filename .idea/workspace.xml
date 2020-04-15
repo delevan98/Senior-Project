@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="Add custom fonts that everyone can see to web app">
+    <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/delevan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-scraper/cleanedRow.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-scraper/singleRow.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neural-net/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neural-net/models/rflin.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neural-net/models/weights/singleRow.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neural-net/models/xgblin.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Senior-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Senior-Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.slugignore" beforeDir="false" afterPath="$PROJECT_DIR$/.slugignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ANA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ARI_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/ATL_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BAL_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/BOS_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CHN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CIN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/CLE_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/COL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/COL_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/DET_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/DET_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/FLO_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/HOU_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/KCA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/LAN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIL_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/MIN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/NYN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/OAK_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PHI_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/PIT_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SDN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SEA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SFN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/SLN_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TBA_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TEX_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/TOR_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/WAS_Full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/Weights-050--1.17033.hdf5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/br-scraper/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/br-scraper/data-scraper-working.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/brScraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/combinedData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/combinedData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/linmodel.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/models/linmodel.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/logmodel.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/models/logmodel.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-scraper/team_averages.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/team_averages.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/gamesSchedule.db" beforeDir="false" afterPath="$PROJECT_DIR$/games/gamesSchedule.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/data-cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/dataCleaning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/get-predictions.py" beforeDir="false" afterPath="$PROJECT_DIR$/data-scraper/get-predictions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/getGameSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/getGameSchedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/models/regModel" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/models/regModel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/neural-network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/neuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/stat-models.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/statModels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stats-and-correlations/Correlation_Heatmap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/stats-and-correlations/Sample_Conf_Matrix.png" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/stats-and-correlations/Sample_Conf_Matrix.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,22 +113,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/games/gamesSchedule.db" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net\models" />
+      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\games" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\baseData" />
       <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net" />
-      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\data-scraper" />
-      <recent name="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net\models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.stat-models">
-    <configuration name="data-scraper-working" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.get-predictions">
+    <configuration name="get-predictions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -79,12 +136,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data-scraper/br-scraper" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data-scraper" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/br-scraper/data-scraper-working.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/get-predictions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="getGameSchedule" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="neuralNetwork" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -106,29 +163,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural-net/getGameSchedule.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="neural-network" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Senior-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neural-net" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural-net/neural-network.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural-net/neuralNetwork.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,7 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stat-models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="statModels (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -172,7 +207,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural-net/stat-models.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural-net/statModels.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="statModels" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Senior-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neural-net" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net\statModels.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,11 +240,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.stat-models" />
+        <item itemvalue="Python.get-predictions" />
         <item itemvalue="Python.server" />
-        <item itemvalue="Python.data-scraper-working" />
-        <item itemvalue="Python.getGameSchedule" />
-        <item itemvalue="Python.neural-network" />
+        <item itemvalue="Python.neuralNetwork" />
+        <item itemvalue="Python.statModels (1)" />
+        <item itemvalue="Python.statModels" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +265,13 @@
       <workItem from="1581647823028" duration="26796000" />
       <workItem from="1582758249184" duration="11655000" />
       <workItem from="1585351945224" duration="54822000" />
-      <workItem from="1585623111789" duration="3841000" />
+      <workItem from="1585623111789" duration="15266000" />
+      <workItem from="1585928234388" duration="483000" />
+      <workItem from="1585928729885" duration="1819000" />
+      <workItem from="1586297915133" duration="71301000" />
+      <workItem from="1586624652360" duration="27550000" />
+      <workItem from="1586692820956" duration="42821000" />
+      <workItem from="1586910700648" duration="6650000" />
     </task>
     <task id="LOCAL-00001" summary="Initial data cleaning and prep for ANN">
       <created>1567736619558</created>
@@ -539,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585656001943</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Add custom fonts that everyone can see to web app">
+      <created>1585656307373</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1585656307373</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView">
@@ -623,46 +693,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585656039822">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1585656306934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656039822" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656306934" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585406081173" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1585656026931">
+    <state width="914" height="185" key="GridCell.Tab.0.bottom" timestamp="1586910681388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1585656026931">
+    <state width="914" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
+    <state width="914" height="185" key="GridCell.Tab.0.center" timestamp="1586910681388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1585656026931">
+    <state width="914" height="185" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
+    <state width="914" height="185" key="GridCell.Tab.0.left" timestamp="1586910681388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1585656026931">
+    <state width="914" height="185" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
+    <state width="914" height="185" key="GridCell.Tab.0.right" timestamp="1586910681388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585656026931" />
-    <state width="914" height="347" key="GridCell.Tab.1.bottom" timestamp="1585620808343">
+    <state width="914" height="185" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586910681388" />
+    <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585620808343" />
-    <state width="914" height="347" key="GridCell.Tab.1.center" timestamp="1585620808342">
+    <state width="1877" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586575828362" />
+    <state width="1877" height="346" key="GridCell.Tab.1.center" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585620808342" />
-    <state width="914" height="347" key="GridCell.Tab.1.left" timestamp="1585620808342">
+    <state width="1877" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586575828362" />
+    <state width="1877" height="346" key="GridCell.Tab.1.left" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585620808342" />
-    <state width="914" height="347" key="GridCell.Tab.1.right" timestamp="1585620808342">
+    <state width="1877" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586575828362" />
+    <state width="1877" height="346" key="GridCell.Tab.1.right" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585620808342" />
+    <state width="1877" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586575828362" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585406104697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -671,14 +741,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1229" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582335492283" />
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1585407034440">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1586300712134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585407034440" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585656046587">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586300712134" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585656311527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656046587" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585656311527" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -693,13 +763,17 @@
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585584572682" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Senior_Project$stat_models.coverage" NAME="stat-models Coverage Results" MODIFIED="1585655978591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$stat_models.coverage" NAME="statModels Coverage Results" MODIFIED="1586458169536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$neuralNetwork.coverage" NAME="neuralNetwork Coverage Results" MODIFIED="1586822962286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_scraper.coverage" NAME="data-scraper Coverage Results" MODIFIED="1582335996618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_scraper_working.coverage" NAME="data-scraper-working Coverage Results" MODIFIED="1585529888682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$fuckthishomework.coverage" NAME="fuckthishomework Coverage Results" MODIFIED="1585929686050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$neural_network.coverage" NAME="neural-network Coverage Results" MODIFIED="1585353317744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$getGameSchedule.coverage" NAME="getGameSchedule Coverage Results" MODIFIED="1585405744845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$server.coverage" NAME="server Coverage Results" MODIFIED="1585655364465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Project$getGameSchedule.coverage" NAME="getGameSchedule Coverage Results" MODIFIED="1586370541354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$server.coverage" NAME="server Coverage Results" MODIFIED="1586830150742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Project$get_daily_data.coverage" NAME="get-daily-data Coverage Results" MODIFIED="1582336218022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$statModels__1_.coverage" NAME="statModels (1) Coverage Results" MODIFIED="1586822583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_cleaning.coverage" NAME="data-cleaning Coverage Results" MODIFIED="1585352590087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$get_predictions.coverage" NAME="get-predictions Coverage Results" MODIFIED="1586910977063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
   </component>
 </project>

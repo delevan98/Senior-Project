@@ -1,12 +1,13 @@
-import numpy as np
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
 from flask import request
 import pandas as pd
-from sklearn import preprocessing
-import json
 import tensorflow as tf
+from datetime import date, timedelta, datetime
+import sqlite3
+import re
+import getGameSchedule
 
 
 teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
@@ -16,34 +17,53 @@ teamAbbr = ["CHN","PHI","PIT", "CIN", "SLN", "BOS", "CHA",
 				"MIL", "WAS"]
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 @app.route('/')
-def home():
-    logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    #linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
-    data = pd.read_csv('/app/data-scraper/team_averages.csv')
-    games = pd.read_csv('/app/games/games_3_28_2019.csv')
+@app.route("/<day>")
+def home(day=str(date.today())):
+    date_object = datetime.strptime(day, '%Y-%m-%d')
+    next_date_object = date_object + timedelta(days=1)
+    next_day = datetime.strftime(next_date_object, '%Y-%m-%d')
+    previous_date_object = date_object - timedelta(days=1)
+    previous_day = datetime.strftime(previous_date_object, '%Y-%m-%d')
 
-    #logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
-    #linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    #linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
-    #data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-    #games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
+    # logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
+    # linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
+    # linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
+    # data = pd.read_csv('/app/data-scraper/team_averages.csv')
+    # games = pd.read_csv('/app/games/games_3_28_2019.csv')
 
-    logDF = modifyDF(data,games)
-    logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
-    winPredictions = logModel.predict(logDF)
-    print(winPredictions)
+    # logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
+    # linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
+    # linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
+    # data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
+    # games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
 
-    linearDF = modifyLinear(data,games)
-    linearDF.drop(['teamAbbr', 'Win'], axis=1, inplace=True)
-    print(linearDF.dtypes)
-    scorePredictions = linModel.predict(linearDF)
-    print(np.round(scorePredictions))
-    gameData=createJSON(games, winPredictions, scorePredictions)
-    return render_template('result.html',games=gameData)
+    # logDF = modifyDF(data,games)
+    # logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
+    # winPredictions = logModel.predict(logDF)
+    # print(winPredictions)
+
+    # linearDF = modifyLinear(data,games)
+    # linearDF.drop(['teamAbbr', 'Win'], axis=1, inplace=True)
+    # print(linearDF.dtypes)
+    # scorePredictions = linModel.predict(linearDF)
+    # print(np.round(scorePredictions))
+
+    connection = sqlite3.connect("C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\gamesSchedule.db")
+    crsr = connection.cursor()
+    print(day)
+
+    sql_command = "SELECT homeTeam, awayTeam, gameDate, gameTime," \
+                  " xgbPredHomeScore, xgbPredAwayScore, logHomeWinPred, logAwayWinPred FROM games WHERE gamedate = " + "'" + str(day) + "'"
+    games = pd.DataFrame(crsr.execute(sql_command), columns=['Home Team', 'Away Team', 'gameDate', 'gameTime',
+                                                             'xgbPredHomeScore', 'xgbPredAwayScore',
+                                                             'logHomeWinPrediction', 'logAwayWinPrediction'])
+
+    gameData=createJSON(games, mode=1)
+    return render_template('result.html',games=gameData, day=day, previous_day=previous_day, next_day=next_day)
 
 @app.route('/predict',methods=['GET','POST'])
 def get_win():
@@ -81,42 +101,103 @@ def get_win():
         print(linearDF.dtypes)
         scorePredictions = linModel.predict(linearDF)
 
-        matchupData = createJSON(matchup, winPredictions, scorePredictions)
+        matchupData = createJSON(matchup, winPredictions, scorePredictions, mode=2)
 
     return render_template('matchup.html',teams = teamNames, predictions=matchupData)
 
-def createJSON(games,predictions,scores):
+def createJSON(games, predictions=None, scores=None, mode=1):
     gameDataFinal = []
     gameData = {}
     keys = ["Time", "HomeTeamAbbr","HomePrediction","HomeLogoPath","HomeScore", "AwayTeamAbbr","AwayPrediction","AwayLogoPath", "AwayScore"]
-    labels = predictions.astype(np.int32)
-    for x in range(games.shape[0]):
+    #labels = predictions.astype(np.int32)
 
-        awayTeamPrediction = 1
-        awayTeamPrediction ^= labels[x]
-        homeTeamPrediction = labels[x]
-        homeTeamName = convertName(games.iloc[x,0])
-        awayTeamName = convertName(games.iloc[x,1])
-        homeScorePrediction = np.int32(np.floor(scores[x*2]))
-        awayScorePrediction = np.int32(np.floor(scores[2*x+1]))
+    if (mode == 1):
+        for x in range(games.shape[0]):
 
-        #Checks and balances
-        #Tie Predicted
-        if((homeScorePrediction == awayScorePrediction) and labels[x] == 1):
-            homeScorePrediction = homeScorePrediction + 1
-        #Tie Predicted
-        elif((homeScorePrediction == awayScorePrediction) and labels[x] == 0):
-            awayScorePrediction = awayScorePrediction + 1
+            homeTeamName = convertName(games.iloc[x, 0])
+            awayTeamName = convertName(games.iloc[x, 1])
 
-        elif((homeTeamPrediction == 1) and homeScorePrediction < awayScorePrediction):
-            homeTeamPrediction = 0
+            gameDate = games.iloc[x, 2]
+
+            gameTime = games.iloc[x, 3]
+
+            homeScorePrediction = games.iloc[x, 4]
+            awayScorePrediction = games.iloc[x, 5]
+
+            homeTeamPrediction = games.iloc[x, 6]
+            awayTeamPrediction = games.iloc[x, 7]
+
+            # Checks and balances
+            # Tie Predicted
+            if((homeScorePrediction == awayScorePrediction) and homeTeamPrediction == 1):
+                homeScorePrediction = homeScorePrediction + 1
+            # Tie Predicted
+            elif((homeScorePrediction == awayScorePrediction) and homeTeamPrediction == 0):
+                awayScorePrediction = awayScorePrediction + 1
+
+            elif((homeTeamPrediction == 1) and homeScorePrediction < awayScorePrediction):
+                homeTeamPrediction = 0
+                awayTeamPrediction = 1
+
+            elif((awayTeamPrediction == 1) and awayScorePrediction < homeScorePrediction):
+                awayTeamPrediction = 0
+                homeTeamPrediction = 1
+
+            regex = re.compile('\d+-(\d{2})-\d+')
+            month = regex.findall(gameDate)
+
+            month = getGameSchedule.convertMonth(int(month[0].lstrip('0')))
+
+            regex = re.compile('\d+-\d{2}-(\d{2})')
+            day = regex.findall(gameDate)
+
+            date = day[0].lstrip('0')
+
+            gameDate = month + " " + date + " @ " + gameTime
+
+            values = [gameDate, homeTeamName, int(homeTeamPrediction), "static/" + games.iloc[x, 0] + "_Logo.png",
+                      int(homeScorePrediction), awayTeamName, int(awayTeamPrediction),
+                      "static/" + games.iloc[x, 1] + "_Logo.png", int(awayScorePrediction)]
+
+            gameData = dict(zip(keys, values))
+            gameDataFinal.append(gameData)
+
+    elif(mode == 2):
+        labels = predictions.astype(np.int32)
+
+        for x in range(games.shape[0]):
+
             awayTeamPrediction = 1
+            awayTeamPrediction ^= labels[x]
+            homeTeamPrediction = labels[x]
+            homeTeamName = convertName(games.iloc[x, 0])
+            awayTeamName = convertName(games.iloc[x, 1])
+            homeScorePrediction = np.int32(np.floor(scores[x * 2]))
+            awayScorePrediction = np.int32(np.floor(scores[2 * x + 1]))
 
-        elif((awayTeamPrediction == 1) and awayScorePrediction < homeScorePrediction):
-            awayTeamPrediction = 0
-            homeTeamPrediction = 1
+            # Checks and balances
+            # Tie Predicted
+            # Make this a method
+            if ((homeScorePrediction == awayScorePrediction) and labels[x] == 1):
+                homeScorePrediction = homeScorePrediction + 1
+            # Tie Predicted
+            elif ((homeScorePrediction == awayScorePrediction) and labels[x] == 0):
+                awayScorePrediction = awayScorePrediction + 1
 
-        values = [games.iloc[x,2], homeTeamName, int(homeTeamPrediction),"static/" +games.iloc[x,0]+"_Logo.png",int(homeScorePrediction), awayTeamName, int(awayTeamPrediction),"static/" +games.iloc[x,1]+"_Logo.png", int(awayScorePrediction)]
+            elif ((homeTeamPrediction == 1) and homeScorePrediction < awayScorePrediction):
+                homeTeamPrediction = 0
+                awayTeamPrediction = 1
+
+            elif ((awayTeamPrediction == 1) and awayScorePrediction < homeScorePrediction):
+                awayTeamPrediction = 0
+                homeTeamPrediction = 1
+
+        gameDate = games.iloc[x,2]
+
+        values = [gameDate, homeTeamName, int(homeTeamPrediction),"static/" +games.iloc[x,0]+"_Logo.png",
+                  int(homeScorePrediction), awayTeamName, int(awayTeamPrediction),
+                  "static/" + games.iloc[x,1]+"_Logo.png", int(awayScorePrediction)]
+
         gameData = dict(zip(keys,values))
         gameDataFinal.append(gameData)
 
@@ -141,7 +222,7 @@ def modifyDF(data,games):
                                  row2['BBPercent'], row2['FIP'], row2['BABIP'], row2['ERA'], row2['HAllowed'],
                                  row2['defensiveSO']]
 
-    print(df.tail(10))
+    #print(df.tail(10))
     return df
 
 def modifyLinear(data,games):
@@ -171,7 +252,7 @@ def modifyLinear(data,games):
                                    row3['BBPercent'], row3['FIP'], row3['BABIP'], row3['ERA'], row3['HAllowed'], row3['defensiveSO']]
                 x = x + 1
 
-    print(df.tail(10))
+    #print(df.tail(10))
     return df
 
 def convertName(teamAbbr):

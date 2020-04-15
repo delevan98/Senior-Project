@@ -5,6 +5,11 @@
 </head>
 
 {% block main %}
+        <div class="navigation">
+            <a class='previous' href='/{{previous_day}}'>{{previous_day}}</a>
+            <a class='next' href='/{{next_day}}'>{{next_day}}</a>
+        </div>
+
         <div class="flex-container" overflow="visible">
         {%for game in games%}
         <div class="rectangle">

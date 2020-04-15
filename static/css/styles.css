@@ -12,6 +12,27 @@
   color: var(--font-color) !important;
 }
 
+a.previous {
+    float: left;
+    font-family: 'Russo One', sans-serif;
+    margin: auto;
+    padding-top: 1%;
+}
+
+a.next {
+    float: right;
+    font-family: 'Russo One', sans-serif;
+    margin: auto;
+    padding-top: 1%;
+}
+
+
+.navigation{
+    width: auto;
+    height: auto;
+    margin: 1%;
+    margin-bottom: 2%;
+}
 
 .navbar-brand img {
     height: 45px;
@@ -50,7 +71,8 @@ body{
 	margin: 0px;
 	background-color: var(--bg-color) !important;
 	height: 100%;
-	overflow-y: auto;
+	overflow-x: hidden;
+    overflow-y: auto;
 	color: var(--font-color) !important;
 }
 
@@ -110,7 +132,7 @@ header h2{
   background: var(--primary-color) !important;
   box-shadow: 0px 0px 8px var(--font-color) !important;
   position: relative;
-  margin: 35px;
+  margin: 20px;
   border-style: solid;
   border-width: thin;
   columns: 2 100px;
@@ -304,9 +326,12 @@ header h2{
     display: flex;
     flex-wrap: wrap;
     background-color: var(--bg-color) !important;
+    overflow-x: hidden;
     overflow-y: hidden;
     height: 100%;
     margin: auto;
+    margin-top: 4%;
+    justify-content: space-around;
 }
 
 .homeTeamMatchup {
