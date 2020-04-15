@@ -13,7 +13,6 @@
 /notebooks/*.jpg
 /notebooks/.ipynb_checkpoints
 /static/css/matchup.sketch
-/neural-net/*.py
 /baseData/*.csv
 /.ipynb_checkpoints
 /data-scraper/ANA_Full.csv
