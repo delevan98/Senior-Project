@@ -53,10 +53,9 @@ def home(day=str(date.today())):
     # scorePredictions = linModel.predict(linearDF)
     # print(np.round(scorePredictions))
 
-    connection = sqlite3.connect("app/games/gamesSchedule.db")
+    connection = sqlite3.connect('/app/games/gamesSchedule.db')
     #connection = sqlite3.connect("C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\gamesSchedule.db")
     crsr = connection.cursor()
-    print(day)
 
     sql_command = "SELECT homeTeam, awayTeam, gameDate, gameTime," \
                   " xgbPredHomeScore, xgbPredAwayScore, logHomeWinPred, logAwayWinPred FROM games WHERE gamedate = " + "'" + str(day) + "'"

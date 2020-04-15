@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,14 +213,7 @@
       <workItem from="1586297915133" duration="71301000" />
       <workItem from="1586624652360" duration="27550000" />
       <workItem from="1586692820956" duration="42821000" />
-      <workItem from="1586910700648" duration="9524000" />
-    </task>
-    <task id="LOCAL-00005" summary="Printing out predictions in web app + logos">
-      <created>1569198335979</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1569198335979</updated>
+      <workItem from="1586910700648" duration="9765000" />
     </task>
     <task id="LOCAL-00006" summary="Data Pre-Processing + Web Development">
       <created>1569983193356</created>
@@ -559,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586984873955</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Add in ability to select dates along with multiple predictions">
+      <created>1586985486000</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1586985486000</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -643,10 +642,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586984873528">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586985485577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586984873528" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985485577" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -695,10 +694,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586983397821" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586984881786">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586985490489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586984881786" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985490489" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
