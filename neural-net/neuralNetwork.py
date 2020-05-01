@@ -19,6 +19,7 @@ from sklearn.metrics import mean_squared_error
 import shutil
 
 def main():
+    '''
     os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\weights')
     teamAbbr = ["CHN", "PIT", "PHI", "CIN", "SLN", "BOS", "CHA",
                 "CLE", "DET", "NYA", "BAL", "LAN", "SFN", "MIN",
@@ -89,6 +90,60 @@ def main():
         model.save('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
 
         ## --------------------------------------------------------------- ##
+        '''
+
+    ## -------------------- Classification LSTM ---------------------- ##
+
+    from statsmodels.tsa.stattools import adfuller, kpss
+    data = pd.read_csv('D:\\Downloads\\projectBackup\\data-scraper\\ANA_Full.csv')
+    data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER'], axis=1, inplace=True)
+
+    time_steps = 10
+
+    # reshape to [samples, time_steps, n_features]
+
+    train_size = int(len(data) * 0.8)
+    test_size = len(data) - train_size
+    train, test = data.iloc[0:train_size], data.iloc[train_size:len(data)]
+    print(len(train), len(test))
+
+    X_train, y_train = create_dataset(train, train.Win, time_steps)
+    X_test, y_test = create_dataset(test, test.Win, time_steps)
+
+    print(X_train.shape, y_train.shape)
+
+    model = Sequential()
+    model.add(LSTM(units=24, return_sequences=True, input_shape=(X_train.shape[1], X_train.shape[2])))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=12, return_sequences=True))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=12, return_sequences=True))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=12))
+    model.add(Dropout(0.2))
+    model.add(Dense(1))
+
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+    history = model.fit(
+        X_train, y_train,
+        epochs=50,
+        batch_size=16,
+        validation_split=0.2,
+        verbose=1,
+        shuffle=False
+    )
+
+
+
+
+def create_dataset(X, y, time_steps=1):
+    Xs, ys = [], []
+    for i in range(len(X) - time_steps):
+        v = X.iloc[i:(i + time_steps)].values
+        Xs.append(v)
+        ys.append(y.iloc[i + time_steps])
+    return np.array(Xs), np.array(ys)
 
 def plot_history(history):
   print(history.history)

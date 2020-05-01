@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91230c5a-b1fb-4671-be46-e594c757487c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/getAccuracy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/gamesSchedule.db" beforeDir="false" afterPath="$PROJECT_DIR$/games/gamesSchedule.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/neuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/neuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural-net/statModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural-net/statModels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +26,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gamesSchedule.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -51,11 +62,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite.xerial" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/games/gamesSchedule.db" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,7 +81,7 @@
       <recent name="C:\Users\Mike Delevan\PycharmProjects\Senior-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.server">
+  <component name="RunManager" selected="Python.neuralNetwork">
     <configuration name="get-predictions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Senior-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +96,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data-scraper/get-predictions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="getAccuracy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Senior-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getAccuracy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,35 +192,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="statModels" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Senior-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/neural-net" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\delevan\PycharmProjects\Senior-Project\neural-net\statModels.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.server" />
-        <item itemvalue="Python.get-predictions" />
         <item itemvalue="Python.neuralNetwork" />
         <item itemvalue="Python.statModels (1)" />
-        <item itemvalue="Python.statModels" />
+        <item itemvalue="Python.getAccuracy" />
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.get-predictions" />
       </list>
     </recent_temporary>
   </component>
@@ -213,14 +225,13 @@
       <workItem from="1586297915133" duration="71301000" />
       <workItem from="1586624652360" duration="27550000" />
       <workItem from="1586692820956" duration="42821000" />
-      <workItem from="1586910700648" duration="9765000" />
-    </task>
-    <task id="LOCAL-00006" summary="Data Pre-Processing + Web Development">
-      <created>1569983193356</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1569983193356</updated>
+      <workItem from="1586910700648" duration="11135000" />
+      <workItem from="1587349969477" duration="629000" />
+      <workItem from="1587471880446" duration="692000" />
+      <workItem from="1587472601650" duration="389000" />
+      <workItem from="1587473048455" duration="4756000" />
+      <workItem from="1587601990750" duration="374000" />
+      <workItem from="1588250868829" duration="6835000" />
     </task>
     <task id="LOCAL-00007" summary="Adding presentation 2 and data pre-processing">
       <created>1570190669609</created>
@@ -558,17 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1586985486000</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Add in ability to select dates along with multiple predictions">
+      <created>1586985888379</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1586985888379</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -634,38 +643,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1581383996771" />
-    <state x="72" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585406162479">
+    <state x="72" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587472417274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="72" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585406162479" />
+    <state x="72" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587472417274" />
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585356369245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="921" y="454" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585356369245" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586985485577">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1586985887936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985485577" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985887936" />
     <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1585406081173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585406081173" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1586985209851">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1588360691046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586985209851" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1586985209851">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588360691046" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1588360691045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586985209851" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1586985209851">
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588360691045" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1588360691045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586985209851" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1586985209851">
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588360691045" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1588360691045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586985209851" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588360691045" />
     <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1586575828362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -682,30 +691,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586575828362" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585406104697">
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1587472112919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1585406104697" />
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1587472112919" />
     <state x="1229" y="231" key="RollbackChangesDialog" timestamp="1582335492283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1229" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582335492283" />
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1586983397821">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor" timestamp="1588279869952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586983397821" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586985490489">
+    <state x="530" y="92" width="916" height="713" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588279869952" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586985892241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985490489" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586985892241" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1581209102657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581209102657" />
-    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582251410048">
+    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588360236170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582251410048" />
+    <state x="1086" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588360236170" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1585584572682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -713,16 +722,17 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Senior_Project$stat_models.coverage" NAME="statModels Coverage Results" MODIFIED="1586458169536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$neuralNetwork.coverage" NAME="neuralNetwork Coverage Results" MODIFIED="1586822962286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$data_scraper.coverage" NAME="data-scraper Coverage Results" MODIFIED="1582335996618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$neuralNetwork.coverage" NAME="neuralNetwork Coverage Results" MODIFIED="1588360691040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_scraper_working.coverage" NAME="data-scraper-working Coverage Results" MODIFIED="1585529888682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$getAccuracy.coverage" NAME="getAccuracy Coverage Results" MODIFIED="1587475495882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Senior_Project$getGameSchedule.coverage" NAME="getGameSchedule Coverage Results" MODIFIED="1586370541354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$statModels__1_.coverage" NAME="statModels (1) Coverage Results" MODIFIED="1587477156441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
+    <SUITE FILE_PATH="coverage/Senior_Project$get_predictions.coverage" NAME="get-predictions Coverage Results" MODIFIED="1586910977063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
+    <SUITE FILE_PATH="coverage/Senior_Project$data_scraper.coverage" NAME="data-scraper Coverage Results" MODIFIED="1582335996618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
     <SUITE FILE_PATH="coverage/Senior_Project$fuckthishomework.coverage" NAME="fuckthishomework Coverage Results" MODIFIED="1585929686050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$neural_network.coverage" NAME="neural-network Coverage Results" MODIFIED="1585353317744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$getGameSchedule.coverage" NAME="getGameSchedule Coverage Results" MODIFIED="1586370541354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$server.coverage" NAME="server Coverage Results" MODIFIED="1586984805821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Senior_Project$get_daily_data.coverage" NAME="get-daily-data Coverage Results" MODIFIED="1582336218022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper/br-scraper" />
-    <SUITE FILE_PATH="coverage/Senior_Project$statModels__1_.coverage" NAME="statModels (1) Coverage Results" MODIFIED="1586822583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
     <SUITE FILE_PATH="coverage/Senior_Project$data_cleaning.coverage" NAME="data-cleaning Coverage Results" MODIFIED="1585352590087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neural-net" />
-    <SUITE FILE_PATH="coverage/Senior_Project$get_predictions.coverage" NAME="get-predictions Coverage Results" MODIFIED="1586910977063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data-scraper" />
   </component>
 </project>

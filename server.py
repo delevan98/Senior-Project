@@ -22,36 +22,12 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 @app.route('/')
 @app.route("/<day>")
 def home(day=str(date.today())):
-    print(day)
     date_object = datetime.strptime(day, '%Y-%m-%d')
 
     next_date_object = date_object + timedelta(days=1)
     next_day = datetime.strftime(next_date_object, '%Y-%m-%d')
     previous_date_object = date_object - timedelta(days=1)
     previous_day = datetime.strftime(previous_date_object, '%Y-%m-%d')
-
-    # logModel = pickle.load(open('/app/data-scraper/logmodel.pkl', 'rb'))
-    # linModel = pickle.load(open('/app/data-scraper/linmodel.pkl', 'rb'))
-    # linModel = tf.keras.models.load_model('/app/neural-net/models/regModel')
-    # data = pd.read_csv('/app/data-scraper/team_averages.csv')
-    # games = pd.read_csv('/app/games/games_3_28_2019.csv')
-
-    # logModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\logmodel.pkl', 'rb'))
-    # linModel = pickle.load(open('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\linmodel.pkl', 'rb'))
-    # linModel = tf.keras.models.load_model('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models\\regModel')
-    # data = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper\\team_averages.csv')
-    # games = pd.read_csv('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\games_3_28_2019.csv')
-
-    # logDF = modifyDF(data,games)
-    # logDF.drop(['Win', 'teamAbbr'], axis=1, inplace=True)
-    # winPredictions = logModel.predict(logDF)
-    # print(winPredictions)
-
-    # linearDF = modifyLinear(data,games)
-    # linearDF.drop(['teamAbbr', 'Win'], axis=1, inplace=True)
-    # print(linearDF.dtypes)
-    # scorePredictions = linModel.predict(linearDF)
-    # print(np.round(scorePredictions))
 
     connection = sqlite3.connect('/app/games/gamesSchedule.db')
     #connection = sqlite3.connect("C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\games\\gamesSchedule.db")

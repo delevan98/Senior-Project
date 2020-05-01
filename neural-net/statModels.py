@@ -15,6 +15,7 @@ import pickle
 import tensorflow as tf
 import xgboost as xgb
 from xgboost.sklearn import XGBRegressor
+from xgboost.sklearn import XGBClassifier
 from sklearn.model_selection import GridSearchCV
 
 
@@ -170,6 +171,7 @@ def main():
 
     ## ----------------------------------------- ##
     print('Re-trained XGBoost regression')
+    
     ## ---------- LOGISTIC REGRESSION ---------- ##
     print('Re-training logistic regression')
     os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\data-scraper')
@@ -202,6 +204,30 @@ def main():
     # getFeatureImportances(X_train, y_train)
     print('Re-trained logistic regression')
     pickle.dump(logmodel, open('logmodel.pkl', 'wb'))
+
+    ## -------------- XGBoost Classification -------------- ##
+
+    print('Re-training XGBoost classification')
+    os.chdir('D:\\Downloads\\projectBackup\\data-scraper')
+    data = pd.read_csv('combinedData.csv')
+    os.chdir('C:\\Users\\delevan\\PycharmProjects\\Senior-Project\\neural-net\\models')
+    data.drop(['League', 'teamAbbr', 'RBI', 'indER', 'teamER'], axis=1, inplace=True)
+
+    X_train, X_test, y_train, y_test = train_test_split(data.drop('Win', axis=1),
+                                                        data['Win'], test_size=0.20,
+                                                        random_state=93)
+
+    xgb1 = XGBClassifier(learning_rate=.1, n_estimators=250, max_depth=7, min_child_weight=8,
+                        gamma=0, reg_lambda=.1, subsample=.8, colsample_bytree=.8, objective='binary:logistic',
+                        nthread=4, seed=27)
+
+    xgb1.fit(X_train, y_train)
+
+    y_pred = xgb1.predict(X_test)
+
+    from sklearn.metrics import accuracy_score
+    accuracy = accuracy_score(y_test, y_pred)
+    print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
     ## ------------------------------------------------------------- ##
 
